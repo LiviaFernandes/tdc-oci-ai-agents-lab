@@ -90,27 +90,30 @@ Description: Recursos do laboratorio TDC AI Agents OCI
 
 6. Clique em **Create compartment**.
 
-> INSERIR PRINT: tela de criacao do compartment.
+> <img width="1470" height="776" alt="image" src="https://github.com/user-attachments/assets/b48c1ffe-83d6-45fe-9557-2bd3060f6a6f" />
+
 
 ## 2. Criar grupo e adicionar usuario
 
 1. Va em **Identity & Security**.
 2. Acesse **Domains**.
-3. Entre no dominio usado pela sua conta.
+3. Entre no dominio default no compartment root.
 4. Acesse **Groups**.
 5. Crie um grupo:
+   <img width="1161" height="247" alt="image" src="https://github.com/user-attachments/assets/a9ae3208-db9f-4bcf-aa95-f47e627df6c5" />
 
+6. Utilize o seguinte name para o grupo
 ```text
 tdc-ai-agents-users
 ```
 
-6. Adicione seu usuario ao grupo.
+7. Adicione seu usuario ao grupo e clique em create.
 
-> INSERIR PRINT: grupo criado com usuario associado.
+<img width="1466" height="829" alt="image" src="https://github.com/user-attachments/assets/2ad7d490-099a-4f4b-a0d2-447342503eed" />
 
 ## 3. Criar policies do lab
 
-Va em **Identity & Security > Policies** e crie uma policy no compartment raiz ou no compartment de administracao da tenancy.
+Va em **Identity & Security > Policies** e crie uma policy no compartment root
 
 Nome sugerido:
 
@@ -126,10 +129,9 @@ Allow group tdc-ai-agents-users to manage generative-ai-family in compartment td
 Allow group tdc-ai-agents-users to manage ai-service-generative-ai-agents-family in compartment tdc-ai-agents-lab
 Allow group tdc-ai-agents-users to read compartments in tenancy
 ```
+<img width="1466" height="829" alt="image" src="https://github.com/user-attachments/assets/78e3c250-9211-4928-9a0b-aa38e7bae3a6" />
 
-Observacao: os nomes exatos de resource-types podem variar conforme evolucao do servico. Se sua tenancy apresentar um exemplo oficial ou policy wizard, use a recomendacao da propria OCI.
 
-> INSERIR PRINT: policy criada.
 
 ## 4. Criar bucket no Object Storage
 
@@ -146,7 +148,7 @@ Bucket name: tdc-agent-kb
 6. Mantenha as demais opcoes padrao.
 7. Clique em **Create**.
 
-> INSERIR PRINT: bucket criado.
+<img width="1470" height="831" alt="image" src="https://github.com/user-attachments/assets/41ad45b7-6ae9-4c4e-a81b-7416cbdb2507" />
 
 ## 5. Subir arquivos para RAG
 
