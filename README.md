@@ -15,6 +15,7 @@ O objetivo do lab e criar um agente chamado **Assistente TDC Floripa**, capaz de
 
 ```text
 assets/
+  base_rag_tdc_floripa_2026.pdf         # Arquivo unico recomendado para upload no RAG
   programacao_tdc_floripa_2026.pdf      # PDF da programacao com trilhas, sessoes e speakers
   programacao_tdc_floripa_2026.md       # Versao Markdown para RAG
   programacao_tdc_floripa_2026.json     # Dataset usado pela tool
@@ -148,17 +149,15 @@ Bucket name: tdc-agent-kb
 
 > INSERIR PRINT: bucket criado.
 
-## 5. Subir arquivos para RAG
+## 5. Subir arquivo para RAG
 
 No bucket `tdc-agent-kb`, faca upload dos arquivos:
 
 ```text
-assets/tdc_floripa_2026_oficial.md
-assets/programacao_tdc_floripa_2026.md
-assets/programacao_tdc_floripa_2026.pdf
+assets/base_rag_tdc_floripa_2026.pdf
 ```
 
-Esses arquivos contem a base sobre o evento e a programacao coletada do site oficial.
+Esse PDF unico contem a base sobre o evento, FAQ, jornadas e programacao coletada do site oficial. O arquivo `programacao_tdc_floripa_2026.json` fica reservado para a custom tool.
 
 > INSERIR PRINT: upload dos arquivos no bucket.
 
@@ -395,6 +394,12 @@ Isso regenera:
 assets/programacao_tdc_floripa_2026.json
 assets/programacao_tdc_floripa_2026.md
 assets/programacao_tdc_floripa_2026.pdf
+```
+
+Depois regenere tambem o PDF unico do RAG:
+
+```bash
+python3 scripts/build_rag_pdf.py
 ```
 
 ## Limpeza dos recursos
