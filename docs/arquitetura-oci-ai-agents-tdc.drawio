@@ -128,13 +128,13 @@
         <mxCell id="42" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="3" source="4" target="6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="43" value="1. pergunta" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="3">
+        <mxCell id="43" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="3">
           <mxGeometry x="150" y="180" width="130" height="22" as="geometry" />
         </mxCell>
         <mxCell id="44" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" edge="1" parent="3" source="6" target="8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="45" value="2. webhook HTTPS" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="3">
+        <mxCell id="45" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="3">
           <mxGeometry x="270" y="210" width="130" height="22" as="geometry" />
         </mxCell>
         <mxCell id="46" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="21">
@@ -145,19 +145,19 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="47" value="3. OCI SDK signed request" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="1">
+        <mxCell id="47" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="1">
           <mxGeometry x="550" y="385" width="130" height="22" as="geometry" />
         </mxCell>
         <mxCell id="48" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="20" source="21" target="23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="49" value="session + chat" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="20">
+        <mxCell id="49" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="20">
           <mxGeometry x="900" y="230" width="130" height="22" as="geometry" />
         </mxCell>
         <mxCell id="50" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="20" source="23" target="25">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="51" value="RAG retrieval" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="20">
+        <mxCell id="51" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="20">
           <mxGeometry x="1070" y="230" width="130" height="22" as="geometry" />
         </mxCell>
         <mxCell id="52" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=1.0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="20" source="23" target="27">
@@ -168,7 +168,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="53" value="tool call" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="20">
+        <mxCell id="53" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="20">
           <mxGeometry x="1190" y="365" width="130" height="22" as="geometry" />
         </mxCell>
         <mxCell id="54" value="inference" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" edge="1" parent="20" source="23" target="29">
@@ -182,10 +182,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="56" value="indexa PDF" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="14">
+        <mxCell id="56" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="14">
           <mxGeometry x="1110" y="500" width="130" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="57" value="documento" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="31" source="32" target="34">
+        <mxCell id="57" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="31" source="32" target="34">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="58" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" edge="1" parent="14" source="27" target="38">
@@ -196,7 +196,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="59" value="egress HTTPS" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="14">
+        <mxCell id="59" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="14">
           <mxGeometry x="1310" y="500" width="130" height="22" as="geometry" />
         </mxCell>
         <mxCell id="60" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=0;endArrow=open;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;exitX=0.0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="38" target="10">
@@ -207,7 +207,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="61" value="4. consulta agenda" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="1">
+        <mxCell id="61" value="" style="text;html=1;strokeColor=none;fillColor=#FCFBFA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=2;fontFamily=Oracle Sans;fontSize=8;fontStyle=0;fontColor=#312D2A;" vertex="1" parent="1">
           <mxGeometry x="640" y="730" width="130" height="22" as="geometry" />
         </mxCell>
         <mxCell id="62" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#312D2A;strokeWidth=1;dashed=1;dashPattern=6 3;endArrow=none;endFill=0;fontFamily=Oracle Sans;fontSize=12;fontColor=#312D2A;rounded=1;jettySize=auto;orthogonalLoop=1;endArrow=none;endFill=0;startArrow=none;" edge="1" parent="14">

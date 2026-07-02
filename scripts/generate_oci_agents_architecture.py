@@ -149,7 +149,7 @@ def build_diagram() -> Path:
     d.add_labeled_edge(
         attendee,
         telegram,
-        "1. pergunta",
+        "",
         label_x=150,
         label_y=180,
         parent=external,
@@ -161,7 +161,7 @@ def build_diagram() -> Path:
     d.add_labeled_edge(
         telegram,
         backend,
-        "2. webhook HTTPS",
+        "",
         label_x=270,
         label_y=210,
         parent=external,
@@ -173,7 +173,7 @@ def build_diagram() -> Path:
     d.add_labeled_edge(
         backend,
         endpoint,
-        "3. OCI SDK signed request",
+        "",
         label_x=550,
         label_y=385,
         parent="1",
@@ -188,7 +188,7 @@ def build_diagram() -> Path:
     d.add_labeled_edge(
         endpoint,
         agent,
-        "session + chat",
+        "",
         label_x=900,
         label_y=230,
         parent=genai_panel,
@@ -200,7 +200,7 @@ def build_diagram() -> Path:
     d.add_labeled_edge(
         agent,
         kb,
-        "RAG retrieval",
+        "",
         label_x=1070,
         label_y=230,
         parent=genai_panel,
@@ -212,7 +212,7 @@ def build_diagram() -> Path:
     d.add_labeled_edge(
         agent,
         tool,
-        "tool call",
+        "",
         label_x=1190,
         label_y=365,
         parent=genai_panel,
@@ -227,7 +227,7 @@ def build_diagram() -> Path:
     d.add_labeled_edge(
         kb,
         bucket,
-        "indexa PDF",
+        "",
         label_x=1110,
         label_y=500,
         parent=compartment,
@@ -237,12 +237,12 @@ def build_diagram() -> Path:
         entry_y=0.0,
         waypoints=[(735, 365), (515, 365)],
     )
-    d.add_edge(bucket, pdf, "documento", parent=data_panel, exit_x=1.0, exit_y=0.5, entry_x=0.0, entry_y=0.5)
+    d.add_edge(bucket, pdf, "", parent=data_panel, exit_x=1.0, exit_y=0.5, entry_x=0.0, entry_y=0.5)
 
     d.add_labeled_edge(
         tool,
         nat,
-        "egress HTTPS",
+        "",
         label_x=1310,
         label_y=500,
         parent=compartment,
@@ -255,7 +255,7 @@ def build_diagram() -> Path:
     d.add_labeled_edge(
         nat,
         public_api,
-        "4. consulta agenda",
+        "",
         label_x=640,
         label_y=730,
         parent="1",

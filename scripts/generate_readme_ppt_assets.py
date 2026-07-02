@@ -119,11 +119,6 @@ def generate_architecture_png():
     arrow(draw, (1408, 440), (1408, 535), COLORS["sienna"])
     arrow(draw, (1490, 602), (1590, 602), COLORS["line"])
 
-    label(draw, "pergunta", 288, 382, size=17, fill=COLORS["ocean"])
-    label(draw, "webhook", 288, 552, size=17, fill=COLORS["ocean"])
-    label(draw, "RAG", 1160, 475, size=18, fill=COLORS["ivy"])
-    label(draw, "PDF", 940, 570, size=18, fill=COLORS["ivy"])
-
     rounded_box(draw, (55, 835, 1740, 920), fill="#FFFFFF", outline="#DFDCD8", radius=18)
     label(draw, "Resumo:", 90, 862, size=22, bold=True)
     label(draw, "o Agent Endpoint recebe a pergunta; o Agent combina RAG no PDF com chamada HTTP estruturada via Custom Tool.", 200, 863, size=20, fill="#504B45")
