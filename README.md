@@ -213,7 +213,7 @@ Quando uma informacao puder mudar, informe que a fonte oficial deve ser consulta
 Nao invente horarios, speakers, valores ou regras que nao estejam na base ou na resposta da tool.
 ```
 
-> INSERIR PRINT: tela de criacao do agente.
+<img width="1469" height="829" alt="image" src="https://github.com/user-attachments/assets/4e88776b-77c9-4f0d-bd62-5d4f9d826098" />
 
 ## 8. Adicionar RAG Tool
 
