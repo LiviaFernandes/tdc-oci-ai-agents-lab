@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: TDC Floripa 2026 Programacao Tool
+  version: 1.0.0
+  description: Consulta publica read-only da programacao do TDC Floripa 2026 usada no lab de OCI Generative AI Agents.
+servers:
+  - url: https://cdn.jsdelivr.net
+paths:
+  /gh/LiviaFernandes/tdc-oci-ai-agents-lab@main/assets/programacao_tdc_floripa_2026.json:
+    get:
+      operationId: getProgramacaoTdcFloripa2026
+      summary: Retorna a programacao estruturada do TDC Floripa 2026
+      description: Retorna trilhas, sessoes, horarios, speakers, descricoes e URLs fonte para o agente filtrar conforme a pergunta do usuario.
+      responses:
+        "200":
+          description: Programacao estruturada do TDC Floripa 2026
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
