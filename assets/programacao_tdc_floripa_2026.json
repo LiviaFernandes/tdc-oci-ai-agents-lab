@@ -1,0 +1,2384 @@
+[
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Abertura",
+    "date": "22/jul",
+    "time": "09:00-10:00",
+    "speakers": [],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha Agentic AI",
+    "title": "Arquiteturas orientadas a agentes: quando sistemas deixam de executar e passam a decidir",
+    "date": "22/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Ana Lindiner Lima de Araujo"
+    ],
+    "description": "Ana Lindiner Lima de Araujo Riachuelo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agentic-ai"
+  },
+  {
+    "track": "Trilha Arquitetura de Soluções",
+    "title": "Operando Globalmente com Segurança: transferência internacional de dados e arquitetura técnica multi jurisdição",
+    "date": "22/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Pedro May",
+      "Vinicius Bitencourt"
+    ],
+    "description": "Pedro May C2R Vinicius Bitencourt FLOW VISTA",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-de-solucoes"
+  },
+  {
+    "track": "Trilha Design de Código",
+    "title": "Código que Sobrevive: Como Evitar Sistemas que Ninguém Quer Tocar",
+    "date": "22/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Peter Rizzon"
+    ],
+    "description": "Peter Rizzon Unimed Serra Gaúcha",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-de-codigo"
+  },
+  {
+    "track": "Trilha Gestão Ágil e Liderança de Impacto",
+    "title": "Do Caos à Escala: Governança Ágil sincroniza +130 pessoas, evolui maturidade com dados e acelera 4 produtos a cada 21 dias",
+    "date": "22/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Guilherme Villanova"
+    ],
+    "description": "Guilherme Villanova TOTVS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-agil-e-lideranca-de-impacto"
+  },
+  {
+    "track": "Trilha JavaScript e Node.js",
+    "title": "Mastra: Construindo Agentes de IA com TypeScript e Node.js",
+    "date": "22/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Diego Roberto Antunes"
+    ],
+    "description": "Diego Roberto Antunes UTFPR",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-javascript-e-node-js"
+  },
+  {
+    "track": "Trilha SRE e Observabilidade",
+    "title": "Incidente resolvido ou problema adiado?",
+    "date": "22/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Dickson Guedes"
+    ],
+    "description": "Dickson Guedes Timbira",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-sre-e-observabilidade"
+  },
+  {
+    "track": "Trilha UX Design, Research e Métricas",
+    "title": "Do clique ao roadmap: usando heatmaps para tomar decisões de produto com impacto real",
+    "date": "22/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Eduarda Loureiro Azevedo"
+    ],
+    "description": "Eduarda Loureiro Azevedo Compass UOL",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-ux-design-research-e-metricas"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Arquiteturas orientadas a agentes: quando sistemas deixam de executar e passam a decidir",
+    "date": "22/jul",
+    "time": "10:30-11:05",
+    "speakers": [
+      "Ana Lindiner Lima de Araujo"
+    ],
+    "description": "Ana Lindiner Lima de Araujo Riachuelo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Do Código à Liderança Estratégica: O Caminho para Quem Veio da Engenharia",
+    "date": "22/jul",
+    "time": "10:30-11:10",
+    "speakers": [
+      "Gabriele Guedes",
+      "Matheus Harlacher Hoff"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Agentic AI",
+    "title": "Arquitetura Agêntica sobre Sistemas Legados: um Caso Real no Setor Público",
+    "date": "22/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Luiz Henrique A. Salazar"
+    ],
+    "description": "Luiz Henrique A. Salazar Centro de Informática e Automação do Estado de Santa Catarina (CIASC)",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agentic-ai"
+  },
+  {
+    "track": "Trilha Arquitetura de Soluções",
+    "title": "Design for Failure: Arquitetando Sistemas que Sobrevivem ao Caos em Produção",
+    "date": "22/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Guilherme Altmann"
+    ],
+    "description": "Guilherme Altmann Qive",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-de-solucoes"
+  },
+  {
+    "track": "Trilha Design de Código",
+    "title": "Clean code já era!",
+    "date": "22/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Lucas Rogerio Masotti"
+    ],
+    "description": "Lucas Rogerio Masotti Sicredi",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-de-codigo"
+  },
+  {
+    "track": "Trilha Gestão Ágil e Liderança de Impacto",
+    "title": "People OS: Como Construí um Sistema de Coaching com IA para Desenvolver Meu Time",
+    "date": "22/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Andre Ganske"
+    ],
+    "description": "Andre Ganske PX",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-agil-e-lideranca-de-impacto"
+  },
+  {
+    "track": "Trilha JavaScript e Node.js",
+    "title": "Nitro: um servidor para qualquer runtime",
+    "date": "22/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Enzo Albornoz"
+    ],
+    "description": "Enzo Albornoz Tarmac.IO",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-javascript-e-node-js"
+  },
+  {
+    "track": "Trilha SRE e Observabilidade",
+    "title": "Observabilidade como ferramenta de segurança: detectando incidentes antes do impacto",
+    "date": "22/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "João Becker"
+    ],
+    "description": "João Becker IT2S GROUP",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-sre-e-observabilidade"
+  },
+  {
+    "track": "Trilha UX Design, Research e Métricas",
+    "title": "Menos esforço, mais decisão: UX e IA em sistemas de alta carga cognitiva",
+    "date": "22/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Bruno da Silva Assis",
+      "Vagner Mensch"
+    ],
+    "description": "Bruno da Silva Assis Telus Digital Vagner Mensch Telus Digital",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-ux-design-research-e-metricas"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Design for Failure: Arquitetando Sistemas que Sobrevivem ao Caos em Produção",
+    "date": "22/jul",
+    "time": "11:15-11:50",
+    "speakers": [
+      "Guilherme Altmann"
+    ],
+    "description": "Guilherme Altmann Qive",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha Agentic AI",
+    "title": "Multiagente de Comunicação Confiável",
+    "date": "22/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Michael Silva"
+    ],
+    "description": "Michael Silva",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agentic-ai"
+  },
+  {
+    "track": "Trilha Arquitetura de Soluções",
+    "title": "Integrações que Não Quebram: Arquitetando APIs e Eventos em Sistemas Reais",
+    "date": "22/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Peter Rizzon"
+    ],
+    "description": "Peter Rizzon Unimed Serra Gaúcha",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-de-solucoes"
+  },
+  {
+    "track": "Trilha UX Design, Research e Métricas",
+    "title": "O que designers não entendem sobre usuários autistas",
+    "date": "22/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Natália Grein"
+    ],
+    "description": "Natália Grein Objective",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-ux-design-research-e-metricas"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Integrações que Não Quebram: Arquitetando APIs e Eventos em Sistemas Reais",
+    "date": "22/jul",
+    "time": "11:55-12:30",
+    "speakers": [
+      "Peter Rizzon"
+    ],
+    "description": "Peter Rizzon Unimed Serra Gaúcha",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha Design de Código",
+    "title": "Entre débito cognitivo e controle: como engenheiros mantêm qualidade quando a IA escreve o código",
+    "date": "22/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Will Amaral"
+    ],
+    "description": "Will Amaral Thoughtworks",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-de-codigo"
+  },
+  {
+    "track": "Trilha Gestão Ágil e Liderança de Impacto",
+    "title": "Confusão de Níveis: A doença silenciosa que destrói a autonomia",
+    "date": "22/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Fernanda Lessa"
+    ],
+    "description": "Fernanda Lessa Boticário",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-agil-e-lideranca-de-impacto"
+  },
+  {
+    "track": "Trilha JavaScript e Node.js",
+    "title": "Como fazer uma bomba atômica com Maizena e JavaScript  Uma análise após 20 anos da Lei de Atwood",
+    "date": "22/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Gabriel Soares Flores"
+    ],
+    "description": "Gabriel Soares Flores OMD Soluções",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-javascript-e-node-js"
+  },
+  {
+    "track": "Trilha SRE e Observabilidade",
+    "title": "Event-Driven Ansible + Kubernetes: automação reativa sem polling",
+    "date": "22/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Kaio Oliveira"
+    ],
+    "description": "Kaio Oliveira Red Hat",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-sre-e-observabilidade"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Entre débito cognitivo e controle: como engenheiros mantêm qualidade quando a IA escreve o código",
+    "date": "22/jul",
+    "time": "13:30-14:05",
+    "speakers": [
+      "Will Amaral"
+    ],
+    "description": "Will Amaral Thoughtworks",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Tech Lead como Arquiteto de Decisões e o Fim das \"Arquiteturas Perfeitas Ninguém Usa\"",
+    "date": "22/jul",
+    "time": "14:00-14:40",
+    "speakers": [
+      "Luma Jung",
+      "Marcello Ozzetti"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Agentic AI",
+    "title": "Agentes de IA em produção: orquestrando Microsoft Agent Framework com Temporal.io e Durable Tasks",
+    "date": "22/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Gabriel Schmith"
+    ],
+    "description": "Gabriel Schmith SOFTPLAN",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agentic-ai"
+  },
+  {
+    "track": "Trilha Arquitetura de Soluções",
+    "title": "Sim, arquitetos serão substituídos por IA. Principalmente se competirem com ela do jeito errado",
+    "date": "22/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Gabriel Kohlrausch"
+    ],
+    "description": "Gabriel Kohlrausch EximiaCo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-de-solucoes"
+  },
+  {
+    "track": "Trilha UX Design, Research e Métricas",
+    "title": "Usuários sintéticos no discovery: como validar hipóteses com IA antes de falar com usuários reais",
+    "date": "22/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Thuany Serpa"
+    ],
+    "description": "Thuany Serpa Cora",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-ux-design-research-e-metricas"
+  },
+  {
+    "track": "Trilha Design de Código",
+    "title": "Painel O papel das habilidades de design de código na era da AI",
+    "date": "22/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-de-codigo"
+  },
+  {
+    "track": "Trilha Gestão Ágil e Liderança de Impacto",
+    "title": "Painel: Quem Lidera os Times na Era dos Agentes de IA?",
+    "date": "22/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [
+      "Jonathan Santos",
+      "Roberta Koche",
+      "Denilson Torres de Azevedo"
+    ],
+    "description": "Jonathan Santos Telefônica Vivo Roberta Koche BM3 Group Denilson Torres de Azevedo Dadus AI",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-agil-e-lideranca-de-impacto"
+  },
+  {
+    "track": "Trilha JavaScript e Node.js",
+    "title": "Painel Tudo é JavaScript; e JavaScript é quase tudo.",
+    "date": "22/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-javascript-e-node-js"
+  },
+  {
+    "track": "Trilha SRE e Observabilidade",
+    "title": "Painel Quem cuida de quem sustenta a operação? Saúde mental, pressão operacional e liderança humanizada em ambientes críticos.",
+    "date": "22/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-sre-e-observabilidade"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Usuários sintéticos no discovery: como validar hipóteses com IA antes de falar com usuários reais",
+    "date": "22/jul",
+    "time": "14:10-14:45",
+    "speakers": [
+      "Thuany Serpa"
+    ],
+    "description": "Thuany Serpa Cora",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha Agentic AI",
+    "title": "Memória em agentes de IA: o que faz um sistema parecer inteligente",
+    "date": "22/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Thamiris Adriano"
+    ],
+    "description": "Thamiris Adriano FIAP | F1rst",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agentic-ai"
+  },
+  {
+    "track": "Trilha Arquitetura de Soluções",
+    "title": "Complexidade de Segunda Ordem: O Novo Gargalo do DevOps em Escala",
+    "date": "22/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Sergio Leal"
+    ],
+    "description": "Sergio Leal RNP - Rede Nacional de Ensino e Pesquisa",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-de-solucoes"
+  },
+  {
+    "track": "Trilha UX Design, Research e Métricas",
+    "title": "O Designer Como Maestro: Decidindo Onde e Quando usar IA",
+    "date": "22/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Ricardo Martins"
+    ],
+    "description": "Ricardo Martins Vessel",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-ux-design-research-e-metricas"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "O Designer Como Maestro: Decidindo Onde e Quando usar IA",
+    "date": "22/jul",
+    "time": "14:50-15:25",
+    "speakers": [
+      "Ricardo Martins"
+    ],
+    "description": "Ricardo Martins Vessel",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Gamificação, Liderança e Facilitação: O que o RPG ensina sobre Times de Alta Performance",
+    "date": "22/jul",
+    "time": "14:50-15:30",
+    "speakers": [
+      "Rodolfo Colares"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Agentic AI",
+    "title": "Painel: Do protótipo ao crítico: governança, segurança e confiabilidade em sistemas agênticos",
+    "date": "22/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Daniel Avancini",
+      "Luis Fernando Fausto"
+    ],
+    "description": "Daniel Avancini Indicium AI Luis Fernando Fausto Softplan Planejamento e Sistemas ltda",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agentic-ai"
+  },
+  {
+    "track": "Trilha Arquitetura de Soluções",
+    "title": "Painel: SDD, Hardness e Agents: Desafios e oportunidades no papel do arquiteto de soluções na era da IA",
+    "date": "22/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Luiz Guilherme Bauer Fraga Moreira",
+      "Rogério Fontes Tomaz"
+    ],
+    "description": "Luiz Guilherme Bauer Fraga Moreira Mercado Livre Rogério Fontes Tomaz NTT DATA",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-de-solucoes"
+  },
+  {
+    "track": "Trilha UX Design, Research e Métricas",
+    "title": "Painel: O Papel do Designer Digital em Tempos de IA",
+    "date": "22/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Ricardo Martins",
+      "Priscilla Albuquerque",
+      "Ollivia Maria Gonçalves"
+    ],
+    "description": "Ricardo Martins Vessel Priscilla Albuquerque Catarinas Design Ollivia Maria Gonçalves AuralScapes",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-ux-design-research-e-metricas"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Networking",
+    "date": "22/jul",
+    "time": "15:30-15:45",
+    "speakers": [],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Liderança, Humanos e Ego na Era da IA: Decisões Reais e Impacto nas Equipes",
+    "date": "22/jul",
+    "time": "15:40-16:20",
+    "speakers": [
+      "Cilene Danta de Queiroz",
+      "Michael Silva"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Design de Código",
+    "title": "Mais código, pior design: como controlar o impacto da IA nas bases de código",
+    "date": "22/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "Vinícius Albano"
+    ],
+    "description": "Vinícius Albano Vinicius Albano Desenvolvimento e Consultoria",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-de-codigo"
+  },
+  {
+    "track": "Trilha Gestão Ágil e Liderança de Impacto",
+    "title": "IAGen como acelerador de Change Management",
+    "date": "22/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "Talita Cardozo Daneluz"
+    ],
+    "description": "Talita Cardozo Daneluz ITAÚ",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-agil-e-lideranca-de-impacto"
+  },
+  {
+    "track": "Trilha JavaScript e Node.js",
+    "title": "Node.js em escala real: quando seu backend precisa evoluir",
+    "date": "22/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "José Rubens Rodrigues"
+    ],
+    "description": "José Rubens Rodrigues School Guardian / FIAP",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-javascript-e-node-js"
+  },
+  {
+    "track": "Trilha SRE e Observabilidade",
+    "title": "O novo paradigma de SRE com AI Ops e Observabilidade",
+    "date": "22/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "Bruno Pereira"
+    ],
+    "description": "Bruno Pereira Elvenworks",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-sre-e-observabilidade"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Node.js em escala real: quando seu backend precisa evoluir",
+    "date": "22/jul",
+    "time": "15:50-16:25",
+    "speakers": [
+      "José Rubens Rodrigues"
+    ],
+    "description": "José Rubens Rodrigues School Guardian / FIAP",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha Design de Código",
+    "title": "Como manter qualidade quando a I.A. escreve parte do código",
+    "date": "22/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Guilherme Luiz Maia Pinto"
+    ],
+    "description": "Guilherme Luiz Maia Pinto Fortress OS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-de-codigo"
+  },
+  {
+    "track": "Trilha Gestão Ágil e Liderança de Impacto",
+    "title": "Agilidade em tempos de GenAI - Guia de sobrevivência para líderes",
+    "date": "22/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Luiz Felipe Conceição"
+    ],
+    "description": "Luiz Felipe Conceição Globo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-agil-e-lideranca-de-impacto"
+  },
+  {
+    "track": "Trilha JavaScript e Node.js",
+    "title": "Construindo MCP Servers com Node.js e TypeScript: ferramentas para agentes de IA",
+    "date": "22/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Thiago Adriano"
+    ],
+    "description": "Thiago Adriano VÓRTX",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-javascript-e-node-js"
+  },
+  {
+    "track": "Trilha SRE e Observabilidade",
+    "title": "Observabilidade para FinOps: Monitorando o Desperdício em Cloud Providers com Estratégias de SRE",
+    "date": "22/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Hugo Cileiro"
+    ],
+    "description": "Hugo Cileiro Senior Sistemas",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-sre-e-observabilidade"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Observabilidade para FinOps: Monitorando o Desperdício em Cloud Providers com Estratégias de SRE",
+    "date": "22/jul",
+    "time": "16:30-17:05",
+    "speakers": [
+      "Hugo Cileiro"
+    ],
+    "description": "Hugo Cileiro Senior Sistemas",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha Agentic AI",
+    "title": "Colocando agentes de IA para fazer AppSec!",
+    "date": "22/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Pedro Rosinholi",
+      "Pedro Gadelha"
+    ],
+    "description": "Pedro Rosinholi Amazon Web Services Pedro Gadelha AWS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agentic-ai"
+  },
+  {
+    "track": "Trilha Arquitetura de Soluções",
+    "title": "Reactive DDD na prática: Modelagem event-first e integração reativa em alta escala",
+    "date": "22/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Antônio Falcão Jr"
+    ],
+    "description": "Antônio Falcão Jr Caret Legal",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-de-solucoes"
+  },
+  {
+    "track": "Trilha Design de Código",
+    "title": "IA + Testes de Mutação: Como Garantir que Seus Testes Não São uma Ilusão",
+    "date": "22/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Luiz Lohn"
+    ],
+    "description": "Luiz Lohn Sistemas Ailos",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-de-codigo"
+  },
+  {
+    "track": "Trilha Gestão Ágil e Liderança de Impacto",
+    "title": "Gestão Estratégica de IA: do Plano aos Resultados com Pessoas e GenAI",
+    "date": "22/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Alexandre Reeberg de Mello"
+    ],
+    "description": "Alexandre Reeberg de Mello Starian",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-agil-e-lideranca-de-impacto"
+  },
+  {
+    "track": "Trilha JavaScript e Node.js",
+    "title": "Expo ou bare React Native: para de chutar e entende quando usar cada um",
+    "date": "22/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Leonardo Garcez"
+    ],
+    "description": "Leonardo Garcez musii",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-javascript-e-node-js"
+  },
+  {
+    "track": "Trilha SRE e Observabilidade",
+    "title": "O Canário, a Tulipa e a Janela Quebrada: três sinais ignorados que quebram sistemas",
+    "date": "22/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Marcelo Godinho Wolff"
+    ],
+    "description": "Marcelo Godinho Wolff Intelbras",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-sre-e-observabilidade"
+  },
+  {
+    "track": "Trilha UX Design, Research e Métricas",
+    "title": "Design para humanos: como ler silêncio, contexto e custo humano do caminho sem transformar pessoas em usuários",
+    "date": "22/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Ollivia Maria Gonçalves"
+    ],
+    "description": "Ollivia Maria Gonçalves AuralScapes",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-ux-design-research-e-metricas"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Gestão Estratégica de IA: do Plano aos Resultados com Pessoas e GenAI",
+    "date": "22/jul",
+    "time": "17:10-17:45",
+    "speakers": [
+      "Alexandre Reeberg de Mello"
+    ],
+    "description": "Alexandre Reeberg de Mello Starian",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha Agentic AI",
+    "title": "Desenvolvimento Agêntico na Prática: como agentes de IA operam um pipeline real de software",
+    "date": "22/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Pedro Escobar"
+    ],
+    "description": "Pedro Escobar Softplan",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agentic-ai"
+  },
+  {
+    "track": "Trilha Arquitetura de Soluções",
+    "title": "Event Storming na Arquitetura de Soluções: Conectando o domínio às decisões arquiteturais e facilitando seus trade-offs",
+    "date": "22/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Alice David dos Santos"
+    ],
+    "description": "Alice David dos Santos David San Tecnologia Ltda",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-de-solucoes"
+  },
+  {
+    "track": "Trilha Design de Código",
+    "title": "Pessoas mentem e o código não: como tomar decisões melhores a partir dos sinais da engenharia",
+    "date": "22/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Gabriel Kohlrausch"
+    ],
+    "description": "Gabriel Kohlrausch EximiaCo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-de-codigo"
+  },
+  {
+    "track": "Trilha Gestão Ágil e Liderança de Impacto",
+    "title": "Liderança Contextualizada em Tempos de IA: Dando Direção Quando a Velocidade Aumenta",
+    "date": "22/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Bruno Laerte Ribeiro de Carvalho"
+    ],
+    "description": "Bruno Laerte Ribeiro de Carvalho Zup",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-agil-e-lideranca-de-impacto"
+  },
+  {
+    "track": "Trilha JavaScript e Node.js",
+    "title": "JavaScript & Node.js no mercado global: mitos, realidades e oportunidades",
+    "date": "22/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Nicole Barra"
+    ],
+    "description": "Nicole Barra Strider",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-javascript-e-node-js"
+  },
+  {
+    "track": "Trilha SRE e Observabilidade",
+    "title": "Incident Commander as Code: Como a John Deere Reduziu o Tempo de Resposta a Incidentes de 50 para 2 Minutos com IA",
+    "date": "22/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Andre Cruz",
+      "Bernardo Miura"
+    ],
+    "description": "Andre Cruz John Deere Bernardo Miura John Deere",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-sre-e-observabilidade"
+  },
+  {
+    "track": "Trilha UX Design, Research e Métricas",
+    "title": "ResearchOps na Prática: Estratégias para Escalar a Cultura e Gestão de Pesquisa em Times de Produto",
+    "date": "22/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Aline Effting Guedes"
+    ],
+    "description": "Aline Effting Guedes Laboratório Bridge",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-ux-design-research-e-metricas"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Desenvolvimento Agêntico na Prática: como agentes de IA operam um pipeline real de software",
+    "date": "22/jul",
+    "time": "17:50-18:25",
+    "speakers": [
+      "Pedro Escobar"
+    ],
+    "description": "Pedro Escobar Softplan",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha STADIUM QUARTA",
+    "title": "Encerramento",
+    "date": "22/jul",
+    "time": "18:30-18:50",
+    "speakers": [],
+    "description": "Yara Mascarenhas é CEO e fundadora do The Developer?s Conference (TDC), maior evento de tecnologia do Brasil, com mais de 70 edições e 250.000 participantes. Também lidera projetos na Arena Eventos Digitais , criando experiências inovadoras para conferências. É diretora criativa do podcast \"Tem Tempo pra Pergunta\" , um espaço para discutir tecnologia e inovação. Formada em Ciência da Computação pelo ICMC-USP, tem trajetória marcada pela construção de comunidades e inovação. Reconhecida como Java Champion , recebeu duas vezes o JavaOne Rockstar Speaker e o Duke Choice Award. Foi palestrante TEDx e apresentou conteúdos sobre tecnologia em mais de 10 países. Publicou mais de 20 artigos na JavaMagazine e no InfoQ Brasil.",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quarta"
+  },
+  {
+    "track": "Trilha Agilidade com GenAI",
+    "title": "Raio-PX: como construímos em semanas uma inteligência operacional que líder experiente levaria um ano para montar",
+    "date": "23/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Caco Mafra",
+      "Artur Schmidlin"
+    ],
+    "description": "Caco Mafra PX Artur Schmidlin PX",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agilidade-com-genai"
+  },
+  {
+    "track": "Trilha Arquitetura Java",
+    "title": "Potencializando o LangChain4j com a integração do MCP (Model Context Protocol)",
+    "date": "23/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Juarez Barbosa Junior"
+    ],
+    "description": "Juarez Barbosa Junior ORACLE",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-java"
+  },
+  {
+    "track": "Trilha Design e Estratégia de Produto",
+    "title": "O abismo entre a tecnologia e a experiência: como traduzir IA em valor real para o usuário",
+    "date": "23/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Priscilla Albuquerque"
+    ],
+    "description": "Priscilla Albuquerque Catarinas Design",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-e-estrategia-de-produto"
+  },
+  {
+    "track": "Trilha Engenharia de IA e ML",
+    "title": "Deploy de LLMs 70% Mais Rápido no Kubernetes",
+    "date": "23/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Tiago Miguel Reichert"
+    ],
+    "description": "Tiago Miguel Reichert Amazon Web Services",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-ia-e-ml"
+  },
+  {
+    "track": "Trilha Front-end Moderno e Arquitetura Web",
+    "title": "Desenvolvimento centrado no usuário: Um exercicio de empatia e pensamento crítico",
+    "date": "23/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Camis moreira"
+    ],
+    "description": "Camis moreira Linx",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-front-end-moderno-e-arquitetura-web"
+  },
+  {
+    "track": "Trilha Quality Engineering e AI Testing",
+    "title": "Revolução Visual em Testes E2E: IA (YOLO + OpenCV + EasyOCR) Escalando Validações Regressivas em Mais de 2000 Cenários",
+    "date": "23/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Daniel Wandarti",
+      "Cristian Benites"
+    ],
+    "description": "Daniel Wandarti Objective Cristian Benites Objective",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-quality-engineering-e-ai-testing"
+  },
+  {
+    "track": "Trilha Software Security",
+    "title": "Mobile 2026: O custo da compatibilidade e a nova era de exploits com IA",
+    "date": "23/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Michel Anderson Lütz Teixeira"
+    ],
+    "description": "Michel Anderson Lütz Teixeira AI/R Company",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "O abismo entre a tecnologia e a experiência: como traduzir IA em valor real para o usuário",
+    "date": "23/jul",
+    "time": "10:30-11:05",
+    "speakers": [
+      "Priscilla Albuquerque"
+    ],
+    "description": "Priscilla Albuquerque Catarinas Design",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Carreira Internacional para Devs: Do Primeiro PR em Projetos Globais às Fases do Jogo",
+    "date": "23/jul",
+    "time": "10:30-11:10",
+    "speakers": [
+      "Luiz Cordeiro",
+      "Lorena Locks Coelho",
+      "Matheus Oliveira da Silva"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Agilidade com GenAI",
+    "title": "Agente de Clareza: Usando IA para proteger sua Matriosca Organizacional",
+    "date": "23/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Fernanda Lessa"
+    ],
+    "description": "Fernanda Lessa Boticário",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agilidade-com-genai"
+  },
+  {
+    "track": "Trilha Arquitetura Java",
+    "title": "Construindo MCP Servers em Java: Expondo seu Backend para Agentes de IA",
+    "date": "23/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Lucas Lazarini Lazarini"
+    ],
+    "description": "Lucas Lazarini Lazarini VAAS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-java"
+  },
+  {
+    "track": "Trilha Design e Estratégia de Produto",
+    "title": "De Backlog a Impacto: Como Conectar Produto, Propósito e Engajamento",
+    "date": "23/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Valéria Baptista"
+    ],
+    "description": "Valéria Baptista Magalu Cloud",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-e-estrategia-de-produto"
+  },
+  {
+    "track": "Trilha Engenharia de IA e ML",
+    "title": "KServe e llm-d - Turbinando LLMs",
+    "date": "23/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Filippe Spolti"
+    ],
+    "description": "Filippe Spolti Red Hat",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-ia-e-ml"
+  },
+  {
+    "track": "Trilha Front-end Moderno e Arquitetura Web",
+    "title": "Ficando fera em Google Stitich e Tainwind CSS",
+    "date": "23/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Anderson Burnes"
+    ],
+    "description": "Anderson Burnes Centro Universitário Integrad",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-front-end-moderno-e-arquitetura-web"
+  },
+  {
+    "track": "Trilha Quality Engineering e AI Testing",
+    "title": "IA não resolve seus bugs: como usar RCA (Análise de Causa Raiz) e agentes para evoluir a qualidade de forma estratégica",
+    "date": "23/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Lucas Rodrigues"
+    ],
+    "description": "Lucas Rodrigues LEVVA",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-quality-engineering-e-ai-testing"
+  },
+  {
+    "track": "Trilha Software Security",
+    "title": "SecOps Autônomo: Automatizando Bumps de Dependência e Resolução de CVEs com IA em Pipelines Zero Trust",
+    "date": "23/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Felipe Faria"
+    ],
+    "description": "Felipe Faria Mindera",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "IA não resolve seus bugs: como usar RCA (Análise de Causa Raiz) e agentes para evoluir a qualidade de forma estratégica",
+    "date": "23/jul",
+    "time": "11:15-11:50",
+    "speakers": [
+      "Lucas Rodrigues"
+    ],
+    "description": "Lucas Rodrigues LEVVA",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Trilha Agilidade com GenAI",
+    "title": "Reports que pensam: IA integrada ao fluxo de decisão do seu time",
+    "date": "23/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Eduardo Martins"
+    ],
+    "description": "Eduardo Martins Agência Nâna",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agilidade-com-genai"
+  },
+  {
+    "track": "Trilha Front-end Moderno e Arquitetura Web",
+    "title": "Micro-frontends: quando usar e por que a maioria das implementações falha",
+    "date": "23/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Will Amaral"
+    ],
+    "description": "Will Amaral Thoughtworks",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-front-end-moderno-e-arquitetura-web"
+  },
+  {
+    "track": "Trilha Quality Engineering e AI Testing",
+    "title": "QA não morreu: como agentes de IA estão criando a próxima geração de Engenharia de Qualidade",
+    "date": "23/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "William Alves Da Silva"
+    ],
+    "description": "William Alves Da Silva MadeinWeb",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-quality-engineering-e-ai-testing"
+  },
+  {
+    "track": "Trilha Software Security",
+    "title": "Desenvolvimento seguro com IA: planejamento, revisão e Cross-Agent na prática",
+    "date": "23/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Marcelo Martins"
+    ],
+    "description": "Marcelo Martins",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "QA não morreu: como agentes de IA estão criando a próxima geração de Engenharia de Qualidade",
+    "date": "23/jul",
+    "time": "11:55-12:30",
+    "speakers": [
+      "William Alves Da Silva"
+    ],
+    "description": "William Alves Da Silva MadeinWeb",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Trilha Arquitetura Java",
+    "title": "Quando a Linguagem Ubíqua encontra os LLMs: Redefinindo Limites no Software Moderno",
+    "date": "23/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Cleber Campomori"
+    ],
+    "description": "Cleber Campomori QuintoAndar",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-java"
+  },
+  {
+    "track": "Trilha Design e Estratégia de Produto",
+    "title": "Consertar um problema pode criar outro (pensamento sistêmico para times de produto)",
+    "date": "23/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Ricardo Martins"
+    ],
+    "description": "Ricardo Martins Vessel",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-e-estrategia-de-produto"
+  },
+  {
+    "track": "Trilha Engenharia de IA e ML",
+    "title": "Engenharia de IA: DKCA - Arquitetura de Cognição e Conhecimento Distribuído em Sistemas Multi-Agente",
+    "date": "23/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Thiago Borba"
+    ],
+    "description": "Thiago Borba EximiaCo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-ia-e-ml"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "Quando a Linguagem Ubíqua encontra os LLMs: Redefinindo Limites no Software Moderno",
+    "date": "23/jul",
+    "time": "13:30-14:05",
+    "speakers": [
+      "Cleber Campomori"
+    ],
+    "description": "Cleber Campomori QuintoAndar",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Microservices na Realidade: Domínio, Eventos e Gestão de Complexidade sem Hype",
+    "date": "23/jul",
+    "time": "14:00-14:40",
+    "speakers": [],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Agilidade com GenAI",
+    "title": "IA + Agile: como adaptar modelos de gestão para um mundo preditivo",
+    "date": "23/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Alex Amancio"
+    ],
+    "description": "Alex Amancio Minsait",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agilidade-com-genai"
+  },
+  {
+    "track": "Trilha Front-end Moderno e Arquitetura Web",
+    "title": "Nem todo bug aparece no console",
+    "date": "23/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Rodrigo Ibraim Teixeira"
+    ],
+    "description": "Rodrigo Ibraim Teixeira equalweb",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-front-end-moderno-e-arquitetura-web"
+  },
+  {
+    "track": "Trilha Quality Engineering e AI Testing",
+    "title": "QA Estratégico: Governança Automatizada de Documentação com IA em Times Ágeis",
+    "date": "23/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Vinícius Torales"
+    ],
+    "description": "Vinícius Torales Zallpy",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-quality-engineering-e-ai-testing"
+  },
+  {
+    "track": "Trilha Software Security",
+    "title": "Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA",
+    "date": "23/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Rafael Martin Alves Ferreira",
+      "Jéssica Mello"
+    ],
+    "description": "Rafael Martin Alves Ferreira Stefanini North America and APAC Jéssica Mello",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security"
+  },
+  {
+    "track": "Trilha Arquitetura Java",
+    "title": "Painel Velocidade sem Direção não é Evolução: O Papel do Arquiteto no Desenvolvimento Moderno com IA",
+    "date": "23/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-java"
+  },
+  {
+    "track": "Trilha Design e Estratégia de Produto",
+    "title": "Painel: A hora da verdade: go-to-market em tempos de IA",
+    "date": "23/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [
+      "Valéria Baptista",
+      "Rafael Zilli Vicente",
+      "Vanessa Cardoso da Silva",
+      "Arno Roldão de Oliveira Junior"
+    ],
+    "description": "Valéria Baptista Magalu Cloud Rafael Zilli Vicente Manobra Studio Vanessa Cardoso da Silva Arno Roldão de Oliveira Junior NSTECH",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-e-estrategia-de-produto"
+  },
+  {
+    "track": "Trilha Engenharia de IA e ML",
+    "title": "Painel: Da experimentação ao impacto: o que define sucesso em projetos de IA",
+    "date": "23/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [
+      "Bob Evergreen",
+      "Lucas Mata",
+      "Rafael Roberto Dias"
+    ],
+    "description": "Bob Evergreen Inteligência Mil Grau Lucas Mata Alura Rafael Roberto Dias Oracle",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-ia-e-ml"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "IA + Agile: como adaptar modelos de gestão para um mundo preditivo",
+    "date": "23/jul",
+    "time": "14:10-14:45",
+    "speakers": [
+      "Alex Amancio"
+    ],
+    "description": "Alex Amancio Minsait",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Trilha Agilidade com GenAI",
+    "title": "O Paradoxo da Produtividade em GenAI: Por que revisões ficaram onerosas e como mitigar o gargalo.",
+    "date": "23/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Felipe Faria"
+    ],
+    "description": "Felipe Faria Mindera",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agilidade-com-genai"
+  },
+  {
+    "track": "Trilha Front-end Moderno e Arquitetura Web",
+    "title": "Web AI: Explorando as Novas APIs de IA Nativas no Chrome",
+    "date": "23/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Kevin Uehara"
+    ],
+    "description": "Kevin Uehara iFood",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-front-end-moderno-e-arquitetura-web"
+  },
+  {
+    "track": "Trilha Quality Engineering e AI Testing",
+    "title": "Avaliação Determinística para Agentes de IA: Oráculos de Teste Automatizados com Conhecimento Estruturado",
+    "date": "23/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Rui Rodrigues"
+    ],
+    "description": "Rui Rodrigues NTT DATA",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-quality-engineering-e-ai-testing"
+  },
+  {
+    "track": "Trilha Software Security",
+    "title": "Prompt Injection: um problema de segurança em LLMs",
+    "date": "23/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Guilherme Luiz Maia Pinto"
+    ],
+    "description": "Guilherme Luiz Maia Pinto Fortress OS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "O Paradoxo da Produtividade em GenAI: Por que revisões ficaram onerosas e como mitigar o gargalo.",
+    "date": "23/jul",
+    "time": "14:50-15:25",
+    "speakers": [
+      "Felipe Faria"
+    ],
+    "description": "Felipe Faria Mindera",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Qualidade e Cultura de Entrega: Por que Cobertura de Testes não Garante Cliente Feliz",
+    "date": "23/jul",
+    "time": "14:50-15:30",
+    "speakers": [
+      "Marcelo Mendonça Scheidt",
+      "Elisama Pires"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Agilidade com GenAI",
+    "title": "Painel: Agilidade Aumentada  frameworks evaporam, princípios ficam: quais papéis emergem e quais os próximos passos?",
+    "date": "23/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Caco Mafra",
+      "Celso Martins",
+      "Danielle Campos",
+      "Raphael Donaire Albino"
+    ],
+    "description": "Caco Mafra PX Celso Martins Taller Digital Business Danielle Campos RD Station Raphael Donaire Albino Flow Climate",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agilidade-com-genai"
+  },
+  {
+    "track": "Trilha Front-end Moderno e Arquitetura Web",
+    "title": "Painel: Como a IA Está Redefinindo a Engenharia Frontend",
+    "date": "23/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Thiago Xikota",
+      "Diogo Moretti",
+      "Laura Beatris Serafim"
+    ],
+    "description": "Thiago Xikota The AI Collective Florianopolis Diogo Moretti Kovi Laura Beatris Serafim Clerk",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-front-end-moderno-e-arquitetura-web"
+  },
+  {
+    "track": "Trilha Quality Engineering e AI Testing",
+    "title": "Painel: LLM as a judge: Como Quality Engineering pode criar uma nova camada de validação em todo o SDLC",
+    "date": "23/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Mateus Queiroz Correia",
+      "Rui Barbosa",
+      "Carol Vilas Boas",
+      "Sabrina Papes",
+      "Bárbara Cristina Palma Cabral da Conceição"
+    ],
+    "description": "Mateus Queiroz Correia Nubank Rui Barbosa QA Lead Carol Vilas Boas Elvora Academy Sabrina Papes Arctouch Bárbara Cristina Palma Cabral da Conceição Coforge",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-quality-engineering-e-ai-testing"
+  },
+  {
+    "track": "Trilha Software Security",
+    "title": "Painel: Da AppSec à AgentSec: quem garante a segurança quando a IA escreve, corrige, opera e decide?",
+    "date": "23/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Georgia Maria Ferro Benetti",
+      "Rodrigo Diehl",
+      "Kalita da Silva",
+      "Gabriel Ferreira Ramos da Conceição"
+    ],
+    "description": "Georgia Maria Ferro Benetti ACATE Rodrigo Diehl CI&T Kalita da Silva UNIBH | Ânima Educação Gabriel Ferreira Ramos da Conceição Carbigdata",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Diversidade que Escala: Hiperpersonalização, IA e Inclusão no Consumo",
+    "date": "23/jul",
+    "time": "15:40-16:20",
+    "speakers": [
+      "Luiz Fernando Carreirão"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Arquitetura Java",
+    "title": "Project Loom: A Era do Java Reativo acabou",
+    "date": "23/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "Lucas Rogerio Masotti"
+    ],
+    "description": "Lucas Rogerio Masotti Sicredi",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-java"
+  },
+  {
+    "track": "Trilha Design e Estratégia de Produto",
+    "title": "Event storming: alinhando negócio e tecnologia",
+    "date": "23/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "Anderson Matheus Lemke"
+    ],
+    "description": "Anderson Matheus Lemke Taller",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-e-estrategia-de-produto"
+  },
+  {
+    "track": "Trilha Engenharia de IA e ML",
+    "title": "Support AI no Mercado Livre: Arquitetura de Agentes, MCP e RAG Escalando o Suporte Técnico",
+    "date": "23/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "Rogerio Birne"
+    ],
+    "description": "Rogerio Birne Mercado Livre",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-ia-e-ml"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "Support AI no Mercado Livre: Arquitetura de Agentes, MCP e RAG Escalando o Suporte Técnico",
+    "date": "23/jul",
+    "time": "15:50-16:25",
+    "speakers": [
+      "Rogerio Birne"
+    ],
+    "description": "Rogerio Birne Mercado Livre",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Trilha Arquitetura Java",
+    "title": "Quarkus Native na prática: como eliminamos o cold start e igualamos o Rust em produção",
+    "date": "23/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Daniel Naschenweng"
+    ],
+    "description": "Daniel Naschenweng Portobello Shop",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-java"
+  },
+  {
+    "track": "Trilha Design e Estratégia de Produto",
+    "title": "Design estratégico com IA: Evoluindo produtos digitais a partir da coleta e análise de dados",
+    "date": "23/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Neto Jacinto"
+    ],
+    "description": "Neto Jacinto TOTVS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-e-estrategia-de-produto"
+  },
+  {
+    "track": "Trilha Engenharia de IA e ML",
+    "title": "AI Gateway na prática: Governança, Segurança e Observabilidade com APIs, MCP e Agentes",
+    "date": "23/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Marcelo Godinho Wolff"
+    ],
+    "description": "Marcelo Godinho Wolff Intelbras",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-ia-e-ml"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "AI Gateway na prática: Governança, Segurança e Observabilidade com APIs, MCP e Agentes",
+    "date": "23/jul",
+    "time": "16:30-17:05",
+    "speakers": [
+      "Marcelo Godinho Wolff"
+    ],
+    "description": "Marcelo Godinho Wolff Intelbras",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Trilha Agilidade com GenAI",
+    "title": "Do código ao fluxo: o impacto real dos agentes de IA na entrega de software",
+    "date": "23/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Ana Beatriz Mano",
+      "Ari Carmo"
+    ],
+    "description": "Ana Beatriz Mano Globo Ari Carmo Globo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agilidade-com-genai"
+  },
+  {
+    "track": "Trilha Arquitetura Java",
+    "title": "Do Spring Boot ao Quarkus: Desafios Vencidos e Redução de Custos Real",
+    "date": "23/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Jean Donato"
+    ],
+    "description": "Jean Donato Digix",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-java"
+  },
+  {
+    "track": "Trilha Design e Estratégia de Produto",
+    "title": "Human-in-the-Loop is the best place for GenAI",
+    "date": "23/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Radamés Roriz"
+    ],
+    "description": "Radamés Roriz KnowBe4",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-e-estrategia-de-produto"
+  },
+  {
+    "track": "Trilha Engenharia de IA e ML",
+    "title": "Blind RAG: Protegendo PII com NER Zero-Shot e Modelos GLiNER Localmente",
+    "date": "23/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Caio Cordeiro"
+    ],
+    "description": "Caio Cordeiro CESAR",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-ia-e-ml"
+  },
+  {
+    "track": "Trilha Front-end Moderno e Arquitetura Web",
+    "title": "Arquitetura Front-End Moderna: como estruturar aplicações que realmente escalam",
+    "date": "23/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Thamiris Adriano"
+    ],
+    "description": "Thamiris Adriano FIAP | F1rst",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-front-end-moderno-e-arquitetura-web"
+  },
+  {
+    "track": "Trilha Quality Engineering e AI Testing",
+    "title": "IA testando IA: Como testar conteúdos dinâmicos gerados por IA com Robot Framework e Gemini API",
+    "date": "23/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Carlos Barboza"
+    ],
+    "description": "Carlos Barboza Logcomex",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-quality-engineering-e-ai-testing"
+  },
+  {
+    "track": "Trilha Software Security",
+    "title": "Eficiência em AppSec: Utilizando a IA para escalar Segurança em Aplicações",
+    "date": "23/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Thiago Lotufo"
+    ],
+    "description": "Thiago Lotufo Globo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "Arquitetura Front-End Moderna: como estruturar aplicações que realmente escalam",
+    "date": "23/jul",
+    "time": "17:10-17:45",
+    "speakers": [
+      "Thamiris Adriano"
+    ],
+    "description": "Thamiris Adriano FIAP | F1rst",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Trilha Agilidade com GenAI",
+    "title": "A importância da engenharia de prompt no discovery e delivery: Como melhoramos produtividade na Senior",
+    "date": "23/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Raul Nery Moreira da Silva",
+      "Diego Fonseca da Silva"
+    ],
+    "description": "Raul Nery Moreira da Silva Senior Sistemas Diego Fonseca da Silva Senior Sistemas",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-agilidade-com-genai"
+  },
+  {
+    "track": "Trilha Arquitetura Java",
+    "title": "Como dar superpoderes às suas aplicações Java com RAG usando Spring Boot e LangChain4j",
+    "date": "23/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Thiago Gonzaga"
+    ],
+    "description": "Thiago Gonzaga Java Noroeste",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-java"
+  },
+  {
+    "track": "Trilha Design e Estratégia de Produto",
+    "title": "Quem audita o agente? UX Design como camada de segurança na era da IA autônoma",
+    "date": "23/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Luana Favetta Groppo"
+    ],
+    "description": "Luana Favetta Groppo Arandu Studio",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-design-e-estrategia-de-produto"
+  },
+  {
+    "track": "Trilha Engenharia de IA e ML",
+    "title": "Governança de IA Generativa na Prática: Como o MLflow garante Compliance e Rastreabilidade",
+    "date": "23/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Luiz Carrossoni Neto",
+      "Lucas Rampim de Souza"
+    ],
+    "description": "Luiz Carrossoni Neto Databricks Lucas Rampim de Souza Databricks",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-ia-e-ml"
+  },
+  {
+    "track": "Trilha Front-end Moderno e Arquitetura Web",
+    "title": "Edge Computing no Front-end: Reduzindo Latência e acelerando a entrega",
+    "date": "23/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Cícero Feijó"
+    ],
+    "description": "Cícero Feijó Sicredi",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-front-end-moderno-e-arquitetura-web"
+  },
+  {
+    "track": "Trilha Quality Engineering e AI Testing",
+    "title": "Caos e Performance: Estudo de Caso de Resiliência em Quality Engineering",
+    "date": "23/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Luiz Lohn",
+      "Maria Carolina Lopes Braulino"
+    ],
+    "description": "Luiz Lohn Sistemas Ailos Maria Carolina Lopes Braulino COOPERATIVA DE CRÉDITO CENTRAL AILOS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-quality-engineering-e-ai-testing"
+  },
+  {
+    "track": "Trilha Software Security",
+    "title": "IA em produção é risco: como governar decisões automatizadas com segurança",
+    "date": "23/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Wesley Souza"
+    ],
+    "description": "Wesley Souza AdviceHealth",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security"
+  },
+  {
+    "track": "Trilha STADIUM QUINTA",
+    "title": "IA em produção é risco: como governar decisões automatizadas com segurança",
+    "date": "23/jul",
+    "time": "17:50-18:25",
+    "speakers": [
+      "Wesley Souza"
+    ],
+    "description": "Wesley Souza AdviceHealth",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-quinta"
+  },
+  {
+    "track": "Trilha APIs e Microservices",
+    "title": "Além do Swagger: APIs modernas com OpenAPI, Scalar e Node.js",
+    "date": "24/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Daniel Castro"
+    ],
+    "description": "Daniel Castro DDevs",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-apis-e-microservices"
+  },
+  {
+    "track": "Trilha Arquitetura Cloud",
+    "title": "Otimizando ambientes multicloud com extensões JDBC da Oracle e Azure: uma abordagem prática",
+    "date": "24/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Juarez Barbosa Junior"
+    ],
+    "description": "Juarez Barbosa Junior ORACLE",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-cloud"
+  },
+  {
+    "track": "Trilha Engenharia de Dados e Analytics",
+    "title": "Agentes de IA para Bancos de Dados: Descobrir, Recomendar, Otimizar",
+    "date": "24/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "William Lino Oliveira"
+    ],
+    "description": "William Lino Oliveira AWS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-dados-e-analytics"
+  },
+  {
+    "track": "Trilha Gen AI e LLMs",
+    "title": "IA sem estratégia é só hype: como usar GenAI para gerar valor real em produtos e negócios",
+    "date": "24/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Bárbara Miranda"
+    ],
+    "description": "Bárbara Miranda Mova Inovação & Negócios",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gen-ai-e-llms"
+  },
+  {
+    "track": "Trilha Gestão de Produtos e Growth",
+    "title": "Do Zero a 50k Validações: Como Construímos um Produto de Decisão de Risco em 12 Meses",
+    "date": "24/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Andre Ganske"
+    ],
+    "description": "Andre Ganske PX",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-de-produtos-e-growth"
+  },
+  {
+    "track": "Trilha Liderança Técnica",
+    "title": "Você Virou Líder, Mas Ninguém Te Ensinou a Liderar",
+    "date": "24/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Diego Correia"
+    ],
+    "description": "Diego Correia Envolve Treinamentos",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-lideranca-tecnica"
+  },
+  {
+    "track": "Trilha RH Ágil",
+    "title": "RH Ágil na Era da IA: Como escalar performance sem perder o humano",
+    "date": "24/jul",
+    "time": "10:30 às 11:05",
+    "speakers": [
+      "Roberta Koche"
+    ],
+    "description": "Roberta Koche BM3 Group",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-rh-agil"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "IA sem estratégia é só hype: como usar GenAI para gerar valor real em produtos e negócios",
+    "date": "24/jul",
+    "time": "10:30-11:05",
+    "speakers": [
+      "Bárbara Miranda"
+    ],
+    "description": "Bárbara Miranda Mova Inovação & Negócios",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Agentes de IA e Documentação Automatizada: O Prompt como Nova Linha de Código",
+    "date": "24/jul",
+    "time": "10:30-11:10",
+    "speakers": [
+      "Eduardo Gobatti",
+      "Lis Regine Amaral",
+      "Mateus Matos"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha APIs e Microservices",
+    "title": "Fronteiras antes de Tecnologia: decomposição e integração de microsserviços à luz do DDD",
+    "date": "24/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Antônio Falcão Jr"
+    ],
+    "description": "Antônio Falcão Jr Caret Legal",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-apis-e-microservices"
+  },
+  {
+    "track": "Trilha Arquitetura Cloud",
+    "title": "API Ops na prática: como um JSON derrubou nosso gateway (e o que aprendemos com GitOps)",
+    "date": "24/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Denis C de Azevedo"
+    ],
+    "description": "Denis C de Azevedo Fluid API",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-cloud"
+  },
+  {
+    "track": "Trilha Engenharia de Dados e Analytics",
+    "title": "Do Data Scientist ao Sistema: automatizando o ciclo de analytics com IA",
+    "date": "24/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Adriana Weingart"
+    ],
+    "description": "Adriana Weingart Kyndryl",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-dados-e-analytics"
+  },
+  {
+    "track": "Trilha Gen AI e LLMs",
+    "title": "Perca o medo do Fine-Tunning de LLMs e passe a aproveitar a precisão de modelos customizados!",
+    "date": "24/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Pedro Rosinholi",
+      "Fabio Balancin"
+    ],
+    "description": "Pedro Rosinholi Amazon Web Services Fabio Balancin AWS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gen-ai-e-llms"
+  },
+  {
+    "track": "Trilha Gestão de Produtos e Growth",
+    "title": "Precificação em produtos SaaS: IA, oportunidades e desafios que afetam receita",
+    "date": "24/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Vanessa Botega"
+    ],
+    "description": "Vanessa Botega OmniChat",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-de-produtos-e-growth"
+  },
+  {
+    "track": "Trilha Liderança Técnica",
+    "title": "Quando Engenharia, Produto e Negócio Colidem: O Papel do Líder Técnico",
+    "date": "24/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Valéria Baptista"
+    ],
+    "description": "Valéria Baptista Magalu Cloud",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-lideranca-tecnica"
+  },
+  {
+    "track": "Trilha RH Ágil",
+    "title": "People Design: por que sua empresa não escala mesmo com as melhores pessoas",
+    "date": "24/jul",
+    "time": "11:15 às 11:50",
+    "speakers": [
+      "Fernanda Alves Chaves"
+    ],
+    "description": "Fernanda Alves Chaves DualFusion HR Solutions",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-rh-agil"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "Do Data Scientist ao Sistema: automatizando o ciclo de analytics com IA",
+    "date": "24/jul",
+    "time": "11:15-11:50",
+    "speakers": [
+      "Adriana Weingart"
+    ],
+    "description": "Adriana Weingart Kyndryl",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Trilha APIs e Microservices",
+    "title": "Do WhatsApp ao MCP: expondo APIs para o mundo dos agentes",
+    "date": "24/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Vinicius Mussak"
+    ],
+    "description": "Vinicius Mussak luizalabs",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-apis-e-microservices"
+  },
+  {
+    "track": "Trilha Engenharia de Dados e Analytics",
+    "title": "Arquitetando Pipelines com Agentes de IA e Spec-Driven Development",
+    "date": "24/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Arthur Kretzer"
+    ],
+    "description": "Arthur Kretzer CI&T",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-dados-e-analytics"
+  },
+  {
+    "track": "Trilha Gestão de Produtos e Growth",
+    "title": "Product Ops na prática: como low-code empoderou nosso time de produto",
+    "date": "24/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Gabriel Oliveira"
+    ],
+    "description": "Gabriel Oliveira",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-de-produtos-e-growth"
+  },
+  {
+    "track": "Trilha RH Ágil",
+    "title": "Theo Aprendizagem: IA generativa no LMS para personalizar, orientar e acelerar o aprendizado integrado ao fluxo do trabalho",
+    "date": "24/jul",
+    "time": "11:55 às 12:30",
+    "speakers": [
+      "Natasha Linhares",
+      "Rossana Bitello"
+    ],
+    "description": "Natasha Linhares Sicredi Rossana Bitello Sicredi",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-rh-agil"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "Arquitetando Pipelines com Agentes de IA e Spec-Driven Development",
+    "date": "24/jul",
+    "time": "11:55-12:30",
+    "speakers": [
+      "Arthur Kretzer"
+    ],
+    "description": "Arthur Kretzer CI&T",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Trilha Arquitetura Cloud",
+    "title": "Framework para Evolução da Maturidade SRE para ambientes em Cloud",
+    "date": "24/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Amanda Silva de Souza",
+      "Sergio Kachvartanian Junior"
+    ],
+    "description": "Amanda Silva de Souza Bradesco Sergio Kachvartanian Junior Bradesco",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-cloud"
+  },
+  {
+    "track": "Trilha Gen AI e LLMs",
+    "title": "Além do RAG Tradicional: Gerando Documentos de Alta Fidelidade com GraphRAG e Neo4j",
+    "date": "24/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "José Hélio Westarb Júnior"
+    ],
+    "description": "José Hélio Westarb Júnior Grupo Supero",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gen-ai-e-llms"
+  },
+  {
+    "track": "Trilha Liderança Técnica",
+    "title": "Tomada de decisão na liderança técnica: um framework prático na era da IA",
+    "date": "24/jul",
+    "time": "13:30 às 14:05",
+    "speakers": [
+      "Adriana Weingart"
+    ],
+    "description": "Adriana Weingart Kyndryl",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-lideranca-tecnica"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "Framework para Evolução da Maturidade SRE para ambientes em Cloud",
+    "date": "24/jul",
+    "time": "13:30-14:05",
+    "speakers": [
+      "Amanda Silva de Souza",
+      "Sergio Kachvartanian Junior"
+    ],
+    "description": "Amanda Silva de Souza Bradesco Sergio Kachvartanian Junior Bradesco",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Comunidades Tech como Infraestrutura e Aprendizado Contínuo em IA",
+    "date": "24/jul",
+    "time": "14:00-14:40",
+    "speakers": [
+      "Danilo Amaral",
+      "Glória Barboza"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha APIs e Microservices",
+    "title": "From BFF to Server-Driven UI: A Spec-Driven Approach",
+    "date": "24/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Danilo Pereira De Luca"
+    ],
+    "description": "Danilo Pereira De Luca ClassPass",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-apis-e-microservices"
+  },
+  {
+    "track": "Trilha Engenharia de Dados e Analytics",
+    "title": "Arquiteturas de Streaming com Apache Flink: quando reduzir ou eliminar o uso de Apache Kafka",
+    "date": "24/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Marcio Junior Vieira"
+    ],
+    "description": "Marcio Junior Vieira Ambiente Livre",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-dados-e-analytics"
+  },
+  {
+    "track": "Trilha Gestão de Produtos e Growth",
+    "title": "Quem fala como invasor não converte: o que a antropologia entende de growth",
+    "date": "24/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Ollivia Maria Gonçalves"
+    ],
+    "description": "Ollivia Maria Gonçalves AuralScapes",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-de-produtos-e-growth"
+  },
+  {
+    "track": "Trilha RH Ágil",
+    "title": "Recrutamento como Produto: como reduzimos o tempo de contratação e impactamos receita com dados e experimentação.",
+    "date": "24/jul",
+    "time": "14:10 às 14:45",
+    "speakers": [
+      "Gabriela Hoffmann"
+    ],
+    "description": "Gabriela Hoffmann Objective",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-rh-agil"
+  },
+  {
+    "track": "Trilha Arquitetura Cloud",
+    "title": "Painel: Arquitetura resiliente sob pressão: decisões técnicas que evitam colapso em ambientes cloud",
+    "date": "24/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-cloud"
+  },
+  {
+    "track": "Trilha Gen AI e LLMs",
+    "title": "Painel: GenAI no Limite: Arquiteturas Avançadas e as Conversas que Evitamos",
+    "date": "24/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [
+      "Juarez Barbosa Junior",
+      "Livia Rodrigues Fernandes Silva",
+      "Gilsiley Henrique Darú",
+      "Juan Pablo D. Boeira"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gen-ai-e-llms"
+  },
+  {
+    "track": "Trilha Liderança Técnica",
+    "title": "Painel: Liderança Técnica na Era da IA: Quando a Execução Vira Commodity e a Decisão Vira Diferencial",
+    "date": "24/jul",
+    "time": "14:10 às 15:10",
+    "speakers": [
+      "Kauane S. Costa",
+      "Camila Maia",
+      "Jonathan Santos"
+    ],
+    "description": "Kauane S. Costa Evertec Camila Maia Cumbuca Dev Jonathan Santos Telefônica Vivo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-lideranca-tecnica"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "Quem fala como invasor não converte: o que a antropologia entende de growth",
+    "date": "24/jul",
+    "time": "14:10-14:45",
+    "speakers": [
+      "Ollivia Maria Gonçalves"
+    ],
+    "description": "Ollivia Maria Gonçalves AuralScapes",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Trilha APIs e Microservices",
+    "title": "De Logs a Insights: Troubleshooting Conversacional para Kubernetes com GenAI",
+    "date": "24/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Tiago Miguel Reichert"
+    ],
+    "description": "Tiago Miguel Reichert Amazon Web Services",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-apis-e-microservices"
+  },
+  {
+    "track": "Trilha Engenharia de Dados e Analytics",
+    "title": "O Teu Modelo Já Decidiu Até Demais Sobre Alguém | Um papo sobre ética na modelagem de dados",
+    "date": "24/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Sofia Marshallowitz"
+    ],
+    "description": "Sofia Marshallowitz PUC Campinas",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-dados-e-analytics"
+  },
+  {
+    "track": "Trilha Gestão de Produtos e Growth",
+    "title": "IA para decisões de produto: validando hipóteses e priorizando features com dados reais",
+    "date": "24/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Kelly Franco"
+    ],
+    "description": "Kelly Franco Yeahp!",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-de-produtos-e-growth"
+  },
+  {
+    "track": "Trilha RH Ágil",
+    "title": "Menos Operação. Mais Impacto. Automatizamos rotinas para que o RH foque em performance e resultado de negócio.",
+    "date": "24/jul",
+    "time": "14:50 às 15:25",
+    "speakers": [
+      "Paula Moraes"
+    ],
+    "description": "Paula Moraes Grupo Elian",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-rh-agil"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "Menos Operação. Mais Impacto. Automatizamos rotinas para que o RH foque em performance e resultado de negócio.",
+    "date": "24/jul",
+    "time": "14:50-15:25",
+    "speakers": [
+      "Paula Moraes"
+    ],
+    "description": "Paula Moraes Grupo Elian",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "Inclusão e Acessibilidade: Por que o Backlog de Impacto Social Sempre Fica por Último?",
+    "date": "24/jul",
+    "time": "14:50-15:30",
+    "speakers": [
+      "Rodrigo Ibraim Teixeira",
+      "Claudia Bruni"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha APIs e Microservices",
+    "title": "Painel Trocando o Motor com o Veículo em Movimento: Sobrevivendo a Migrações Críticas e Integrações Complexas",
+    "date": "24/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Rodrigo Branas"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-apis-e-microservices"
+  },
+  {
+    "track": "Trilha Engenharia de Dados e Analytics",
+    "title": "Painel: Governança, ética e qualidade - O que os dados exigem do futuro?",
+    "date": "24/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Paulo Cardoso Pinto Neto",
+      "Erika Nagamine",
+      "Bárbara Miranda"
+    ],
+    "description": "Paulo Cardoso Pinto Neto HorusBI Erika Nagamine AWS Bárbara Miranda Mova Inovação & Negócios",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-dados-e-analytics"
+  },
+  {
+    "track": "Trilha Gestão de Produtos e Growth",
+    "title": "Painel: Features morreram? O futuro é Growth Systems AI-Driven?",
+    "date": "24/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Priscilla Albuquerque"
+    ],
+    "description": "Priscilla Albuquerque Catarinas Design",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-de-produtos-e-growth"
+  },
+  {
+    "track": "Trilha RH Ágil",
+    "title": "Painel: Humanos na Era da IA: liderança, cultura e o novo papel do RH",
+    "date": "24/jul",
+    "time": "15:30 às 16:30",
+    "speakers": [
+      "Ricardo Farah",
+      "Adriana Rodrigues Machado Thomé",
+      "Patricia de Sá Freire"
+    ],
+    "description": "Ricardo Farah R.Farah Mentoring, Treinamento e Cursos Ltda Adriana Rodrigues Machado Thomé Ailos cooperativa Únilos Patricia de Sá Freire LabENGIN/UFSC",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-rh-agil"
+  },
+  {
+    "track": "Community Lounge - TDC Floripa",
+    "title": "O Amanhã da Tecnologia: Educação de Filhos, IA e os Primeiros Passos em Tech",
+    "date": "24/jul",
+    "time": "15:40-16:20",
+    "speakers": [
+      "Rodolfo Colares"
+    ],
+    "description": "",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/community-lounge"
+  },
+  {
+    "track": "Trilha Arquitetura Cloud",
+    "title": "Construindo sua camada de dados para suportar milhões de usuários na AWS",
+    "date": "24/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "William Lino Oliveira"
+    ],
+    "description": "William Lino Oliveira AWS",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-cloud"
+  },
+  {
+    "track": "Trilha Gen AI e LLMs",
+    "title": "LLM-as-Judge: Usando IA para avaliar IA",
+    "date": "24/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "Livia Rodrigues Fernandes Silva"
+    ],
+    "description": "Livia Rodrigues Fernandes Silva Oracle",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gen-ai-e-llms"
+  },
+  {
+    "track": "Trilha Liderança Técnica",
+    "title": "O Tech Lead que seu time precisa, não o que seu time quer",
+    "date": "24/jul",
+    "time": "15:50 às 16:25",
+    "speakers": [
+      "Gabriel Kohlrausch"
+    ],
+    "description": "Gabriel Kohlrausch EximiaCo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-lideranca-tecnica"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "O Tech Lead que seu time precisa, não o que seu time quer",
+    "date": "24/jul",
+    "time": "15:50-16:25",
+    "speakers": [
+      "Gabriel Kohlrausch"
+    ],
+    "description": "Gabriel Kohlrausch EximiaCo",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Trilha Arquitetura Cloud",
+    "title": "Kubernetes está realmente pronto para banco de dados?",
+    "date": "24/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Roberto Garcia de Bem"
+    ],
+    "description": "Roberto Garcia de Bem Percona",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-cloud"
+  },
+  {
+    "track": "Trilha Gen AI e LLMs",
+    "title": "Criando servidores MCP com FastMCP e Python",
+    "date": "24/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Andrio Frizon"
+    ],
+    "description": "Andrio Frizon Nekt",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gen-ai-e-llms"
+  },
+  {
+    "track": "Trilha Liderança Técnica",
+    "title": "Liderando em mudanças de eras (agentes autônomos)",
+    "date": "24/jul",
+    "time": "16:30 às 17:05",
+    "speakers": [
+      "Mateus Queiroz Correia"
+    ],
+    "description": "Mateus Queiroz Correia Nubank",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-lideranca-tecnica"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "Liderando em mudanças de eras (agentes autônomos)",
+    "date": "24/jul",
+    "time": "16:30-17:05",
+    "speakers": [
+      "Mateus Queiroz Correia"
+    ],
+    "description": "Mateus Queiroz Correia Nubank",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Trilha APIs e Microservices",
+    "title": "A Nova Era dos Microsserviços com Agentic Workflows",
+    "date": "24/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Vanessa Valle"
+    ],
+    "description": "Vanessa Valle UNICRED",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-apis-e-microservices"
+  },
+  {
+    "track": "Trilha Arquitetura Cloud",
+    "title": "Multi-Cloud Service Mesh: Dominando a Conectividade entre Clusters Kubernetes Distribuídos com Istio",
+    "date": "24/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Rafael Zago"
+    ],
+    "description": "Rafael Zago Red Hat",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-cloud"
+  },
+  {
+    "track": "Trilha Engenharia de Dados e Analytics",
+    "title": "Lakehouse On Premises Escalável: modernizando a infraestrutura de Big Data de SC",
+    "date": "24/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Raphael Tucunduva Gonçalves"
+    ],
+    "description": "Raphael Tucunduva Gonçalves CIASC",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-dados-e-analytics"
+  },
+  {
+    "track": "Trilha Gen AI e LLMs",
+    "title": "GenIA & LLM na prática: como empresas estão transformando software, produtividade e qualidade com Inteligência Artificial",
+    "date": "24/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "William Alves Da Silva"
+    ],
+    "description": "William Alves Da Silva MadeinWeb",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gen-ai-e-llms"
+  },
+  {
+    "track": "Trilha Gestão de Produtos e Growth",
+    "title": "Gamificação em aplicativos e plataformas digitais como estratégia para engajamento e growth",
+    "date": "24/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Amanda Farias"
+    ],
+    "description": "Amanda Farias iFood",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-de-produtos-e-growth"
+  },
+  {
+    "track": "Trilha Liderança Técnica",
+    "title": "Liderar sem todas as respostas: o desafio real dos tech leads",
+    "date": "24/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Roberta Koche"
+    ],
+    "description": "Roberta Koche BM3 Group",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-lideranca-tecnica"
+  },
+  {
+    "track": "Trilha RH Ágil",
+    "title": "Business Partner RH em Startups: como escalar a operação sem perder cultura e performance",
+    "date": "24/jul",
+    "time": "17:10 às 17:45",
+    "speakers": [
+      "Maria Laura de Souza Perão"
+    ],
+    "description": "Maria Laura de Souza Perão Fluid API",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-rh-agil"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "A Nova Era dos Microsserviços com Agentic Workflows",
+    "date": "24/jul",
+    "time": "17:10-17:45",
+    "speakers": [
+      "Vanessa Valle"
+    ],
+    "description": "Vanessa Valle UNICRED",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  },
+  {
+    "track": "Trilha APIs e Microservices",
+    "title": "Gateway API com Linkerd: Roteamento Inteligente no Kubernetes Além do Ingress",
+    "date": "24/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Bezaleel Silva"
+    ],
+    "description": "Bezaleel Silva BTG Pactual",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-apis-e-microservices"
+  },
+  {
+    "track": "Trilha Arquitetura Cloud",
+    "title": "Governança no Kubernetes sem Dor: Validação, Mutação e Geração de Recursos com Kyverno",
+    "date": "24/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Bezaleel Silva"
+    ],
+    "description": "Bezaleel Silva BTG Pactual",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-arquitetura-cloud"
+  },
+  {
+    "track": "Trilha Engenharia de Dados e Analytics",
+    "title": "Do caos de dados à decisão: a arquitetura por trás de uma organização data-driven",
+    "date": "24/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Wagner Solano Pantoja Chagas"
+    ],
+    "description": "Wagner Solano Pantoja Chagas Instituto Atlântico",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-engenharia-de-dados-e-analytics"
+  },
+  {
+    "track": "Trilha Gen AI e LLMs",
+    "title": "Escolhendo LLMs na Prática: Lições Reais em Busca Agêntica no Mercado Livre",
+    "date": "24/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Jéssica Bonson"
+    ],
+    "description": "Jéssica Bonson Mercado Livre",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gen-ai-e-llms"
+  },
+  {
+    "track": "Trilha Gestão de Produtos e Growth",
+    "title": "Feedback Loop Acelerado: Clientes Reagem em Tempo Real com GenAI",
+    "date": "24/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Bruno Laerte Ribeiro de Carvalho"
+    ],
+    "description": "Bruno Laerte Ribeiro de Carvalho Zup",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-gestao-de-produtos-e-growth"
+  },
+  {
+    "track": "Trilha Liderança Técnica",
+    "title": "Do Caos ao Controle: liderança técnica em uma crise real de produção",
+    "date": "24/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Micael dos Santos"
+    ],
+    "description": "Micael dos Santos EndoFlow & Olympus IT",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-lideranca-tecnica"
+  },
+  {
+    "track": "Trilha RH Ágil",
+    "title": "People Analytics na prática: como transformar dados em decisões que realmente mudam o negócio",
+    "date": "24/jul",
+    "time": "17:50 às 18:25",
+    "speakers": [
+      "Franciele Calbo Alves"
+    ],
+    "description": "Franciele Calbo Alves Feel Tech RH",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-rh-agil"
+  },
+  {
+    "track": "Trilha STADIUM SEXTA",
+    "title": "Escolhendo LLMs na Prática: Lições Reais em Busca Agêntica no Mercado Livre",
+    "date": "24/jul",
+    "time": "17:50-18:25",
+    "speakers": [
+      "Jéssica Bonson"
+    ],
+    "description": "Jéssica Bonson Mercado Livre",
+    "source_url": "https://thedevconf.com/tdc/2026/florianopolis/trilha-stadium-sexta"
+  }
+]
