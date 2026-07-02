@@ -11,21 +11,6 @@ Este projeto contem o material de apoio para um laboratorio de 1 hora sobre **AI
 
 O objetivo do lab e criar um agente chamado **Assistente TDC Floripa**, capaz de responder perguntas gerais sobre o evento usando RAG e consultar programacao, horarios, sessoes e speakers usando uma tool.
 
-## Entregaveis do repositorio
-
-```text
-assets/
-  base_rag_tdc_floripa_2026.pdf         # Base estatica para RAG
-  programacao_tdc_floripa_2026.json     # Dataset estruturado usado pela tool
-  custom_tool_openapi.yaml              # Contrato pronto da Custom Tool
-api/
-  server.js                             # API completa de busca para a Custom Tool
-```
-
-O PDF e o JSON foram separados de proposito:
-
-- **PDF/RAG**: contexto estatico do evento, FAQ, jornadas, formato, links oficiais e orientacoes.
-- **API/Tool**: busca estruturada sobre o JSON de programacao, com filtros por termo, speaker, dia e trilha.
 
 ## Demo do lab
 
@@ -141,8 +126,8 @@ A Custom Tool precisa de uma VCN e de uma subnet para fazer chamadas HTTPS exter
 3. Clique em **Start VCN Wizard**.
   <img width="1470" height="831" alt="image" src="https://github.com/user-attachments/assets/0073e861-2ec1-4102-a005-6ff4fd45c9b2" />
 
-3. Escolha **Create VCN with Internet Connectivity**.
-6. Use:
+4. Escolha **Create VCN with Internet Connectivity**.
+5. Use:
 
 ```text
 VCN name: tdc-ai-agents-vcn
@@ -205,8 +190,8 @@ tdc-floripa-2026-kb
 8. Selecione o bucket `tdc-agent-kb`.
 <img width="1470" height="833" alt="image" src="https://github.com/user-attachments/assets/02664034-4ae3-4506-b040-04a9a3a702ac" />
 
-10. Crie a knowledge base.
-11. Aguarde a ingestao finalizar.
+9. Crie a knowledge base.
+10. Aguarde a ingestao finalizar.
     
 
 
@@ -233,9 +218,6 @@ Voce e o Assistente TDC Floripa, um agente para orientar participantes sobre o T
 Responda em portugues brasileiro, de forma clara, objetiva e educada.
 Use a base de conhecimento para perguntas gerais sobre o evento, jornadas, formato, FAQ, regras e links oficiais.
 Use obrigatoriamente a tool consulta_programacao_tdc quando a pergunta pedir agenda, programacao, trilhas por dia, horarios, palestras, sessoes, speakers, nomes de pessoas ou busca por termo.
-Nao use a base de conhecimento para responder perguntas sobre speakers, sessoes, horarios ou trilhas especificas.
-Se o usuario perguntar sobre uma pessoa, como Ana Lindiner, chame a tool consulta_programacao_tdc usando o nome como parametro speaker ou q.
-Quando uma informacao puder mudar, informe que a fonte oficial deve ser consultada.
 Nao invente horarios, speakers, valores ou regras que nao estejam na base ou na resposta da tool.
 ```
 
@@ -307,7 +289,7 @@ Teste rapido:
 
 ```text
 https://tdc-oci-ai-agents-lab.onrender.com/health
-https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Ana%20Lindiner
+https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia%20Rodrigues
 ```
 
 Se o retorno vier em JSON, a API esta pronta para ser usada na Custom Tool.
@@ -451,13 +433,13 @@ npm start
 Exemplos de teste local:
 
 ```text
-http://localhost:3000/sessions?speaker=Ana%20Lindiner
 http://localhost:3000/sessions?q=agentes&limit=5
 http://localhost:3000/tracks?day=22/jul
 http://localhost:3000/speakers?q=ana
-```
 
-<img width="1470" height="876" alt="image" src="https://github.com/user-attachments/assets/506f20bd-0790-46da-acb5-2c77649e6f14" />
+```
+<img width="1470" height="877" alt="image" src="https://github.com/user-attachments/assets/df3fbb08-ae3a-4f14-87f2-2ba83248dffb" />
+
 
 ## 11. Adicionar Custom Tool no agente
 
@@ -477,7 +459,6 @@ consulta_programacao_tdc
 ```text
 Use esta ferramenta obrigatoriamente para buscar sessoes, speakers, trilhas por dia, horarios, palestras, nomes de pessoas e detalhes estruturados da programacao do TDC Floripa 2026.
 Ela deve ser usada sempre que o usuario perguntar sobre agenda, horarios, palestras, trilhas especificas, speakers, nomes de pessoas ou busca por termo na programacao.
-Exemplos: Ana Lindiner, sessoes sobre agentes, trilhas do dia 22/jul, palestras de arquitetura, horarios de uma sessao.
 ```
 
 7. Em **Authentication type**, selecione **No authentication** ou **None**.
