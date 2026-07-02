@@ -136,8 +136,10 @@ A Custom Tool precisa de uma VCN e de uma subnet para fazer chamadas HTTPS exter
 1. Va em **Networking > Virtual cloud networks**.
 2. Selecione o compartment `tdc-ai-agents-lab`.
 3. Clique em **Start VCN Wizard**.
-4. Escolha **Create VCN with Internet Connectivity**.
-5. Use:
+  <img width="1470" height="831" alt="image" src="https://github.com/user-attachments/assets/0073e861-2ec1-4102-a005-6ff4fd45c9b2" />
+
+3. Escolha **Create VCN with Internet Connectivity**.
+6. Use:
 
 ```text
 VCN name: tdc-ai-agents-vcn
@@ -150,19 +152,8 @@ Private subnet CIDR block: 10.0.1.0/24
 6. Clique em **Next**.
 7. Revise os recursos que serao criados.
 8. Clique em **Create**.
+ <img width="1470" height="842" alt="image" src="https://github.com/user-attachments/assets/86f75d50-f12a-405c-9521-2e9325e8e17b" />
 
-O wizard cria a VCN, subnets, Internet Gateway, NAT Gateway, route tables e security lists. No momento de criar a Custom Tool, selecione:
-
-```text
-VCN compartment: tdc-ai-agents-lab
-VCN: tdc-ai-agents-vcn
-Subnet compartment: tdc-ai-agents-lab
-Subnet: public subnet ou private subnet criada pelo wizard
-```
-
-Para este lab, a opcao mais simples e selecionar a subnet publica criada pelo wizard. O ponto importante e que a subnet tenha saida para internet, pois a tool acessa a URL publica do JSON da programacao.
-
-> INSERIR PRINT: VCN criada pelo wizard.
 
 
 ## 5. Criar bucket no Object Storage
@@ -324,7 +315,7 @@ O mesmo contrato esta salvo em:
 assets/custom_tool_openapi.yaml
 ```
 
-> INSERIR PRINT: teste da URL publica do JSON no navegador.
+<img width="1470" height="876" alt="image" src="https://github.com/user-attachments/assets/506f20bd-0790-46da-acb5-2c77649e6f14" />
 
 ## 11. Adicionar Custom Tool no agente
 
@@ -358,7 +349,7 @@ Subnet: public subnet criada pelo wizard
 
 9. Salve a tool.
 
-> INSERIR PRINT: custom tool adicionada.
+<img width="1470" height="792" alt="image" src="https://github.com/user-attachments/assets/a8a51ac5-e772-4dff-be31-61c4964f3114" />
 
 ## 12. Criar endpoint do agente
 
