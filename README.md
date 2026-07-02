@@ -178,11 +178,13 @@ tdc-floripa-2026-kb
 
 6. Escolha Object Storage como origem.
 7. Selecione o bucket `tdc-agent-kb`.
-8. Selecione os arquivos enviados.
-9. Crie a knowledge base.
-10. Aguarde a ingestao finalizar.
+8. Selecione o pdf da pasta assets em file upload.
+ <img width="1470" height="832" alt="image" src="https://github.com/user-attachments/assets/bf7ac371-39bf-4831-8b97-22b196b50656" />
 
-> INSERIR PRINT: knowledge base criada e ativa.
+10. Crie a knowledge base.
+11. Aguarde a ingestao finalizar.
+<img width="1470" height="833" alt="image" src="https://github.com/user-attachments/assets/1cd4a16c-cc31-4532-8869-ba3479b44343" />
+
 
 ## 7. Criar o agente
 
