@@ -299,6 +299,35 @@ O importante para o conceito e que o agente nao busque sessoes e speakers no PDF
 
 Para usar no OCI Agent, publique essa API em um endpoint HTTPS publico. Pode ser em OCI, Render, Railway, Fly.io, Cloud Run ou outro servico simples de hosting Node.js. Depois substitua `https://SEU_ENDPOINT_PUBLICO` no OpenAPI pela URL publicada.
 
+Este repositorio ja inclui `render.yaml`, entao o caminho mais simples e publicar no Render:
+
+1. Acesse `https://render.com`.
+2. Crie um **New > Blueprint** ou **New > Web Service** conectado ao repositorio GitHub.
+3. Se usar **Blueprint**, selecione este repositorio e confirme o arquivo `render.yaml`.
+4. Se usar **Web Service**, configure:
+
+```text
+Root Directory: api
+Build Command: npm install
+Start Command: npm start
+Health Check Path: /health
+```
+
+5. Aguarde o deploy finalizar.
+6. Copie a URL publica gerada, por exemplo:
+
+```text
+https://tdc-floripa-programacao-api.onrender.com
+```
+
+7. Teste:
+
+```text
+https://SUA_URL_RENDER/sessions?speaker=Ana%20Lindiner
+```
+
+Se o retorno vier em JSON com as sessoes da speaker, a API esta pronta para ser usada na Custom Tool.
+
 Contrato OpenAPI pronto para cadastrar a tool:
 
 ```yaml
