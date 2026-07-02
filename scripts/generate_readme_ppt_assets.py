@@ -62,13 +62,11 @@ def arrow(draw, start, end, fill=COLORS["line"], width=4, via=None):
 def draw_icon_card(draw, xy, icon, title, subtitle, accent):
     x1, y1, x2, y2 = xy
     rounded_box(draw, xy, fill="#FFFFFF", outline=accent, radius=18)
-    draw.ellipse((x1 + 22, y1 + 28, x1 + 82, y1 + 88), fill=accent, outline=accent)
-    label(draw, icon, x1 + 52, y1 + 45, size=20, fill="#FFFFFF", bold=True, anchor="mm")
-    label(draw, title, x1 + 102, y1 + 22, size=24, bold=True)
+    label(draw, title, x1 + 24, y1 + 22, size=24, bold=True)
     if subtitle:
         y = y1 + 58
         for line in subtitle.split("\n"):
-            label(draw, line, x1 + 102, y, size=17, fill="#504B45")
+            label(draw, line, x1 + 24, y, size=17, fill="#504B45")
             y += 24
 
 
@@ -84,7 +82,7 @@ def generate_architecture_png():
     label(draw, "Canais externos", 85, 178, size=28, bold=True)
     draw_icon_card(draw, (105, 245, 455, 355), "U", "Participante", "Pergunta no Telegram", COLORS["ocean"])
     draw_icon_card(draw, (105, 420, 455, 530), "TG", "Telegram Bot", "Webhook HTTPS", COLORS["ocean"])
-    draw_icon_card(draw, (105, 595, 455, 725), "JS", "Render Backend", "Node.js\nOCI SDK + env vars", COLORS["ocean"])
+    draw_icon_card(draw, (105, 595, 455, 725), "JS", "Backend", "Node.js\nOCI SDK + env vars", COLORS["ocean"])
 
     rounded_box(draw, (585, 145, 1735, 830), fill="#F5F4F2", outline="#9E9892", radius=24)
     label(draw, "OCI Region: us-phoenix-1 | Compartment: tdc-ai-agents-lab", 625, 178, size=27, bold=True)
@@ -118,7 +116,7 @@ def generate_architecture_png():
     label(draw, "chamada assinada ao endpoint", 650, 205, size=18, fill=COLORS["line"])
     label(draw, "RAG", 970, 570, size=18, fill=COLORS["ivy"])
     label(draw, "tool call", 1568, 452, size=18, fill=COLORS["sienna"])
-    label(draw, "consulta JSON da programacao", 690, 738, size=18, fill=COLORS["line"])
+    label(draw, "consulta JSON da programacao", 690, 710, size=18, fill=COLORS["line"])
 
     rounded_box(draw, (55, 875, 1735, 940), fill="#FFFFFF", outline="#DFDCD8", radius=18)
     label(draw, "Resumo:", 90, 895, size=22, bold=True)

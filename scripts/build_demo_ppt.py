@@ -192,7 +192,7 @@ def build():
         [
             "Agent com RAG: PDF do evento como base de conhecimento.",
             "Custom Tool: agenda e speakers via API estruturada.",
-            "Endpoint real: consumo pelo Telegram usando backend Render.",
+            "Endpoint real: consumo pelo Telegram usando backend.",
         ],
         9.15,
         3.62,
