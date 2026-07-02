@@ -586,21 +586,7 @@ Tenho acesso ao dia 22/jul e quero focar em Agentic AI e arquitetura. Quais sess
 Resultado esperado: roteiro com sessoes do dia 22/jul, priorizando trilha Agentic AI e termos de arquitetura.
 
 
-## 14. Demonstrar endpoint
-
-- Console chat: valida comportamento.
-- Agent endpoint: integra com aplicacao real.
-- Custom tool: conecta o agente a dados vivos ou estruturados.
-
-Mensagem para o publico:
-
-```text
-O chat prova que o agente funciona. O endpoint prova que ele pode virar produto.
-```
-
-> INSERIR PRINT: tela do endpoint do agente.
-
-## 15. Opcional: Telegram Bot
+## 14. Opcional: Telegram Bot
 
 Depois de criar o Agent Endpoint, voce pode mostrar como o agente seria usado em um canal real, como Telegram.
 
@@ -683,28 +669,6 @@ Quais palestras a Livia Rodrigues vai fazer?
 
 Importante: as credenciais OCI ficam somente no backend. Nunca coloque `OCI_PRIVATE_KEY`, token do Telegram ou OCIDs sensiveis em uma pagina web publica.
 
-## Atualizar programacao antes do evento
-
-Para atualizar a programacao a partir do site oficial:
-
-Atualize o arquivo:
-
-```text
-assets/programacao_tdc_floripa_2026.json
-```
-
-Depois faca commit e push para a branch `main` e redeploy/restart da API publicada. A API le o JSON atualizado e passa a devolver os novos resultados nas consultas da Custom Tool. O PDF do RAG so deve ser alterado quando mudarem informacoes estaticas do evento, como formato, FAQ, links oficiais ou regras gerais.
-
-## Limpeza dos recursos
-
-Ao final do lab, remova:
-
-- agent endpoint;
-- agent;
-- knowledge base;
-- objetos do bucket;
-- bucket;
-- policies e compartment, se forem descartaveis.
 
 ## Fontes
 
