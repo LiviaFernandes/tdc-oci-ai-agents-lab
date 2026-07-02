@@ -28,9 +28,6 @@ Quais trilhas existem no dia 22 de julho?
 Quais palestras falam sobre agentes?
 ```
 
-```text
-Quais sessoes a speaker Ana Lindiner apresenta?
-```
 
 Perguntas sobre conceitos gerais, jornadas, formato, FAQ e regras usam **RAG** porque estao no PDF.
 
@@ -307,14 +304,6 @@ Teste rapido:
 https://tdc-oci-ai-agents-lab.onrender.com/health
 https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia%20Rodrigues
 ```
-
-Se o retorno vier em JSON, a API esta pronta para ser usada na Custom Tool.
-
-Na Custom Tool, as buscas de sessoes e speakers usam `POST` com corpo JSON. Isso evita erro quando nomes possuem espacos, como `Livia Rodrigues`.
-
-> Observacao: no plano gratuito do Render, o servico pode "dormir" depois de alguns minutos sem uso. Antes de testar no OCI Agent ou antes da demo, abra `/health` no navegador para aquecer a API. Se a primeira chamada da tool der erro temporario, aguarde alguns segundos e teste novamente.
-
-Este repositorio tambem inclui `render.yaml`, caso seja necessario republicar ou recriar o servico no Render.
 
 Contrato OpenAPI pronto para cadastrar a tool:
 
@@ -596,129 +585,10 @@ Tenho acesso ao dia 22/jul e quero focar em Agentic AI e arquitetura. Quais sess
 
 Resultado esperado: roteiro com sessoes do dia 22/jul, priorizando trilha Agentic AI e termos de arquitetura.
 
-### Teste 5: limite entre RAG e tool
-
-```text
-Qual e o link oficial de inscricao?
-```
-
-Resultado esperado: resposta usando RAG, porque o link e uma informacao geral do evento, nao uma consulta de agenda.
-
-> INSERIR PRINT: chat respondendo com RAG.
-
-> INSERIR PRINT: trace mostrando uso da tool.
-
-### Se o agente usar RAG em vez da Custom Tool
-
-Se a resposta disser que nao encontrou um speaker e o trace mostrar somente:
-
-```text
-Tool output: consulta_base_tdc
-```
-
-entao o agente escolheu a ferramenta errada. Para corrigir:
-
-1. Confirme se a Custom Tool `consulta_programacao_tdc` foi criada com o OpenAPI atualizado deste repositorio.
-2. Confirme se a descricao da RAG Tool diz que ela nao deve ser usada para agenda, sessoes, horarios, speakers ou nomes de pessoas.
-3. Confirme se as instrucoes do agente dizem explicitamente para usar `consulta_programacao_tdc` quando a pergunta mencionar speakers, sessoes, trilhas, horarios ou nomes de pessoas.
-4. Teste com uma pergunta mais direcionada:
-
-```text
-Use a tool consulta_programacao_tdc e responda quais sessoes a Ana Lindiner apresenta.
-```
-
-Resultado esperado para esse teste:
-
-```text
-Ana Lindiner Lima de Araujo apresenta a sessao "Arquiteturas orientadas a agentes: quando sistemas deixam de executar e passam a decidir", no dia 22/jul, das 10:30 as 11:05, na Trilha Agentic AI.
-```
-
-### Se a tool retornar Internal Execution Error
-
-Se o trace mostrar a Custom Tool correta, mas a resposta da tool vier como:
-
-```text
-HTTP Endpoint API call failed
-Internal Execution Error
-```
-
-verifique primeiro o `apiPath` no trace.
-
-Se aparecer algo assim:
-
-```text
-https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia Rodrigues
-```
-
-com espaco no parametro da URL, a tool ainda esta usando o OpenAPI antigo com `GET /sessions`. Recrie ou edite a Custom Tool usando o OpenAPI atualizado deste repositorio. O contrato novo usa `POST /sessions/search` e envia o nome no corpo JSON, evitando erro com espacos.
-
-Se a tool ja estiver usando `POST /sessions/search` e mesmo assim falhar, provavelmente a API publicada no Render estava em cold start. No plano gratuito, o Render pode desligar o servico quando ele fica sem trafego, e a primeira chamada pode demorar mais do que o timeout da OCI.
-
-Para corrigir:
-
-1. Abra no navegador:
-
-```text
-https://tdc-oci-ai-agents-lab.onrender.com/health
-```
-
-2. Aguarde retornar:
-
-```json
-{
-  "status": "ok"
-}
-```
-
-3. Teste diretamente:
-
-```text
-https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia%20Rodrigues
-```
-
-4. Confirme que a Custom Tool usa o OpenAPI atualizado, com `POST /sessions/search` e `POST /speakers/search`.
-5. Volte ao chat do agente e envie a pergunta novamente.
-
-Para a apresentacao ao vivo, aqueça a API alguns minutos antes da demo ou use um plano/servico de hosting sem sleep.
 
 ## 14. Demonstrar endpoint
 
-Explique a diferenca:
 
-- Console chat: valida comportamento.
-- Agent endpoint: integra com aplicacao real.
-- Custom tool: conecta o agente a dados vivos ou estruturados.
-
-Mensagem para o publico:
-
-```text
-O chat prova que o agente funciona. O endpoint prova que ele pode virar produto.
-```
-
-> INSERIR PRINT: tela do endpoint do agente.
-
-## Atualizar programacao antes do evento
-
-Para atualizar a programacao a partir do site oficial:
-
-Atualize o arquivo:
-
-```text
-assets/programacao_tdc_floripa_2026.json
-```
-
-Depois faca commit e push para a branch `main` e redeploy/restart da API publicada. A API le o JSON atualizado e passa a devolver os novos resultados nas consultas da Custom Tool. O PDF do RAG so deve ser alterado quando mudarem informacoes estaticas do evento, como formato, FAQ, links oficiais ou regras gerais.
-
-## Limpeza dos recursos
-
-Ao final do lab, remova:
-
-- agent endpoint;
-- agent;
-- knowledge base;
-- objetos do bucket;
-- bucket;
-- policies e compartment, se forem descartaveis.
 
 ## Fontes
 
