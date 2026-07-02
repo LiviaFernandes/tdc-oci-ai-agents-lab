@@ -24,17 +24,23 @@ Guarde o token como:
 TELEGRAM_BOT_TOKEN
 ```
 
-## 2. Publicar este backend
+## 2. Publicar este backend no Render
 
-Publique a pasta `examples/telegram-bot` em um servico Node.js como Render.
+Publique o repositorio como **New Web Service** no Render.
 
 Configuracao sugerida:
 
 ```text
-Root Directory: examples/telegram-bot
+Root Directory: deixe vazio
 Build Command: npm install
 Start Command: npm start
 Health Check Path: /health
+```
+
+O `package.json` da raiz do repositorio ja aponta o `npm start` para este exemplo:
+
+```text
+node examples/telegram-bot/server.js
 ```
 
 Variaveis de ambiente:

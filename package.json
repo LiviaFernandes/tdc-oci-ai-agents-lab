@@ -1,0 +1,14 @@
+{
+  "name": "tdc-oci-ai-agents-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node examples/telegram-bot/server.js",
+    "telegram:start": "node examples/telegram-bot/server.js",
+    "api:start": "node api/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

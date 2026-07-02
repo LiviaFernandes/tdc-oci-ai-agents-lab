@@ -626,8 +626,17 @@ Resumo do setup:
 
 1. Crie um bot no Telegram com `@BotFather`.
 2. Guarde o token como `TELEGRAM_BOT_TOKEN`.
-3. Publique `examples/telegram-bot` em um servico Node.js, como Render.
-4. Configure as variaveis:
+3. Publique este repositorio como **New Web Service** no Render.
+4. Use:
+
+```text
+Root Directory: deixe vazio
+Build Command: npm install
+Start Command: npm start
+Health Check Path: /health
+```
+
+5. Configure as variaveis:
 
 ```text
 TELEGRAM_BOT_TOKEN=token_do_botfather
@@ -635,13 +644,13 @@ BOT_MODE=mock
 PROGRAMACAO_API_URL=https://tdc-oci-ai-agents-lab.onrender.com
 ```
 
-5. Configure o webhook:
+6. Configure o webhook:
 
 ```text
 https://api.telegram.org/botSEU_TOKEN/setWebhook?url=https://SUA_URL_DO_BOT/telegram/webhook
 ```
 
-6. Teste no Telegram:
+7. Teste no Telegram:
 
 ```text
 Quais palestras a Livia Rodrigues vai fazer?
