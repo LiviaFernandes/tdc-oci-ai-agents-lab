@@ -10,5 +10,9 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "oci-common": "^2.136.0",
+    "oci-generativeaiagentruntime": "^2.136.0"
   }
 }

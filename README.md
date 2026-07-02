@@ -620,7 +620,7 @@ Este repositorio inclui um exemplo em:
 examples/telegram-bot
 ```
 
-Para uma demo rapida sem credenciais OCI, o exemplo roda em `BOT_MODE=mock` e consulta a API publica da programacao. Para usar o agente real, troque para `BOT_MODE=oci` e implemente a chamada autenticada ao OCI Agent Endpoint no backend.
+Para uma demo rapida sem credenciais OCI, o exemplo roda em `BOT_MODE=mock` e consulta a API publica da programacao. Para a opcao completa, use `BOT_MODE=oci`: o backend chama o OCI Generative AI Agent Endpoint real e a resposta passa pelo agente, RAG e Custom Tool.
 
 Resumo do setup:
 
@@ -644,6 +644,29 @@ BOT_MODE=mock
 PROGRAMACAO_API_URL=https://tdc-oci-ai-agents-lab.onrender.com
 ```
 
+Para usar o Agent Endpoint real:
+
+```text
+TELEGRAM_BOT_TOKEN=token_do_botfather
+BOT_MODE=oci
+OCI_REGION=us-phoenix-1
+OCI_AGENT_ENDPOINT_ID=ocid1.genaiagentendpoint...
+OCI_TENANCY_OCID=ocid1.tenancy...
+OCI_USER_OCID=ocid1.user...
+OCI_FINGERPRINT=fingerprint_da_api_key
+OCI_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----
+OCI_PRIVATE_KEY_PASSPHRASE=
+```
+
+Como obter esses valores:
+
+- `OCI_AGENT_ENDPOINT_ID`: na pagina do endpoint em **Generative AI Agents > Agent endpoints**.
+- `OCI_TENANCY_OCID`: em **Tenancy details**.
+- `OCI_USER_OCID`, `OCI_FINGERPRINT` e chave privada: em **My profile > API keys**.
+- `OCI_REGION`: a regiao usada no lab, por exemplo `us-phoenix-1`.
+
+No Render, cole `OCI_PRIVATE_KEY` em uma linha usando `\n` no lugar das quebras de linha. Deixe `OCI_PRIVATE_KEY_PASSPHRASE` vazio se sua chave privada nao tiver senha.
+
 6. Configure o webhook:
 
 ```text
@@ -657,6 +680,8 @@ Quais palestras a Livia Rodrigues vai fazer?
 ```
 
 > Esse passo e opcional. Ele mostra que o Agent Endpoint pode virar produto em canais como Telegram, WhatsApp, Slack ou uma pagina web, mas nao e necessario para concluir o lab principal.
+
+Importante: as credenciais OCI ficam somente no backend. Nunca coloque `OCI_PRIVATE_KEY`, token do Telegram ou OCIDs sensiveis em uma pagina web publica.
 
 ## Atualizar programacao antes do evento
 

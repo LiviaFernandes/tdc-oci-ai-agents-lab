@@ -8,7 +8,10 @@ Fluxo:
 Telegram -> Backend do bot -> API/OCI Agent -> Backend -> Telegram
 ```
 
-Para o lab, o exemplo vem em modo `mock`: ele usa a API publica da programacao para responder perguntas sobre palestrantes. Depois, voce pode trocar para `BOT_MODE=oci` e implementar a chamada ao OCI Agent Endpoint.
+Para o lab, o exemplo pode rodar de duas formas:
+
+- `BOT_MODE=mock`: consulta somente a API publica da programacao.
+- `BOT_MODE=oci`: chama o OCI Generative AI Agent Endpoint real, mantendo RAG, tools e instrucoes do agente.
 
 ## 1. Criar bot no BotFather
 
@@ -51,6 +54,27 @@ BOT_MODE=mock
 PROGRAMACAO_API_URL=https://tdc-oci-ai-agents-lab.onrender.com
 ```
 
+Para a opcao completa com OCI Agent Endpoint, use:
+
+```text
+TELEGRAM_BOT_TOKEN=token_do_botfather
+BOT_MODE=oci
+OCI_REGION=us-phoenix-1
+OCI_AGENT_ENDPOINT_ID=ocid1.genaiagentendpoint...
+OCI_TENANCY_OCID=ocid1.tenancy...
+OCI_USER_OCID=ocid1.user...
+OCI_FINGERPRINT=fingerprint_da_api_key
+OCI_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----
+OCI_PRIVATE_KEY_PASSPHRASE=
+```
+
+Observacoes:
+
+- `OCI_AGENT_ENDPOINT_ID` fica na pagina do endpoint do agente em **Generative AI Agents > Agent endpoints**.
+- `OCI_PRIVATE_KEY` deve ser a chave privada da API key do usuario. No Render, cole a chave em uma linha usando `\n` no lugar das quebras de linha.
+- `OCI_PRIVATE_KEY_PASSPHRASE` so precisa ser preenchida se a chave privada tiver senha.
+- O usuario da API key precisa estar no grupo com as policies do lab.
+
 ## 3. Configurar webhook
 
 Depois do deploy, copie a URL publica do bot, por exemplo:
@@ -75,12 +99,26 @@ No Telegram, envie:
 Quais palestras a Livia Rodrigues vai fazer?
 ```
 
-Resposta esperada: o bot lista as sessoes encontradas na API de programacao.
+Resposta esperada em `BOT_MODE=mock`: o bot lista as sessoes encontradas na API de programacao.
 
-## 5. Conectar ao OCI Agent Endpoint
+Resposta esperada em `BOT_MODE=oci`: o bot responde como o Agent Endpoint, usando RAG e Custom Tool.
 
-Para usar o agente real:
+## 5. Criar a API key OCI para o Render
 
-1. Configure `BOT_MODE=oci`.
-2. Adicione a chamada autenticada ao OCI Agent Endpoint em `answerWithOciAgent`.
-3. Mantenha credenciais OCI somente no backend, nunca no Telegram nem no frontend.
+1. Na OCI, clique no icone do usuario no canto superior direito.
+2. Acesse **My profile > API keys**.
+3. Clique em **Add API key**.
+4. Gere ou envie uma chave publica.
+5. Copie os dados exibidos no arquivo de configuracao:
+
+```text
+user=ocid1.user...
+fingerprint=...
+tenancy=ocid1.tenancy...
+region=us-phoenix-1
+```
+
+6. Leve esses valores para as variaveis `OCI_USER_OCID`, `OCI_FINGERPRINT`, `OCI_TENANCY_OCID` e `OCI_REGION` no Render.
+7. Cole a chave privada em `OCI_PRIVATE_KEY`.
+
+Nunca coloque essas credenciais no frontend, no Telegram ou no repositorio. Elas ficam somente como variaveis de ambiente no backend.

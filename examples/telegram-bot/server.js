@@ -2,6 +2,11 @@ const PORT = Number(process.env.PORT || 3000);
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const BOT_MODE = process.env.BOT_MODE || "mock";
 const PROGRAMACAO_API_URL = process.env.PROGRAMACAO_API_URL || "https://tdc-oci-ai-agents-lab.onrender.com";
+const OCI_AGENT_ENDPOINT_ID = process.env.OCI_AGENT_ENDPOINT_ID;
+const OCI_REGION = process.env.OCI_REGION || "us-phoenix-1";
+
+let ociClientPromise;
+const telegramSessions = new Map();
 
 function jsonResponse(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -15,20 +20,94 @@ async function sendTelegramMessage(chatId, text) {
     throw new Error("Missing TELEGRAM_BOT_TOKEN");
   }
 
-  const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text,
-      parse_mode: "Markdown"
-    })
+  const chunks = splitTelegramText(text);
+  for (const chunk of chunks) {
+    const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: chunk
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Telegram sendMessage failed: ${response.status} ${errorText}`);
+    }
+  }
+}
+
+function splitTelegramText(text) {
+  const maxLength = 3800;
+  if (text.length <= maxLength) return [text];
+
+  const chunks = [];
+  for (let index = 0; index < text.length; index += maxLength) {
+    chunks.push(text.slice(index, index + maxLength));
+  }
+  return chunks;
+}
+
+function requiredEnv(name) {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`Missing ${name}`);
+  }
+  return value;
+}
+
+function normalizePrivateKey(value) {
+  return value.replace(/\\n/g, "\n");
+}
+
+async function getOciAgentClient() {
+  if (!ociClientPromise) {
+    ociClientPromise = (async () => {
+      const ociCommon = await import("oci-common");
+      const agentRuntime = await import("oci-generativeaiagentruntime");
+      const region = ociCommon.Region.fromRegionId(OCI_REGION);
+      const provider = new ociCommon.SimpleAuthenticationDetailsProvider(
+        requiredEnv("OCI_TENANCY_OCID"),
+        requiredEnv("OCI_USER_OCID"),
+        requiredEnv("OCI_FINGERPRINT"),
+        normalizePrivateKey(requiredEnv("OCI_PRIVATE_KEY")),
+        process.env.OCI_PRIVATE_KEY_PASSPHRASE || null,
+        region
+      );
+
+      const client = new agentRuntime.GenerativeAiAgentRuntimeClient({
+        authenticationDetailsProvider: provider
+      });
+      client.region = region;
+      return client;
+    })();
+  }
+
+  return ociClientPromise;
+}
+
+async function getOrCreateAgentSession(chatId) {
+  if (telegramSessions.has(chatId)) {
+    return telegramSessions.get(chatId);
+  }
+
+  const client = await getOciAgentClient();
+  const response = await client.createSession({
+    agentEndpointId: requiredEnv("OCI_AGENT_ENDPOINT_ID"),
+    createSessionDetails: {
+      displayName: `telegram-${chatId}`,
+      description: "Sessao criada pelo bot Telegram do lab TDC OCI AI Agents"
+    }
   });
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Telegram sendMessage failed: ${response.status} ${errorText}`);
+  const sessionId = response.session?.id;
+  if (!sessionId) {
+    throw new Error("OCI Agent Runtime did not return a session id");
   }
+
+  telegramSessions.set(chatId, sessionId);
+  return sessionId;
 }
 
 function extractName(text) {
@@ -74,23 +153,33 @@ async function answerWithMockMode(message) {
   return formatSessionsFromSpeakerResult(await response.json());
 }
 
-async function answerWithOciAgent(message) {
-  // TODO: conecte aqui o SDK/chamada autenticada ao OCI Generative AI Agent Endpoint.
-  // Mantenha essa chamada no backend para nao expor credenciais OCI.
-  return [
-    "Modo OCI ainda nao configurado neste exemplo.",
-    "",
-    "Mensagem recebida:",
-    message,
-    "",
-    "Configure BOT_MODE=mock para testar o Telegram com a API publica da programacao,",
-    "ou implemente aqui a chamada ao OCI Agent Endpoint."
-  ].join("\n");
+async function answerWithOciAgent(message, chatId) {
+  if (!OCI_AGENT_ENDPOINT_ID) {
+    throw new Error("Missing OCI_AGENT_ENDPOINT_ID");
+  }
+
+  const client = await getOciAgentClient();
+  const sessionId = await getOrCreateAgentSession(chatId);
+  const response = await client.chat({
+    agentEndpointId: OCI_AGENT_ENDPOINT_ID,
+    chatDetails: {
+      userMessage: message,
+      sessionId,
+      shouldStream: false
+    }
+  });
+
+  const text = response?.chatResult?.message?.content?.text;
+  if (!text) {
+    throw new Error("OCI Agent Runtime returned an empty answer");
+  }
+
+  return text;
 }
 
-async function answerMessage(message) {
+async function answerMessage(message, chatId) {
   if (BOT_MODE === "oci") {
-    return answerWithOciAgent(message);
+    return answerWithOciAgent(message, chatId);
   }
   return answerWithMockMode(message);
 }
@@ -104,7 +193,14 @@ async function handleTelegramWebhook(request) {
     return jsonResponse({ ok: true, ignored: true });
   }
 
-  const answer = await answerMessage(message);
+  let answer;
+  try {
+    answer = await answerMessage(message, chatId);
+  } catch (error) {
+    console.error("Failed to answer Telegram message", error);
+    answer = "Nao consegui consultar o agente agora. Verifique as variaveis do Render e os logs do backend.";
+  }
+
   await sendTelegramMessage(chatId, answer);
 
   return jsonResponse({ ok: true });
