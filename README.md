@@ -155,7 +155,7 @@ assets/base_rag_tdc_floripa_2026.pdf
 
 Esse PDF contem somente a base estatica do evento: visao geral, formato, FAQ, jornadas, links oficiais e instrucoes de comportamento. Ele nao contem programacao detalhada nem speakers; esses dados ficam no JSON e serao acessados pela Custom Tool.
 
-> INSERIR PRINT: upload dos arquivos no bucket.
+<img width="1470" height="830" alt="image" src="https://github.com/user-attachments/assets/6423d963-06d3-4c1b-b946-f47d8b09dff2" />
 
 ## 6. Criar Knowledge Base
 
@@ -170,13 +170,13 @@ tdc-floripa-2026-kb
 ```
 
 6. Escolha Object Storage como origem.
-7. Selecione o bucket `tdc-agent-kb`.
-8. Selecione o pdf da pasta assets em file upload.
- <img width="1470" height="832" alt="image" src="https://github.com/user-attachments/assets/bf7ac371-39bf-4831-8b97-22b196b50656" />
+7. Clique em 'specify data source'.
+8. Selecione o bucket `tdc-agent-kb`.
+<img width="1470" height="833" alt="image" src="https://github.com/user-attachments/assets/02664034-4ae3-4506-b040-04a9a3a702ac" />
 
 10. Crie a knowledge base.
 11. Aguarde a ingestao finalizar.
-<img width="1470" height="833" alt="image" src="https://github.com/user-attachments/assets/1cd4a16c-cc31-4532-8869-ba3479b44343" />
+    
 
 
 ## 7. Criar o agente
@@ -227,7 +227,7 @@ Use esta ferramenta para responder perguntas gerais sobre o TDC Floripa 2026, in
 5. Selecione a knowledge base `tdc-floripa-2026-kb`.
 6. Adicione a tool.
 
-> INSERIR PRINT: RAG tool adicionada.
+<img width="1470" height="771" alt="image" src="https://github.com/user-attachments/assets/2eb79fab-7d78-44e7-980d-5b2e62e0a004" />
 
 ## 9. Preparar a Custom Tool
 
