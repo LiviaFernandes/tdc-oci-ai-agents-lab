@@ -22,4 +22,14 @@ GET /tracks?day=22/jul
 GET /sessions?q=agentes&limit=5
 GET /sessions?speaker=Ana%20Lindiner
 GET /speakers?q=ana
+POST /sessions/search
+POST /speakers/search
+```
+
+Para OCI Custom Tool, prefira os endpoints `POST`, porque nomes com espaco ficam no corpo JSON:
+
+```bash
+curl -X POST http://localhost:3000/sessions/search \
+  -H "content-type: application/json" \
+  -d '{"speaker":"Livia Rodrigues"}'
 ```

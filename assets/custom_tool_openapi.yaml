@@ -43,43 +43,34 @@ paths:
             application/json:
               schema:
                 type: object
-  /sessions:
-    get:
+  /sessions/search:
+    post:
       operationId: searchSessions
       summary: Busca sessoes, palestras, horarios e speakers
-      description: Use obrigatoriamente para perguntas sobre agenda, programacao, sessoes, palestras, horarios, trilhas especificas, speakers, nomes de pessoas ou busca por termo.
-      parameters:
-        - name: q
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Termo de busca geral, como agentes, IA, arquitetura, Java, titulo ou nome de uma pessoa.
-        - name: speaker
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Nome do speaker ou parte do nome, por exemplo Ana Lindiner.
-        - name: day
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Dia da programacao, por exemplo 22/jul, 23/jul ou 24/jul.
-        - name: track
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Nome ou parte do nome da trilha.
-        - name: limit
-          in: query
-          required: false
-          schema:
-            type: integer
-            default: 10
-          description: Quantidade maxima de resultados.
+      description: Use obrigatoriamente para perguntas sobre agenda, programacao, sessoes, palestras, horarios, trilhas especificas, speakers, nomes de pessoas ou busca por termo. Envie nomes com espacos no corpo JSON, nao na URL.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                q:
+                  type: string
+                  description: Termo de busca geral, como agentes, IA, arquitetura, Java, titulo ou nome de uma pessoa.
+                speaker:
+                  type: string
+                  description: Nome do speaker ou parte do nome, por exemplo Ana Lindiner ou Livia Rodrigues.
+                day:
+                  type: string
+                  description: Dia da programacao, por exemplo 22/jul, 23/jul ou 24/jul.
+                track:
+                  type: string
+                  description: Nome ou parte do nome da trilha.
+                limit:
+                  type: integer
+                  default: 10
+                  description: Quantidade maxima de resultados.
       responses:
         "200":
           description: Sessoes encontradas
@@ -87,25 +78,25 @@ paths:
             application/json:
               schema:
                 type: object
-  /speakers:
-    get:
+  /speakers/search:
+    post:
       operationId: searchSpeakers
       summary: Busca speakers e suas sessoes
-      description: Use para perguntas sobre palestrantes/speakers, nomes de pessoas e sessoes associadas a uma pessoa.
-      parameters:
-        - name: q
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Nome ou parte do nome do speaker.
-        - name: limit
-          in: query
-          required: false
-          schema:
-            type: integer
-            default: 10
-          description: Quantidade maxima de speakers.
+      description: Use para perguntas sobre palestrantes/speakers, nomes de pessoas e sessoes associadas a uma pessoa. Envie nomes com espacos no corpo JSON, nao na URL.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                q:
+                  type: string
+                  description: Nome ou parte do nome do speaker.
+                limit:
+                  type: integer
+                  default: 10
+                  description: Quantidade maxima de speakers.
       responses:
         "200":
           description: Speakers encontrados

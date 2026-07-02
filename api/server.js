@@ -55,7 +55,7 @@ function writeJson(response, status, body) {
   response.writeHead(status, {
     "content-type": "application/json; charset=utf-8",
     "access-control-allow-origin": "*",
-    "access-control-allow-methods": "GET, OPTIONS",
+    "access-control-allow-methods": "GET, POST, OPTIONS",
     "access-control-allow-headers": "content-type"
   });
   response.end(JSON.stringify(body, null, 2));
@@ -109,6 +109,10 @@ function searchSessions(searchParams) {
   const track = searchParams.get("track");
   const limit = parseLimit(searchParams);
 
+  return searchSessionsFromFilters({ q, speaker, day, track, limit });
+}
+
+function searchSessionsFromFilters({ q, speaker, day, track, limit = 10 }) {
   const results = sessions.filter((session) => {
     const speakerText = (session.speakers || []).join(" ");
     return (
@@ -135,6 +139,10 @@ function searchSessions(searchParams) {
 function searchSpeakers(searchParams) {
   const q = searchParams.get("q");
   const limit = parseLimit(searchParams);
+  return searchSpeakersFromFilters({ q, limit });
+}
+
+function searchSpeakersFromFilters({ q, limit = 10 }) {
   const speakers = new Map();
 
   for (const session of sessions) {
@@ -172,11 +180,69 @@ const routes = {
   "/speakers": searchSpeakers
 };
 
-createServer((request, response) => {
+const postRoutes = {
+  "/sessions/search": (body) => searchSessionsFromFilters({
+    q: body.q,
+    speaker: body.speaker,
+    day: body.day,
+    track: body.track,
+    limit: Number(body.limit || 10)
+  }),
+  "/speakers/search": (body) => searchSpeakersFromFilters({
+    q: body.q,
+    limit: Number(body.limit || 10)
+  })
+};
+
+function readJsonBody(request) {
+  return new Promise((resolve, reject) => {
+    let raw = "";
+    request.on("data", (chunk) => {
+      raw += chunk;
+      if (raw.length > 100_000) {
+        reject(new Error("Request body too large"));
+        request.destroy();
+      }
+    });
+    request.on("end", () => {
+      if (!raw.trim()) {
+        resolve({});
+        return;
+      }
+      try {
+        resolve(JSON.parse(raw));
+      } catch {
+        reject(new Error("Invalid JSON body"));
+      }
+    });
+    request.on("error", reject);
+  });
+}
+
+createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host}`);
 
   if (request.method === "OPTIONS") {
     writeJson(response, 200, { status: "ok" });
+    return;
+  }
+
+  if (request.method === "POST") {
+    const handler = postRoutes[url.pathname];
+    if (!handler) {
+      writeJson(response, 404, {
+        error: "Not found",
+        available_endpoints: [...Object.keys(routes), ...Object.keys(postRoutes)]
+      });
+      return;
+    }
+
+    try {
+      const body = await readJsonBody(request);
+      writeJson(response, 200, handler(body));
+    } catch (error) {
+      writeJson(response, 400, { error: error.message });
+    }
     return;
   }
 

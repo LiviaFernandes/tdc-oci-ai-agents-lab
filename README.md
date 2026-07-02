@@ -263,10 +263,8 @@ e expoe endpoints de busca:
 ```text
 GET /event
 GET /tracks?day=22/jul
-GET /sessions?q=agentes&limit=5
-GET /sessions?speaker=Ana%20Lindiner
-GET /sessions?day=22/jul&track=Agentic%20AI
-GET /speakers?q=ana
+POST /sessions/search
+POST /speakers/search
 ```
 
 Como fizemos:
@@ -293,6 +291,8 @@ https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia%20Rodrigues
 ```
 
 Se o retorno vier em JSON, a API esta pronta para ser usada na Custom Tool.
+
+Na Custom Tool, as buscas de sessoes e speakers usam `POST` com corpo JSON. Isso evita erro quando nomes possuem espacos, como `Livia Rodrigues`.
 
 > Observacao: no plano gratuito do Render, o servico pode "dormir" depois de alguns minutos sem uso. Antes de testar no OCI Agent ou antes da demo, abra `/health` no navegador para aquecer a API. Se a primeira chamada da tool der erro temporario, aguarde alguns segundos e teste novamente.
 
@@ -346,43 +346,34 @@ paths:
             application/json:
               schema:
                 type: object
-  /sessions:
-    get:
+  /sessions/search:
+    post:
       operationId: searchSessions
       summary: Busca sessoes, palestras, horarios e speakers
-      description: Use obrigatoriamente para perguntas sobre agenda, programacao, sessoes, palestras, horarios, trilhas especificas, speakers, nomes de pessoas ou busca por termo.
-      parameters:
-        - name: q
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Termo de busca geral, como agentes, IA, arquitetura, Java ou nome de uma pessoa.
-        - name: speaker
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Nome do speaker ou parte do nome, por exemplo Ana Lindiner.
-        - name: day
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Dia da programacao, por exemplo 22/jul, 23/jul ou 24/jul.
-        - name: track
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Nome ou parte do nome da trilha.
-        - name: limit
-          in: query
-          required: false
-          schema:
-            type: integer
-            default: 10
-          description: Quantidade maxima de resultados.
+      description: Use obrigatoriamente para perguntas sobre agenda, programacao, sessoes, palestras, horarios, trilhas especificas, speakers, nomes de pessoas ou busca por termo. Envie nomes com espacos no corpo JSON, nao na URL.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                q:
+                  type: string
+                  description: Termo de busca geral, como agentes, IA, arquitetura, Java, titulo ou nome de uma pessoa.
+                speaker:
+                  type: string
+                  description: Nome do speaker ou parte do nome, por exemplo Ana Lindiner ou Livia Rodrigues.
+                day:
+                  type: string
+                  description: Dia da programacao, por exemplo 22/jul, 23/jul ou 24/jul.
+                track:
+                  type: string
+                  description: Nome ou parte do nome da trilha.
+                limit:
+                  type: integer
+                  default: 10
+                  description: Quantidade maxima de resultados.
       responses:
         "200":
           description: Sessoes encontradas
@@ -390,25 +381,25 @@ paths:
             application/json:
               schema:
                 type: object
-  /speakers:
-    get:
+  /speakers/search:
+    post:
       operationId: searchSpeakers
       summary: Busca speakers e suas sessoes
-      description: Use para perguntas sobre palestrantes/speakers, nomes de pessoas e sessoes associadas a uma pessoa.
-      parameters:
-        - name: q
-          in: query
-          required: false
-          schema:
-            type: string
-          description: Nome ou parte do nome do speaker.
-        - name: limit
-          in: query
-          required: false
-          schema:
-            type: integer
-            default: 10
-          description: Quantidade maxima de speakers.
+      description: Use para perguntas sobre palestrantes/speakers, nomes de pessoas e sessoes associadas a uma pessoa. Envie nomes com espacos no corpo JSON, nao na URL.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                q:
+                  type: string
+                  description: Nome ou parte do nome do speaker.
+                limit:
+                  type: integer
+                  default: 10
+                  description: Quantidade maxima de speakers.
       responses:
         "200":
           description: Speakers encontrados
@@ -596,7 +587,17 @@ HTTP Endpoint API call failed
 Internal Execution Error
 ```
 
-provavelmente a API publicada no Render estava em cold start. No plano gratuito, o Render pode desligar o servico quando ele fica sem trafego, e a primeira chamada pode demorar mais do que o timeout da OCI.
+verifique primeiro o `apiPath` no trace.
+
+Se aparecer algo assim:
+
+```text
+https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia Rodrigues
+```
+
+com espaco no parametro da URL, a tool ainda esta usando o OpenAPI antigo com `GET /sessions`. Recrie ou edite a Custom Tool usando o OpenAPI atualizado deste repositorio. O contrato novo usa `POST /sessions/search` e envia o nome no corpo JSON, evitando erro com espacos.
+
+Se a tool ja estiver usando `POST /sessions/search` e mesmo assim falhar, provavelmente a API publicada no Render estava em cold start. No plano gratuito, o Render pode desligar o servico quando ele fica sem trafego, e a primeira chamada pode demorar mais do que o timeout da OCI.
 
 Para corrigir:
 
@@ -620,7 +621,8 @@ https://tdc-oci-ai-agents-lab.onrender.com/health
 https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia%20Rodrigues
 ```
 
-4. Volte ao chat do agente e envie a pergunta novamente.
+4. Confirme que a Custom Tool usa o OpenAPI atualizado, com `POST /sessions/search` e `POST /speakers/search`.
+5. Volte ao chat do agente e envie a pergunta novamente.
 
 Para a apresentacao ao vivo, aqueça a API alguns minutos antes da demo ou use um plano/servico de hosting sem sleep.
 
