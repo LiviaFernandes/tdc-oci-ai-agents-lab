@@ -353,10 +353,44 @@ Subnet: public subnet criada pelo wizard
 
 ## 12. Criar endpoint do agente
 
-1. Na etapa de endpoint, mantenha a criacao automatica ativada.
-2. Deixe guardrails desativados para o lab ou mostre rapidamente as opcoes.
-3. Crie o agente.
-4. Aguarde status **Active**.
+Na tela **Setup agent endpoint**, use uma configuracao simples para o lab:
+
+1. Mantenha **Automatically create an endpoint for this agent** ativado.
+2. Mantenha **Enable human in the loop** desativado.
+3. Em **Content moderation**, selecione:
+
+```text
+Input: Disable
+Output: Disable
+```
+
+4. Em **Prompt injection (PI) protection**, selecione:
+
+```text
+Disable
+```
+
+5. Em **Personally identifiable information (PII) protection**, selecione:
+
+```text
+Input: Disable
+Output: Disable
+```
+
+6. Clique em **Next**.
+7. Na tela de revisao, confira:
+
+```text
+Agent: Assistente TDC Floripa
+RAG tool: consulta_base_tdc
+Custom tool: consulta_programacao_tdc
+Endpoint automatico: ativado
+```
+
+8. Clique em **Create**.
+9. Aguarde o agente e o endpoint ficarem com status **Active**.
+
+Para o lab, deixamos os guardrails em `Disable` para reduzir variaveis durante os testes e facilitar a demonstracao do uso de RAG e Custom Tool. Em um ambiente produtivo, avalie usar `Block` ou `Inform` para content moderation, prompt injection e PII conforme a politica de seguranca da aplicacao.
 
 > INSERIR PRINT: endpoint ativo.
 
