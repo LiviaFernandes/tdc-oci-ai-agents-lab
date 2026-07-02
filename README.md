@@ -18,12 +18,14 @@ assets/
   base_rag_tdc_floripa_2026.pdf         # Base estatica para RAG
   programacao_tdc_floripa_2026.json     # Dataset estruturado usado pela tool
   custom_tool_openapi.yaml              # Contrato pronto da Custom Tool
+api/
+  server.js                             # API completa de busca para a Custom Tool
 ```
 
 O PDF e o JSON foram separados de proposito:
 
 - **PDF/RAG**: contexto estatico do evento, FAQ, jornadas, formato, links oficiais e orientacoes.
-- **JSON/Tool**: programacao detalhada, trilhas, sessoes, horarios, speakers e busca estruturada.
+- **API/Tool**: busca estruturada sobre o JSON de programacao, com filtros por termo, speaker, dia e trilha.
 
 ## Demo do lab
 
@@ -59,7 +61,8 @@ Usuario
         -> Object Storage
         -> assets/base_rag_tdc_floripa_2026.pdf
      -> Custom Tool
-        -> API publica read-only via jsDelivr/GitHub
+        -> API publica de busca
+        -> api/server.js
         -> assets/programacao_tdc_floripa_2026.json
 ```
 
@@ -261,18 +264,27 @@ Use esta ferramenta somente para perguntas gerais sobre o TDC Floripa 2026, incl
 
 ## 10. Entender a API da Custom Tool
 
-Para simplificar o lab, a API da Custom Tool ja esta disponivel como uma consulta publica read-only via jsDelivr/GitHub. Assim, os participantes nao precisam publicar Functions, API Gateway, Compute ou Container Instance durante a aula.
+Para a Custom Tool funcionar bem, ela precisa chamar uma API que filtre a programacao antes de devolver a resposta ao agente. Por isso, este repositorio inclui uma API completa em Node.js:
 
-A API expoe o dataset estruturado:
+```text
+api/server.js
+```
+
+A API le o dataset estruturado:
 
 ```text
 assets/programacao_tdc_floripa_2026.json
 ```
 
-Esse arquivo contem programacao detalhada, trilhas, sessoes, horarios, speakers, descricoes e URL fonte.
+e expoe endpoints de busca:
 
 ```text
-https://cdn.jsdelivr.net/gh/LiviaFernandes/tdc-oci-ai-agents-lab@main/assets/programacao_tdc_floripa_2026.json
+GET /event
+GET /tracks?day=22/jul
+GET /sessions?q=agentes&limit=5
+GET /sessions?speaker=Ana%20Lindiner
+GET /sessions?day=22/jul&track=Agentic%20AI
+GET /speakers?q=ana
 ```
 
 Como fizemos:
@@ -280,27 +292,66 @@ Como fizemos:
 - coletamos a programacao real do TDC Floripa 2026;
 - normalizamos as informacoes em JSON;
 - deixamos o JSON versionado no repositorio;
-- expusemos o arquivo por uma URL HTTPS publica via jsDelivr;
-- criamos um contrato OpenAPI simples para o OCI Agent conseguir chamar esse endpoint como Custom Tool.
+- criamos uma API que filtra sessoes, speakers, trilhas e dias;
+- criamos um contrato OpenAPI para o OCI Agent chamar essa API como Custom Tool.
 
-O importante para o conceito e que o agente nao busque sessoes e speakers no PDF. Ele deve chamar a tool, receber o JSON estruturado e filtrar os dados conforme a pergunta do usuario.
+O importante para o conceito e que o agente nao busque sessoes e speakers no PDF. Ele deve chamar a tool, e a API deve devolver somente os resultados relevantes para a pergunta.
+
+Para usar no OCI Agent, publique essa API em um endpoint HTTPS publico. Pode ser em OCI, Render, Railway, Fly.io, Cloud Run ou outro servico simples de hosting Node.js. Depois substitua `https://SEU_ENDPOINT_PUBLICO` no OpenAPI pela URL publicada.
 
 Contrato OpenAPI pronto para cadastrar a tool:
 
 ```yaml
 openapi: 3.0.3
 info:
-  title: TDC Floripa 2026 Programacao Tool
+  title: TDC Floripa 2026 Programacao API
   version: 1.0.0
-  description: Ferramenta de busca da programacao do TDC Floripa 2026. Use para perguntas sobre sessoes, speakers, trilhas, horarios, agenda ou busca por termo.
+  description: API de busca da programacao do TDC Floripa 2026 para uso como Custom Tool no OCI Generative AI Agents.
 servers:
-  - url: https://cdn.jsdelivr.net
+  - url: https://SEU_ENDPOINT_PUBLICO
 paths:
-  /gh/LiviaFernandes/tdc-oci-ai-agents-lab@main/assets/programacao_tdc_floripa_2026.json:
+  /event:
     get:
-      operationId: searchProgramacaoTdcFloripa2026
-      summary: Busca programacao, sessoes, speakers, trilhas e horarios do TDC Floripa 2026
-      description: Use esta operacao sempre que o usuario perguntar sobre agenda, sessoes, palestras, speakers, pessoas, trilhas, horarios ou termos especificos na programacao. A API retorna o dataset estruturado para o agente filtrar pelo q, speaker, day ou track informado.
+      operationId: getEventInfo
+      summary: Retorna informacoes gerais do evento
+      description: Use para perguntas gerais sobre o nome do evento, datas, local e quantidade total de sessoes.
+      responses:
+        "200":
+          description: Informacoes gerais do evento
+          content:
+            application/json:
+              schema:
+                type: object
+  /tracks:
+    get:
+      operationId: listTracks
+      summary: Lista trilhas da programacao
+      description: Use para perguntas sobre trilhas, especialmente quando houver filtro por dia.
+      parameters:
+        - name: day
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Dia da programacao, por exemplo 22/jul, 23/jul ou 24/jul.
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Termo para filtrar o nome da trilha.
+      responses:
+        "200":
+          description: Trilhas encontradas
+          content:
+            application/json:
+              schema:
+                type: object
+  /sessions:
+    get:
+      operationId: searchSessions
+      summary: Busca sessoes, palestras, horarios e speakers
+      description: Use obrigatoriamente para perguntas sobre agenda, programacao, sessoes, palestras, horarios, trilhas especificas, speakers, nomes de pessoas ou busca por termo.
       parameters:
         - name: q
           in: query
@@ -332,10 +383,36 @@ paths:
           schema:
             type: integer
             default: 10
-          description: Quantidade maxima de resultados desejada.
+          description: Quantidade maxima de resultados.
       responses:
         "200":
-          description: Programacao estruturada do TDC Floripa 2026
+          description: Sessoes encontradas
+          content:
+            application/json:
+              schema:
+                type: object
+  /speakers:
+    get:
+      operationId: searchSpeakers
+      summary: Busca speakers e suas sessoes
+      description: Use para perguntas sobre palestrantes/speakers, nomes de pessoas e sessoes associadas a uma pessoa.
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Nome ou parte do nome do speaker.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Quantidade maxima de speakers.
+      responses:
+        "200":
+          description: Speakers encontrados
           content:
             application/json:
               schema:
@@ -349,6 +426,30 @@ O mesmo contrato esta salvo em:
 assets/custom_tool_openapi.yaml
 ```
 
+Antes de colar o OpenAPI na OCI, substitua:
+
+```text
+https://SEU_ENDPOINT_PUBLICO
+```
+
+pela URL publica da API publicada.
+
+Para testar a API localmente antes de publicar:
+
+```bash
+cd api
+npm start
+```
+
+Exemplos de teste local:
+
+```text
+http://localhost:3000/sessions?speaker=Ana%20Lindiner
+http://localhost:3000/sessions?q=agentes&limit=5
+http://localhost:3000/tracks?day=22/jul
+http://localhost:3000/speakers?q=ana
+```
+
 <img width="1470" height="876" alt="image" src="https://github.com/user-attachments/assets/506f20bd-0790-46da-acb5-2c77649e6f14" />
 
 ## 11. Adicionar Custom Tool no agente
@@ -357,14 +458,15 @@ assets/custom_tool_openapi.yaml
 2. Clique em **Add tool**.
 3. Escolha **Custom tool**.
 4. Cole o contrato OpenAPI da secao anterior ou use o arquivo `assets/custom_tool_openapi.yaml`.
+5. Substitua `https://SEU_ENDPOINT_PUBLICO` pela URL publica da API.
 
-5. Nome sugerido:
+6. Nome sugerido:
 
 ```text
 consulta_programacao_tdc
 ```
 
-6. Descricao:
+7. Descricao:
 
 ```text
 Use esta ferramenta obrigatoriamente para buscar sessoes, speakers, trilhas por dia, horarios, palestras, nomes de pessoas e detalhes estruturados da programacao do TDC Floripa 2026.
@@ -372,8 +474,8 @@ Ela deve ser usada sempre que o usuario perguntar sobre agenda, horarios, palest
 Exemplos: Ana Lindiner, sessoes sobre agentes, trilhas do dia 22/jul, palestras de arquitetura, horarios de uma sessao.
 ```
 
-7. Em **Authentication type**, selecione **No authentication** ou **None**.
-8. Em rede, selecione os recursos criados no passo 4:
+8. Em **Authentication type**, selecione **No authentication** ou **None**.
+9. Em rede, selecione os recursos criados no passo 4:
 
 ```text
 VCN compartment: tdc-ai-agents-lab
@@ -382,7 +484,7 @@ Subnet compartment: tdc-ai-agents-lab
 Subnet: public subnet criada pelo wizard
 ```
 
-9. Salve a tool.
+10. Salve a tool.
 
 <img width="1470" height="792" alt="image" src="https://github.com/user-attachments/assets/a8a51ac5-e772-4dff-be31-61c4964f3114" />
 
@@ -523,7 +625,7 @@ Atualize o arquivo:
 assets/programacao_tdc_floripa_2026.json
 ```
 
-Depois faca commit e push para a branch `main`. Como a tool usa a URL publica via jsDelivr/GitHub, o agente passa a consultar a nova versao do JSON sem precisar publicar backend. O PDF do RAG so deve ser alterado quando mudarem informacoes estaticas do evento, como formato, FAQ, links oficiais ou regras gerais.
+Depois faca commit e push para a branch `main` e redeploy/restart da API publicada. A API le o JSON atualizado e passa a devolver os novos resultados nas consultas da Custom Tool. O PDF do RAG so deve ser alterado quando mudarem informacoes estaticas do evento, como formato, FAQ, links oficiais ou regras gerais.
 
 ## Limpeza dos recursos
 
