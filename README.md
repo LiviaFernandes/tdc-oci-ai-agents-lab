@@ -142,6 +142,24 @@ Private subnet CIDR block: 10.0.1.0/24
 8. Clique em **Create**.
  <img width="1470" height="842" alt="image" src="https://github.com/user-attachments/assets/86f75d50-f12a-405c-9521-2e9325e8e17b" />
 
+O wizard cria a VCN, a subnet publica, a subnet privada, Internet Gateway, NAT Gateway, route tables e security lists. Para a Custom Tool, use a **private subnet** criada pelo wizard. Ela deve sair para a internet pelo **NAT Gateway**, o que e mais confiavel para chamadas HTTPS feitas por servicos gerenciados.
+
+Antes de seguir, confira se a private subnet tem rota de saida:
+
+```text
+Destination: 0.0.0.0/0
+Target: NAT Gateway
+```
+
+E se a security list/NSG permite saida HTTPS:
+
+```text
+Direction: Egress
+Destination: 0.0.0.0/0
+Protocol: TCP
+Port: 443
+```
+
 
 
 ## 5. Criar bucket no Object Storage
@@ -461,8 +479,10 @@ Ela deve ser usada sempre que o usuario perguntar sobre agenda, horarios, palest
 VCN compartment: tdc-ai-agents-lab
 VCN: tdc-ai-agents-vcn
 Subnet compartment: tdc-ai-agents-lab
-Subnet: public subnet criada pelo wizard
+Subnet: private subnet criada pelo wizard
 ```
+
+Use a **private subnet** porque a Custom Tool faz chamada HTTPS para uma API publica. A saida deve acontecer via NAT Gateway criado pelo wizard. Se usar uma subnet sem rota para internet, a tool pode falhar com `Internal Execution Error`.
 
 9. Salve a tool.
 
@@ -515,39 +535,74 @@ Para o lab, deixamos os guardrails em `Disable` para reduzir variaveis durante o
 
 ## 13. Testar no chat
 
-Perguntas para testar RAG:
+Antes dos testes, aqueça a API da Custom Tool:
 
 ```text
-Quando acontece o TDC Floripa 2026?
+https://tdc-oci-ai-agents-lab.onrender.com/health
 ```
+
+Use os testes abaixo para demonstrar o papel de cada ferramenta.
+
+### Teste 1: RAG com informacao geral do evento
+
+Objetivo: mostrar que o agente usa a Knowledge Base para responder contexto geral do evento, sem depender da API de programacao.
 
 ```text
-O que sao as Jornadas TDC?
+O que sao as Jornadas TDC e como elas ajudam uma pessoa a escolher melhor a experiencia dela no TDC Floripa 2026?
 ```
+
+Resultado esperado: resposta conceitual sobre Jornadas TDC, formato do evento e orientacao geral. O trace deve mostrar uso da RAG Tool `consulta_base_tdc`.
+
+### Teste 2: Custom Tool com speaker especifica
+
+Objetivo: mostrar que perguntas sobre speakers e sessoes usam a API estruturada.
 
 ```text
-O evento e presencial ou online?
+Quais palestras a Livia Rodrigues vai fazer?
 ```
 
-Perguntas para testar tool:
+Resultado esperado: resposta com as sessoes da Livia Rodrigues Fernandes Silva:
+
+- Painel: GenAI no Limite: Arquiteturas Avancadas e as Conversas que Evitamos.
+- LLM-as-Judge: Usando IA para avaliar IA.
+
+O trace deve mostrar `POST /speakers/search` ou `POST /sessions/search`.
+
+### Teste 3: RAG + Custom Tool na mesma resposta
+
+Objetivo: mostrar que o agente pode combinar contexto geral do evento com busca estruturada na programacao.
 
 ```text
-Quais trilhas existem no dia 22/jul?
+Estou interessado em GenAI e agentes. Explique rapidamente como o TDC organiza trilhas ou jornadas e depois liste sessoes da programacao que falem sobre agentes.
 ```
+
+Resultado esperado: a primeira parte vem da RAG, explicando organizacao/jornadas/trilhas; a segunda vem da Custom Tool, listando sessoes filtradas por `agentes`, `agentic` ou termos relacionados.
+
+### Teste 4: roteiro personalizado por acesso e interesses
+
+Objetivo: demonstrar um uso mais proximo de produto, onde o agente cruza preferencia do usuario com a programacao.
 
 ```text
-Busque sessoes sobre agentes.
+Tenho acesso ao dia 24/jul e me interesso por GenAI, LLMs e avaliacao de modelos. Monte um roteiro objetivo para mim com as sessoes mais relevantes, horarios e trilha.
 ```
+
+Resultado esperado: o agente deve usar a Custom Tool para buscar sessoes do dia 24/jul relacionadas a GenAI/LLMs e montar um roteiro em ordem de horario.
+
+Outro exemplo:
 
 ```text
-Quais sessoes a Ana Lindiner apresenta?
+Tenho acesso ao dia 22/jul e quero focar em Agentic AI e arquitetura. Quais sessoes voce recomenda e em que ordem?
 ```
 
-Pergunta para discutir limite entre RAG e tool:
+Resultado esperado: roteiro com sessoes do dia 22/jul, priorizando trilha Agentic AI e termos de arquitetura.
+
+### Teste 5: limite entre RAG e tool
 
 ```text
 Qual e o link oficial de inscricao?
 ```
+
+Resultado esperado: resposta usando RAG, porque o link e uma informacao geral do evento, nao uma consulta de agenda.
 
 > INSERIR PRINT: chat respondendo com RAG.
 
