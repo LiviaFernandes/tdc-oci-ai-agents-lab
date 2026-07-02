@@ -519,7 +519,6 @@ Endpoint automatico: ativado
 
 Para o lab, deixamos os guardrails em `Disable` para reduzir variaveis durante os testes e facilitar a demonstracao do uso de RAG e Custom Tool. Em um ambiente produtivo, avalie usar `Block` ou `Inform` para content moderation, prompt injection e PII conforme a politica de seguranca da aplicacao.
 
-> INSERIR PRINT: endpoint ativo.
 
 ## 13. Testar no chat
 
