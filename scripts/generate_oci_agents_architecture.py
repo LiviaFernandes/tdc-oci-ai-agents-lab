@@ -34,7 +34,7 @@ def build_diagram() -> Path:
 
     d.add_text(
         "<b>Arquitetura do Lab: OCI Generative AI Agents + RAG + Custom Tool</b>"
-        "<br/><i>TDC Floripa 2026 | Telegram opcional, Render backend e OCI AI Agents</i>",
+        "<br/><i>TDC Floripa 2026 | canais externos, backend, OCI AI Agents e API HTTP</i>",
         x=24,
         y=18,
         w=980,
@@ -45,7 +45,7 @@ def build_diagram() -> Path:
     )
 
     external = d.add_group(
-        "Canais e servicos externos",
+        "Canais externos e API publica",
         x=30,
         y=105,
         w=530,
@@ -54,11 +54,11 @@ def build_diagram() -> Path:
     )
     attendee = d.add_primary_icon("Participante", "user", 45, 70, parent=external)
     telegram = d.add_primary_icon("Telegram Bot", "external_cloud", 215, 70, parent=external)
-    render = d.add_primary_icon("Render Web Service", "api_service", 215, 255, parent=external)
+    backend = d.add_primary_icon("Backend", "api_service", 215, 255, parent=external)
     public_api = d.add_primary_icon("API Programacao TDC", "external_cloud", 215, 575, parent=external)
 
     d.add_text(
-        "Backend Node.js<br/>Webhook /telegram/webhook<br/>OCI SDK + API key",
+        "Backend Node.js<br/>Webhook /telegram/webhook<br/>chamada assinada OCI SDK",
         x=340,
         y=260,
         w=150,
@@ -85,18 +85,17 @@ def build_diagram() -> Path:
         group_type="compartment",
     )
 
-    identity_panel = d.add_group(
-        "Identity and access",
+    obs_panel = d.add_group(
+        "Operacao opcional",
         x=30,
         y=50,
         w=270,
-        h=210,
+        h=205,
         parent=compartment,
         group_type="services",
     )
-    group = d.add_secondary_icon("Grupo IAM", "user_group", 25, 55, parent=identity_panel)
-    policies = d.add_secondary_icon("Policies", "policies", 145, 55, parent=identity_panel)
-    api_key = d.add_secondary_icon("API Key user", "iam", 85, 135, parent=identity_panel)
+    logging = d.add_secondary_icon("Logging", "logging", 35, 70, parent=obs_panel)
+    monitoring = d.add_secondary_icon("Monitoring", "monitoring", 160, 70, parent=obs_panel)
 
     genai_panel = d.add_group(
         "OCI Generative AI Agents",
@@ -146,18 +145,6 @@ def build_diagram() -> Path:
     nat = d.add_secondary_icon("NAT Gateway", "nat_gateway", 30, 55, parent=subnet)
     route = d.add_secondary_icon("Route Table", "route_table", 155, 55, parent=subnet)
 
-    obs_panel = d.add_group(
-        "Observabilidade",
-        x=30,
-        y=405,
-        w=270,
-        h=205,
-        parent=compartment,
-        group_type="services",
-    )
-    logging = d.add_secondary_icon("Logging", "logging", 35, 70, parent=obs_panel)
-    monitoring = d.add_secondary_icon("Monitoring", "monitoring", 160, 70, parent=obs_panel)
-
     # Main product flow.
     d.add_labeled_edge(
         attendee,
@@ -173,7 +160,7 @@ def build_diagram() -> Path:
     )
     d.add_labeled_edge(
         telegram,
-        render,
+        backend,
         "2. webhook HTTPS",
         label_x=270,
         label_y=210,
@@ -184,7 +171,7 @@ def build_diagram() -> Path:
         entry_y=0.0,
     )
     d.add_labeled_edge(
-        render,
+        backend,
         endpoint,
         "3. OCI SDK signed request",
         label_x=550,
@@ -279,25 +266,6 @@ def build_diagram() -> Path:
         waypoints=[(645, 735), (560, 735)],
     )
 
-    # Cross-cutting coverage.
-    security_scope = d.add_scope_band(
-        "Controle de acesso: grupo, policies, API key e OCIDs do endpoint",
-        x=805,
-        y=690,
-        w=710,
-        h=52,
-        parent=region,
-    )
-    d.add_coverage_connector(
-        security_scope,
-        identity_panel,
-        "governance",
-        parent=compartment,
-        side="top",
-        label_x=780,
-        label_y=700,
-    )
-
     telemetry_bus = d.add_bus(
         "logs e metricas",
         x1=460,
@@ -316,7 +284,7 @@ def build_diagram() -> Path:
         "<b>Notas para a demo</b><br/>"
         "• O chat do console prova o Agent. O Telegram mostra o endpoint como produto.<br/>"
         "• RAG usa o PDF do evento no Object Storage. A Custom Tool consulta a API estruturada da programacao.<br/>"
-        "• O Render guarda token Telegram e credenciais OCI em env vars; nada sensivel fica no frontend.",
+        "• O backend guarda token Telegram e credenciais OCI em env vars; nada sensivel fica no frontend.",
         x=30,
         y=905,
         w=1690,

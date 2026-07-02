@@ -43,6 +43,8 @@ docs/arquitetura-oci-ai-agents-tdc.drawio
 
 ![Arquitetura da demo OCI AI Agents](docs/arquitetura-oci-ai-agents-tdc.png)
 
+> A arquitetura mostra o fluxo de execucao da demo. Policies, grupos e API keys aparecem no passo a passo como pre-requisitos de seguranca, mas nao entram no diagrama de runtime. A VCN com private subnet e NAT Gateway existe para a **Custom Tool** conseguir fazer egress HTTPS para a API publica da programacao.
+
 Apresentacao de apoio:
 
 ```text
@@ -50,16 +52,13 @@ docs/tdc-oci-ai-agents-demo-oracle.pptx
 ```
 
 ```text
-Usuario
-  -> OCI Generative AI Agent endpoint
-     -> RAG Tool
-        -> Knowledge Base
-        -> Object Storage
-        -> assets/base_rag_tdc_floripa_2026.pdf
-     -> Custom Tool
-        -> API publica de busca
-        -> api/server.js
-        -> assets/programacao_tdc_floripa_2026.json
+Participante
+  -> Telegram Bot
+  -> Backend
+  -> OCI Generative AI Agent Endpoint
+     -> AI Agent
+        -> RAG / Knowledge Base / Object Storage / PDF
+        -> Custom Tool / VCN private subnet / NAT Gateway / API publica JSON
 ```
 
 ## Pre-requisitos
