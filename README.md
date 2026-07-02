@@ -357,12 +357,15 @@ Na tela **Setup agent endpoint**, use uma configuracao simples para o lab:
 
 1. Mantenha **Automatically create an endpoint for this agent** ativado.
 2. Mantenha **Enable human in the loop** desativado.
+ <img width="1470" height="827" alt="image" src="https://github.com/user-attachments/assets/3d85c92a-6451-4a89-9dbe-ee0fd33e98cd" />
+
 3. Em **Content moderation**, selecione:
 
 ```text
 Input: Disable
 Output: Disable
 ```
+<img width="1470" height="829" alt="image" src="https://github.com/user-attachments/assets/979039b3-7e55-4dc4-8c59-7e5d2f2eb8a4" />
 
 4. Em **Prompt injection (PI) protection**, selecione:
 
