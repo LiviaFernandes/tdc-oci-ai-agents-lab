@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 from pathlib import Path
 
 from reportlab.lib import colors
@@ -36,6 +37,38 @@ def add_markdown(story, md_path: Path, styles, title: str):
             story.append(Paragraph("• " + clean_line(line[2:]), styles["RagBullet"]))
         else:
             story.append(Paragraph(clean_line(line), styles["Body"]))
+
+
+def add_speaker_index(story, styles):
+    sessions = json.loads((ASSETS / "programacao_tdc_floripa_2026.json").read_text(encoding="utf-8"))
+    speaker_map = {}
+    for session in sessions:
+        for speaker in session.get("speakers", []):
+            if "nao publicados" in speaker.lower():
+                continue
+            speaker_map.setdefault(speaker, []).append(session)
+
+    story.append(Paragraph("Indice de speakers", styles["Section"]))
+    story.append(
+        Paragraph(
+            f"Esta secao lista {len(speaker_map)} speakers identificados na programacao coletada do site oficial. "
+            "Cada nome aparece com suas sessoes, trilhas, datas e horarios.",
+            styles["Body"],
+        )
+    )
+    story.append(Spacer(1, 8))
+
+    for speaker in sorted(speaker_map):
+        story.append(Paragraph(clean_line(speaker), styles["ItemTitle"]))
+        for session in speaker_map[speaker]:
+            line = (
+                f"{session.get('date') or 'Data nao informada'} | "
+                f"{session.get('time') or 'Horario nao informado'} | "
+                f"{session.get('track') or 'Trilha nao informada'} | "
+                f"{session.get('title') or 'Sessao sem titulo'}"
+            )
+            story.append(Paragraph("• " + clean_line(line), styles["RagBullet"]))
+        story.append(Spacer(1, 3))
 
 
 def main():
@@ -116,7 +149,7 @@ def main():
             styles["BodyText"],
         ),
         Paragraph(
-            "Inclui visao geral, FAQ, jornadas, trilhas, programacao, sessoes e speakers coletados das paginas oficiais do TDC.",
+            "Inclui visao geral, FAQ, jornadas, trilhas, indice de speakers, programacao e sessoes coletadas das paginas oficiais do TDC.",
             styles["Small"],
         ),
         Paragraph("Fontes: https://thedevconf.com/tdc/2026/florianopolis/ e /jornadas/", styles["Small"]),
@@ -124,6 +157,8 @@ def main():
     ]
 
     add_markdown(story, ASSETS / "tdc_floripa_2026_oficial.md", styles, "Informacoes oficiais curadas")
+    story.append(PageBreak())
+    add_speaker_index(story, styles)
     story.append(PageBreak())
     add_markdown(story, ASSETS / "programacao_tdc_floripa_2026.md", styles, "Programacao oficial com speakers")
 
