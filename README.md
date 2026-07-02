@@ -7,27 +7,22 @@ Este projeto contem o material de apoio para um laboratorio de 1 hora sobre **AI
 - Knowledge Base com RAG;
 - Custom Tool via API;
 - endpoint do agente;
-- programacao real do TDC Floripa 2026 como base de conhecimento.
+- programacao real do TDC Floripa 2026 como dataset estruturado da tool.
 
-O objetivo do lab e criar um agente chamado **Assistente TDC Floripa**, capaz de responder perguntas sobre o evento usando RAG e consultar dados estruturados de programacao usando uma tool.
+O objetivo do lab e criar um agente chamado **Assistente TDC Floripa**, capaz de responder perguntas gerais sobre o evento usando RAG e consultar programacao, horarios, sessoes e speakers usando uma tool.
 
 ## Entregaveis do repositorio
 
 ```text
 assets/
-  programacao_tdc_floripa_2026.pdf      # PDF da programacao com trilhas, sessoes e speakers
-  programacao_tdc_floripa_2026.md       # Versao Markdown para RAG
-  programacao_tdc_floripa_2026.json     # Dataset usado pela tool
-  tdc_floripa_2026_oficial.md           # Base curada do evento
-
-tool/
-  src/main.py                           # API da custom tool
-  openapi/tdc-tool.openapi.yaml         # Contrato OpenAPI para OCI Generative AI Agents
-  requirements.txt
-
-scripts/
-  build_tdc_program.py                  # Atualiza programacao a partir do site oficial
+  base_rag_tdc_floripa_2026.pdf         # Base estatica para RAG
+  programacao_tdc_floripa_2026.json     # Dataset estruturado usado pela tool
 ```
+
+O PDF e o JSON foram separados de proposito:
+
+- **PDF/RAG**: contexto estatico do evento, FAQ, jornadas, formato, links oficiais e orientacoes.
+- **JSON/Tool**: programacao detalhada, trilhas, sessoes, horarios, speakers e busca estruturada.
 
 ## Demo do lab
 
@@ -49,9 +44,9 @@ Quais palestras falam sobre agentes?
 Quais sessoes a speaker Ana Lindiner apresenta?
 ```
 
-Perguntas sobre conceitos gerais, jornadas, formato, FAQ e regras usam **RAG**.
+Perguntas sobre conceitos gerais, jornadas, formato, FAQ e regras usam **RAG** porque estao no PDF.
 
-Perguntas sobre busca estruturada de sessoes, speakers, trilhas por dia e filtros usam **Custom Tool**.
+Perguntas sobre busca estruturada de sessoes, speakers, trilhas por dia e filtros usam **Custom Tool** porque dependem do JSON.
 
 ## Arquitetura
 
@@ -61,7 +56,7 @@ Usuario
      -> RAG Tool
         -> Knowledge Base
         -> Object Storage
-        -> assets/*.md e assets/*.pdf
+        -> assets/base_rag_tdc_floripa_2026.pdf
      -> Custom Tool
         -> API publica
         -> assets/programacao_tdc_floripa_2026.json
@@ -150,17 +145,15 @@ Bucket name: tdc-agent-kb
 
 <img width="1470" height="831" alt="image" src="https://github.com/user-attachments/assets/41ad45b7-6ae9-4c4e-a81b-7416cbdb2507" />
 
-## 5. Subir arquivos para RAG
+## 5. Subir arquivo para RAG
 
-No bucket `tdc-agent-kb`, faca upload dos arquivos:
+No bucket `tdc-agent-kb`, faca upload de apenas um arquivo:
 
 ```text
-assets/tdc_floripa_2026_oficial.md
-assets/programacao_tdc_floripa_2026.md
-assets/programacao_tdc_floripa_2026.pdf
+assets/base_rag_tdc_floripa_2026.pdf
 ```
 
-Esses arquivos contem a base sobre o evento e a programacao coletada do site oficial.
+Esse PDF contem somente a base estatica do evento: visao geral, formato, FAQ, jornadas, links oficiais e instrucoes de comportamento. Ele nao contem programacao detalhada nem speakers; esses dados ficam no JSON e serao acessados pela Custom Tool.
 
 > INSERIR PRINT: upload dos arquivos no bucket.
 
@@ -207,8 +200,8 @@ Ola! Sou o Assistente TDC Floripa. Posso responder perguntas sobre o TDC Floripa
 ```text
 Voce e o Assistente TDC Floripa, um agente para orientar participantes sobre o TDC Floripa 2026.
 Responda em portugues brasileiro, de forma clara, objetiva e educada.
-Use a base de conhecimento para perguntas sobre o evento, jornadas, formato, FAQ, regras, trilhas e programacao.
-Use a tool de programacao quando a pergunta pedir busca por dia, trilha, speaker, termo ou sessao especifica.
+Use a base de conhecimento para perguntas gerais sobre o evento, jornadas, formato, FAQ, regras e links oficiais.
+Use a tool de programacao quando a pergunta pedir trilhas por dia, horarios, speakers, busca por termo ou sessao especifica.
 Quando uma informacao puder mudar, informe que a fonte oficial deve ser consultada.
 Nao invente horarios, speakers, valores ou regras que nao estejam na base ou na resposta da tool.
 ```
@@ -228,7 +221,7 @@ consulta_base_tdc
 4. Descricao:
 
 ```text
-Use esta ferramenta para responder perguntas sobre o TDC Floripa 2026, incluindo formato do evento, jornadas, FAQ, inscricoes, modalidades, trilhas e programacao oficial. Responda com base nos documentos recuperados e cite a fonte quando disponivel.
+Use esta ferramenta para responder perguntas gerais sobre o TDC Floripa 2026, incluindo formato do evento, jornadas, FAQ, inscricoes, modalidades, links oficiais e orientacoes. Nao use esta ferramenta para listar sessoes, horarios ou speakers; nesses casos use a Custom Tool de programacao.
 ```
 
 5. Selecione a knowledge base `tdc-floripa-2026-kb`.
@@ -238,58 +231,118 @@ Use esta ferramenta para responder perguntas sobre o TDC Floripa 2026, incluindo
 
 ## 9. Preparar a Custom Tool
 
-A custom tool deste projeto fica em:
+A Custom Tool deve consultar o dataset estruturado:
 
 ```text
-tool/
+assets/programacao_tdc_floripa_2026.json
 ```
 
-Ela expoe uma API com:
+Esse arquivo contem programacao detalhada, trilhas, sessoes, horarios, speakers, descricoes e URL fonte. A ideia e publicar uma pequena API que leia esse JSON e exponha endpoints para o agente.
+
+Endpoints sugeridos:
 
 - `GET /event`
 - `GET /tracks`
 - `GET /sessions`
 - `GET /speakers`
 
-Para testar localmente:
+Exemplo de comportamento esperado:
 
-```bash
-cd tool
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn src.main:app --reload --port 8080
+```text
+GET /sessions?q=agentic&limit=5
 ```
 
-Testes:
+Retorna sessoes que tenham o termo `agentic` no titulo, descricao, trilha ou speakers.
 
-```bash
-curl http://127.0.0.1:8080/event
-curl "http://127.0.0.1:8080/tracks?day=22/jul"
-curl "http://127.0.0.1:8080/sessions?q=agentic&limit=5"
-curl "http://127.0.0.1:8080/speakers?q=ana"
+```text
+GET /speakers?q=ana
 ```
 
-Para usar no OCI Generative AI Agents, publique essa API em um endpoint acessivel pela OCI. Opcoes:
+Retorna speakers que tenham `ana` no nome e as sessoes associadas.
+
+Para o lab, voce pode publicar essa API em:
 
 - OCI Functions + API Gateway;
 - Compute pequena;
 - Container Instance;
 - outro endpoint HTTPS publico para fins de demo.
 
-Depois, edite:
+O importante para o conceito e que o agente nao busque sessoes e speakers no PDF. Ele deve chamar a tool, que consulta o JSON estruturado.
 
-```text
-tool/openapi/tdc-tool.openapi.yaml
+Contrato OpenAPI sugerido para cadastrar a tool:
+
+```yaml
+openapi: 3.0.3
+info:
+  title: TDC Floripa 2026 Programacao API
+  version: 1.0.0
+servers:
+  - url: https://SEU_ENDPOINT_PUBLICO
+paths:
+  /event:
+    get:
+      operationId: getEventInfo
+      summary: Retorna informacoes gerais do evento
+      responses:
+        "200":
+          description: Informacoes do evento
+  /tracks:
+    get:
+      operationId: listTracks
+      summary: Lista trilhas, opcionalmente filtradas por dia
+      parameters:
+        - name: day
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Dia no formato 22/jul, 23/jul ou 24/jul
+      responses:
+        "200":
+          description: Lista de trilhas
+  /sessions:
+    get:
+      operationId: searchSessions
+      summary: Busca sessoes por dia, trilha ou termo
+      parameters:
+        - name: day
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: track
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: Sessoes encontradas
+  /speakers:
+    get:
+      operationId: searchSpeakers
+      summary: Busca speakers e suas sessoes
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Speakers encontrados
 ```
-
-Substitua:
-
-```text
-https://SEU_ENDPOINT_PUBLICO
-```
-
-pelo endpoint real.
 
 > INSERIR PRINT: API/tool publicada ou teste local.
 
@@ -298,11 +351,7 @@ pelo endpoint real.
 1. Volte ao agente.
 2. Clique em **Add tool**.
 3. Escolha **Custom tool**.
-4. Use o OpenAPI:
-
-```text
-tool/openapi/tdc-tool.openapi.yaml
-```
+4. Use o contrato OpenAPI da secao anterior, substituindo `https://SEU_ENDPOINT_PUBLICO` pelo endpoint real da sua API.
 
 5. Nome sugerido:
 
@@ -389,17 +438,13 @@ O chat prova que o agente funciona. O endpoint prova que ele pode virar produto.
 
 Para atualizar a programacao a partir do site oficial:
 
-```bash
-python3 scripts/build_tdc_program.py assets
-```
-
-Isso regenera:
+Atualize o arquivo:
 
 ```text
 assets/programacao_tdc_floripa_2026.json
-assets/programacao_tdc_floripa_2026.md
-assets/programacao_tdc_floripa_2026.pdf
 ```
+
+Depois republique a API da tool, se necessario. O PDF do RAG so deve ser alterado quando mudarem informacoes estaticas do evento, como formato, FAQ, links oficiais ou regras gerais.
 
 ## Limpeza dos recursos
 
