@@ -168,8 +168,8 @@ def build():
     shutil.copyfile(TEMPLATE, OUTPUT)
     prs = Presentation(str(OUTPUT))
 
-    # Keep title, three content slides, and the closing slide.
-    for index in [7, 6, 5, 4]:
+    # Keep a single light content slide from the Redwood starter.
+    for index in [8, 7, 6, 5, 4, 3, 2, 0]:
         remove_slide(prs, index)
 
     slides = list(prs.slides)
@@ -178,93 +178,31 @@ def build():
     for idx, slide in enumerate(slides, start=1):
         normalize_template_footer(slide, idx)
 
-    # Slide 1
     s = slides[0]
-    textbox(s, "Lab TDC: AI Agents na OCI", 0.75, 0.75, 7.4, 0.65, size=34, bold=True, color="white")
-    textbox(s, "RAG, Custom Tools e endpoint em uma demo de 1 hora", 0.78, 1.42, 7.8, 0.35, size=18, color="white")
-    textbox(s, "Material de apoio", 0.78, 4.55, 2.5, 0.3, size=14, color="white")
-    add_link(s, GITHUB_URL, 0.78, 4.9, 6.2, 0.42)
-    s.shapes.add_picture(str(QR), Inches(10.15), Inches(1.15), width=Inches(2.05), height=Inches(2.05))
-    textbox(s, "Aponte a camera para abrir o GitHub", 9.65, 3.35, 3.0, 0.4, size=13, color="white", align=PP_ALIGN.CENTER)
+    textbox(s, "Lab TDC: AI Agents na OCI", 0.55, 0.35, 6.5, 0.45, size=27, bold=True)
+    textbox(s, "Arquitetura, QR code e resumo da demo", 0.57, 0.82, 5.4, 0.28, size=14, color="muted")
 
-    # Slide 2
-    s = slides[1]
-    textbox(s, "O que a demo mostra", 0.7, 0.55, 6.7, 0.5, size=30, bold=True)
+    s.shapes.add_picture(str(ARCH), Inches(0.45), Inches(1.25), width=Inches(8.35), height=Inches(4.55))
+    s.shapes.add_picture(str(QR), Inches(10.15), Inches(0.72), width=Inches(1.85), height=Inches(1.85))
+    textbox(s, "GitHub do lab", 10.0, 2.62, 2.15, 0.25, size=13, bold=True, align=PP_ALIGN.CENTER)
+
+    textbox(s, "O que a demo ensina", 9.15, 3.15, 3.5, 0.35, size=20, bold=True)
     bullets(
         s,
         [
-            "Criacao de um OCI Generative AI Agent em uma tenancy trial do zero.",
-            "RAG com PDF do TDC Floripa 2026 para contexto geral do evento.",
-            "Custom Tool HTTP para buscar agenda, speakers, trilhas e horarios.",
-            "Agent Endpoint consumido por um canal externo: Telegram via backend Render.",
+            "Agent com RAG: PDF do evento como base de conhecimento.",
+            "Custom Tool: agenda e speakers via API estruturada.",
+            "Endpoint real: consumo pelo Telegram usando backend Render.",
         ],
-        0.85,
-        1.45,
-        6.1,
-        4.3,
-        size=19,
-    )
-    pill(s, "RAG = conhecimento nao estruturado", 7.45, 1.55, 4.6, 0.55, fill="neutral", line="ivy")
-    pill(s, "Tool = dado estruturado e atualizavel", 7.45, 2.35, 4.6, 0.55, fill="neutral", line="sienna")
-    pill(s, "Endpoint = integracao real", 7.45, 3.15, 4.6, 0.55, fill="neutral", line="ocean")
-    pill(s, "Telegram = experiencia de canal", 7.45, 3.95, 4.6, 0.55, fill="neutral", line="rose")
-
-    # Slide 3
-    s = slides[2]
-    textbox(s, "Arquitetura da solucao", 0.7, 0.45, 7.5, 0.5, size=30, bold=True)
-    textbox(s, "Do canal externo ao Agent Endpoint, combinando RAG e Custom Tool.", 0.72, 0.95, 8.6, 0.35, size=15, color="muted")
-    s.shapes.add_picture(str(ARCH), Inches(0.55), Inches(1.35), width=Inches(12.25), height=Inches(5.45))
-
-    # Slide 4
-    s = slides[3]
-    textbox(s, "Roteiro da demonstracao", 0.7, 0.55, 7.3, 0.5, size=30, bold=True)
-    bullets(
-        s,
-        [
-            "1. Preparar OCI: compartment, policies, bucket, rede e subnet privada.",
-            "2. Criar Knowledge Base e ingerir o PDF do evento.",
-            "3. Criar Agent, adicionar RAG Tool e Custom Tool via OpenAPI.",
-            "4. Testar perguntas: geral do evento, speaker, agenda e roteiro personalizado.",
-            "5. Mostrar endpoint em canal externo com Telegram e Render.",
-        ],
-        0.85,
-        1.35,
-        6.4,
-        4.8,
-        size=18,
-    )
-    textbox(s, "Perguntas boas para testar", 7.75, 1.35, 4.3, 0.35, size=18, bold=True)
-    bullets(
-        s,
-        [
-            "O que sao as Jornadas TDC?",
-            "Quais palestras a Livia Rodrigues vai fazer?",
-            "Monte um roteiro para GenAI e arquitetura.",
-        ],
-        7.75,
-        1.9,
-        4.2,
-        2.3,
-        size=16,
-        color="muted",
-    )
-
-    # Slide 5
-    s = slides[4]
-    textbox(s, "Material e proximos passos", 0.75, 0.8, 6.8, 0.6, size=32, bold=True, color="bark")
-    textbox(
-        s,
-        "Use o repositorio para repetir o lab, atualizar os assets do TDC e adaptar a tool para outros eventos ou bases internas.",
-        0.78,
-        1.55,
-        7.3,
-        1.0,
-        size=19,
+        9.15,
+        3.62,
+        3.45,
+        1.8,
+        size=15,
         color="bark",
     )
-    add_link(s, GITHUB_URL, 0.78, 3.1, 7.2, 0.45)
-    s.shapes.add_picture(str(QR), Inches(9.75), Inches(1.1), width=Inches(2.15), height=Inches(2.15))
-    textbox(s, "GitHub do lab", 9.6, 3.38, 2.5, 0.35, size=15, color="bark", align=PP_ALIGN.CENTER)
+    pill(s, "RAG + Tools + Endpoint", 9.25, 5.72, 3.0, 0.42, fill="neutral", line="sienna", size=13)
+    add_link(s, GITHUB_URL, 0.6, 6.67, 7.4, 0.28)
 
     prs.save(str(OUTPUT))
     return OUTPUT

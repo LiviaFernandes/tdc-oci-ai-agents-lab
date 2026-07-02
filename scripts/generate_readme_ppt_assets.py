@@ -45,10 +45,11 @@ def label(draw, text, x, y, size=24, fill=COLORS["bark"], bold=False, anchor=Non
     draw.text((x, y), text, fill=fill, font=font(size, bold), anchor=anchor)
 
 
-def arrow(draw, start, end, fill=COLORS["line"], width=4):
-    draw.line([start, end], fill=fill, width=width)
-    x1, y1 = start
-    x2, y2 = end
+def arrow(draw, start, end, fill=COLORS["line"], width=4, via=None):
+    points = [start] + (via or []) + [end]
+    draw.line(points, fill=fill, width=width)
+    x1, y1 = points[-2]
+    x2, y2 = points[-1]
     if abs(x2 - x1) >= abs(y2 - y1):
         direction = 1 if x2 >= x1 else -1
         points = [(x2, y2), (x2 - 16 * direction, y2 - 8), (x2 - 16 * direction, y2 + 8)]
@@ -58,73 +59,70 @@ def arrow(draw, start, end, fill=COLORS["line"], width=4):
     draw.polygon(points, fill=fill)
 
 
-def draw_component(draw, xy, title, subtitle, fill, outline=None):
+def draw_icon_card(draw, xy, icon, title, subtitle, accent):
     x1, y1, x2, y2 = xy
-    rounded_box(draw, xy, fill=fill, outline=outline or COLORS["line"], radius=16)
-    label(draw, title, x1 + 22, y1 + 20, size=25, bold=True)
+    rounded_box(draw, xy, fill="#FFFFFF", outline=accent, radius=18)
+    draw.ellipse((x1 + 22, y1 + 28, x1 + 82, y1 + 88), fill=accent, outline=accent)
+    label(draw, icon, x1 + 52, y1 + 45, size=20, fill="#FFFFFF", bold=True, anchor="mm")
+    label(draw, title, x1 + 102, y1 + 22, size=24, bold=True)
     if subtitle:
-        y = y1 + 56
+        y = y1 + 58
         for line in subtitle.split("\n"):
-            label(draw, line, x1 + 22, y, size=18, fill="#504B45")
+            label(draw, line, x1 + 102, y, size=17, fill="#504B45")
             y += 24
 
 
 def generate_architecture_png():
     path = DOCS / "arquitetura-oci-ai-agents-tdc.png"
-    img = Image.new("RGB", (1800, 1040), COLORS["air"])
+    img = Image.new("RGB", (1800, 980), COLORS["air"])
     draw = ImageDraw.Draw(img)
 
-    label(draw, "Arquitetura da demo: OCI Generative AI Agents + RAG + Custom Tool", 60, 38, size=38, bold=True)
-    label(draw, "Fluxo opcional com Telegram, backend Render e Agent Endpoint na OCI", 60, 88, size=22, fill="#5B5650")
+    label(draw, "Arquitetura da demo: OCI Generative AI Agents", 60, 36, size=38, bold=True)
+    label(draw, "RAG para conhecimento do evento + Custom Tool para agenda estruturada", 60, 86, size=22, fill="#5B5650")
 
-    rounded_box(draw, (55, 150, 540, 870), fill="#F5F4F2", outline="#9E9892", radius=24)
-    label(draw, "Canais externos", 85, 180, size=28, bold=True)
-    draw_component(draw, (105, 245, 490, 345), "Participante", "Pergunta no Telegram", "#FFFFFF", COLORS["ocean"])
-    draw_component(draw, (105, 410, 490, 535), "Telegram Bot", "Webhook para o backend", "#FFFFFF", COLORS["ocean"])
-    draw_component(draw, (105, 600, 490, 740), "Render Web Service", "Node.js\nOCI SDK + env vars", "#FFFFFF", COLORS["ocean"])
-    draw_component(draw, (105, 780, 490, 845), "API Programacao TDC", "JSON estruturado", "#FFFFFF", COLORS["ocean"])
+    rounded_box(draw, (55, 145, 505, 830), fill="#F5F4F2", outline="#9E9892", radius=24)
+    label(draw, "Canais externos", 85, 178, size=28, bold=True)
+    draw_icon_card(draw, (105, 245, 455, 355), "U", "Participante", "Pergunta no Telegram", COLORS["ocean"])
+    draw_icon_card(draw, (105, 420, 455, 530), "TG", "Telegram Bot", "Webhook HTTPS", COLORS["ocean"])
+    draw_icon_card(draw, (105, 595, 455, 725), "JS", "Render Backend", "Node.js\nOCI SDK + env vars", COLORS["ocean"])
 
-    rounded_box(draw, (610, 150, 1735, 870), fill="#F5F4F2", outline="#9E9892", radius=24)
-    label(draw, "OCI Region: us-phoenix-1", 645, 180, size=28, bold=True)
-    rounded_box(draw, (645, 230, 1695, 830), fill="#FCFBFA", outline="#9E9892", radius=18)
-    label(draw, "Compartment: tdc-ai-agents-lab", 675, 260, size=23, bold=True)
+    rounded_box(draw, (585, 145, 1735, 830), fill="#F5F4F2", outline="#9E9892", radius=24)
+    label(draw, "OCI Region: us-phoenix-1 | Compartment: tdc-ai-agents-lab", 625, 178, size=27, bold=True)
 
-    draw_component(draw, (690, 330, 950, 455), "IAM + Policies", "Grupo tdc-ai-agents-users\nAPI key do backend", "#FFFFFF", COLORS["rose"])
-    draw_component(draw, (1010, 315, 1290, 455), "Agent Endpoint", "Sessao + chat runtime", "#FFFFFF", COLORS["sienna"])
-    draw_component(draw, (1370, 315, 1645, 455), "AI Agent", "Orquestra RAG, tools\ne modelo LLM", "#FFFFFF", COLORS["sienna"])
-    draw_component(draw, (1010, 535, 1290, 675), "Knowledge Base", "RAG sobre PDF do evento", "#FFFFFF", COLORS["ivy"])
-    draw_component(draw, (690, 535, 950, 675), "Object Storage", "PDF base RAG\nTDC Floripa 2026", "#FFFFFF", COLORS["ivy"])
-    draw_component(draw, (1370, 535, 1645, 675), "Custom Tool HTTP", "Busca sessoes, trilhas\ne speakers", "#FFFFFF", COLORS["sienna"])
-    rounded_box(draw, (1305, 720, 1680, 790), fill="#FFF8F2", outline=COLORS["sienna"], radius=14)
-    label(draw, "VCN private subnet + NAT Gateway", 1330, 738, size=19, bold=True)
-    label(draw, "egress HTTPS para a tool", 1330, 763, size=17, fill="#504B45")
+    draw_icon_card(draw, (640, 250, 940, 375), "IAM", "IAM + Policies", "Grupo, API key\ne permissao", COLORS["rose"])
+    draw_icon_card(draw, (1045, 250, 1345, 375), "EP", "Agent Endpoint", "Sessao + chat\nruntime", COLORS["sienna"])
+    draw_icon_card(draw, (1410, 250, 1695, 375), "AI", "AI Agent", "Orquestra RAG,\ntools e LLM", COLORS["sienna"])
 
-    arrow(draw, (300, 345), (300, 410), COLORS["ocean"])
-    arrow(draw, (300, 535), (300, 600), COLORS["ocean"])
-    arrow(draw, (490, 670), (1010, 385), COLORS["line"])
-    arrow(draw, (1290, 385), (1370, 385), COLORS["sienna"])
-    arrow(draw, (1495, 455), (1495, 535), COLORS["sienna"])
-    arrow(draw, (1370, 605), (1290, 605), COLORS["ivy"])
-    arrow(draw, (1010, 605), (950, 605), COLORS["ivy"])
-    arrow(draw, (1495, 675), (1495, 720), COLORS["sienna"])
-    arrow(draw, (1325, 755), (490, 815), COLORS["line"])
+    draw_icon_card(draw, (640, 535, 940, 660), "OBJ", "Object Storage", "PDF base RAG\nTDC Floripa 2026", COLORS["ivy"])
+    draw_icon_card(draw, (1045, 535, 1345, 660), "RAG", "Knowledge Base", "Busca semantica\nno PDF", COLORS["ivy"])
+    draw_icon_card(draw, (1410, 535, 1695, 660), "API", "Custom Tool", "OpenAPI HTTP\nagenda estruturada", COLORS["sienna"])
 
-    label(draw, "1 pergunta", 325, 370, size=17, fill=COLORS["ocean"])
-    label(draw, "2 webhook", 325, 560, size=17, fill=COLORS["ocean"])
-    label(draw, "3 chamada assinada ao Agent Endpoint", 585, 500, size=18, fill=COLORS["line"])
-    label(draw, "4 RAG + tool call", 1320, 500, size=18, fill=COLORS["sienna"])
-    label(draw, "5 consulta API de programacao", 775, 790, size=18, fill=COLORS["line"])
+    rounded_box(draw, (1260, 720, 1695, 790), fill="#FFF8F2", outline=COLORS["sienna"], radius=16)
+    label(draw, "Private subnet + NAT Gateway", 1290, 736, size=20, bold=True)
+    label(draw, "egress HTTPS para API publica da programacao", 1290, 762, size=17, fill="#504B45")
 
-    rounded_box(draw, (55, 910, 1735, 1000), fill="#FFFFFF", outline="#DFDCD8", radius=18)
-    label(draw, "Demo em uma frase:", 90, 935, size=22, bold=True)
-    label(
-        draw,
-        "um agente OCI responde sobre o TDC usando RAG para conhecimento nao estruturado e Custom Tool para dados estruturados.",
-        325,
-        936,
-        size=20,
-        fill="#504B45",
-    )
+    # Clean lanes. All connectors pass between cards, never over text.
+    arrow(draw, (280, 355), (280, 420), COLORS["ocean"])
+    arrow(draw, (280, 530), (280, 595), COLORS["ocean"])
+    arrow(draw, (455, 660), (1195, 250), COLORS["line"], via=[(540, 660), (540, 225), (1195, 225)])
+    arrow(draw, (940, 315), (1045, 315), COLORS["rose"])
+    arrow(draw, (1345, 315), (1410, 315), COLORS["sienna"])
+    arrow(draw, (1550, 375), (1550, 535), COLORS["sienna"])
+    arrow(draw, (1410, 598), (1345, 598), COLORS["ivy"])
+    arrow(draw, (1045, 598), (940, 598), COLORS["ivy"])
+    arrow(draw, (1550, 660), (1550, 720), COLORS["sienna"])
+    arrow(draw, (1260, 755), (455, 755), COLORS["line"])
+
+    label(draw, "pergunta", 304, 382, size=17, fill=COLORS["ocean"])
+    label(draw, "webhook", 304, 556, size=17, fill=COLORS["ocean"])
+    label(draw, "chamada assinada ao endpoint", 650, 205, size=18, fill=COLORS["line"])
+    label(draw, "RAG", 970, 570, size=18, fill=COLORS["ivy"])
+    label(draw, "tool call", 1568, 452, size=18, fill=COLORS["sienna"])
+    label(draw, "consulta JSON da programacao", 690, 738, size=18, fill=COLORS["line"])
+
+    rounded_box(draw, (55, 875, 1735, 940), fill="#FFFFFF", outline="#DFDCD8", radius=18)
+    label(draw, "Resumo:", 90, 895, size=22, bold=True)
+    label(draw, "o agente combina conhecimento nao estruturado do PDF com dados estruturados da agenda via Custom Tool.", 200, 896, size=20, fill="#504B45")
 
     img.save(path)
     return path
