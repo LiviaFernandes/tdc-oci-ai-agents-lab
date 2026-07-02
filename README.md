@@ -588,7 +588,89 @@ Resultado esperado: roteiro com sessoes do dia 22/jul, priorizando trilha Agenti
 
 ## 14. Demonstrar endpoint
 
+- Console chat: valida comportamento.
+- Agent endpoint: integra com aplicacao real.
+- Custom tool: conecta o agente a dados vivos ou estruturados.
 
+Mensagem para o publico:
+
+```text
+O chat prova que o agente funciona. O endpoint prova que ele pode virar produto.
+```
+
+> INSERIR PRINT: tela do endpoint do agente.
+
+## 15. Opcional: Telegram Bot
+
+Depois de criar o Agent Endpoint, voce pode mostrar como o agente seria usado em um canal real, como Telegram.
+
+Fluxo:
+
+```text
+Telegram
+  -> backend do bot
+  -> OCI Agent Endpoint
+  -> RAG Tool / Custom Tool
+  -> resposta no Telegram
+```
+
+Este repositorio inclui um exemplo em:
+
+```text
+examples/telegram-bot
+```
+
+Para uma demo rapida sem credenciais OCI, o exemplo roda em `BOT_MODE=mock` e consulta a API publica da programacao. Para usar o agente real, troque para `BOT_MODE=oci` e implemente a chamada autenticada ao OCI Agent Endpoint no backend.
+
+Resumo do setup:
+
+1. Crie um bot no Telegram com `@BotFather`.
+2. Guarde o token como `TELEGRAM_BOT_TOKEN`.
+3. Publique `examples/telegram-bot` em um servico Node.js, como Render.
+4. Configure as variaveis:
+
+```text
+TELEGRAM_BOT_TOKEN=token_do_botfather
+BOT_MODE=mock
+PROGRAMACAO_API_URL=https://tdc-oci-ai-agents-lab.onrender.com
+```
+
+5. Configure o webhook:
+
+```text
+https://api.telegram.org/botSEU_TOKEN/setWebhook?url=https://SUA_URL_DO_BOT/telegram/webhook
+```
+
+6. Teste no Telegram:
+
+```text
+Quais palestras a Livia Rodrigues vai fazer?
+```
+
+> Esse passo e opcional. Ele mostra que o Agent Endpoint pode virar produto em canais como Telegram, WhatsApp, Slack ou uma pagina web, mas nao e necessario para concluir o lab principal.
+
+## Atualizar programacao antes do evento
+
+Para atualizar a programacao a partir do site oficial:
+
+Atualize o arquivo:
+
+```text
+assets/programacao_tdc_floripa_2026.json
+```
+
+Depois faca commit e push para a branch `main` e redeploy/restart da API publicada. A API le o JSON atualizado e passa a devolver os novos resultados nas consultas da Custom Tool. O PDF do RAG so deve ser alterado quando mudarem informacoes estaticas do evento, como formato, FAQ, links oficiais ou regras gerais.
+
+## Limpeza dos recursos
+
+Ao final do lab, remova:
+
+- agent endpoint;
+- agent;
+- knowledge base;
+- objetos do bucket;
+- bucket;
+- policies e compartment, se forem descartaveis.
 
 ## Fontes
 
