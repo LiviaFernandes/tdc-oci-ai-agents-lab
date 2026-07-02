@@ -2,15 +2,47 @@ openapi: 3.0.3
 info:
   title: TDC Floripa 2026 Programacao Tool
   version: 1.0.0
-  description: Consulta publica read-only da programacao do TDC Floripa 2026 usada no lab de OCI Generative AI Agents.
+  description: Ferramenta de busca da programacao do TDC Floripa 2026. Use para perguntas sobre sessoes, speakers, trilhas, horarios, agenda ou busca por termo.
 servers:
   - url: https://cdn.jsdelivr.net
 paths:
   /gh/LiviaFernandes/tdc-oci-ai-agents-lab@main/assets/programacao_tdc_floripa_2026.json:
     get:
-      operationId: getProgramacaoTdcFloripa2026
-      summary: Retorna a programacao estruturada do TDC Floripa 2026
-      description: Retorna trilhas, sessoes, horarios, speakers, descricoes e URLs fonte para o agente filtrar conforme a pergunta do usuario.
+      operationId: searchProgramacaoTdcFloripa2026
+      summary: Busca programacao, sessoes, speakers, trilhas e horarios do TDC Floripa 2026
+      description: Use esta operacao sempre que o usuario perguntar sobre agenda, sessoes, palestras, speakers, pessoas, trilhas, horarios ou termos especificos na programacao. A API retorna o dataset estruturado para o agente filtrar pelo q, speaker, day ou track informado.
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Termo de busca geral, como agentes, IA, arquitetura, Java ou nome de uma pessoa.
+        - name: speaker
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Nome do speaker ou parte do nome, por exemplo Ana Lindiner.
+        - name: day
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Dia da programacao, por exemplo 22/jul, 23/jul ou 24/jul.
+        - name: track
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Nome ou parte do nome da trilha.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Quantidade maxima de resultados desejada.
       responses:
         "200":
           description: Programacao estruturada do TDC Floripa 2026

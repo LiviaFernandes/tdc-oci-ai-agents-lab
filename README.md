@@ -229,7 +229,9 @@ Ola! Sou o Assistente TDC Floripa. Posso responder perguntas sobre o TDC Floripa
 Voce e o Assistente TDC Floripa, um agente para orientar participantes sobre o TDC Floripa 2026.
 Responda em portugues brasileiro, de forma clara, objetiva e educada.
 Use a base de conhecimento para perguntas gerais sobre o evento, jornadas, formato, FAQ, regras e links oficiais.
-Use a tool de programacao quando a pergunta pedir trilhas por dia, horarios, speakers, busca por termo ou sessao especifica.
+Use obrigatoriamente a tool consulta_programacao_tdc quando a pergunta pedir agenda, programacao, trilhas por dia, horarios, palestras, sessoes, speakers, nomes de pessoas ou busca por termo.
+Nao use a base de conhecimento para responder perguntas sobre speakers, sessoes, horarios ou trilhas especificas.
+Se o usuario perguntar sobre uma pessoa, como Ana Lindiner, chame a tool consulta_programacao_tdc usando o nome como parametro speaker ou q.
 Quando uma informacao puder mudar, informe que a fonte oficial deve ser consultada.
 Nao invente horarios, speakers, valores ou regras que nao estejam na base ou na resposta da tool.
 ```
@@ -249,7 +251,7 @@ consulta_base_tdc
 4. Descricao:
 
 ```text
-Use esta ferramenta para responder perguntas gerais sobre o TDC Floripa 2026, incluindo formato do evento, jornadas, FAQ, inscricoes, modalidades, links oficiais e orientacoes. Nao use esta ferramenta para listar sessoes, horarios ou speakers; nesses casos use a Custom Tool de programacao.
+Use esta ferramenta somente para perguntas gerais sobre o TDC Floripa 2026, incluindo formato do evento, jornadas, FAQ, inscricoes, modalidades, links oficiais e orientacoes gerais. Nao use esta ferramenta para perguntas sobre agenda, programacao, sessoes, palestras, horarios, trilhas especificas, speakers ou nomes de pessoas; nesses casos use obrigatoriamente a Custom Tool consulta_programacao_tdc.
 ```
 
 5. Selecione a knowledge base `tdc-floripa-2026-kb`.
@@ -290,15 +292,47 @@ openapi: 3.0.3
 info:
   title: TDC Floripa 2026 Programacao Tool
   version: 1.0.0
-  description: Consulta publica read-only da programacao do TDC Floripa 2026 usada no lab de OCI Generative AI Agents.
+  description: Ferramenta de busca da programacao do TDC Floripa 2026. Use para perguntas sobre sessoes, speakers, trilhas, horarios, agenda ou busca por termo.
 servers:
   - url: https://cdn.jsdelivr.net
 paths:
   /gh/LiviaFernandes/tdc-oci-ai-agents-lab@main/assets/programacao_tdc_floripa_2026.json:
     get:
-      operationId: getProgramacaoTdcFloripa2026
-      summary: Retorna a programacao estruturada do TDC Floripa 2026
-      description: Retorna trilhas, sessoes, horarios, speakers, descricoes e URLs fonte para o agente filtrar conforme a pergunta do usuario.
+      operationId: searchProgramacaoTdcFloripa2026
+      summary: Busca programacao, sessoes, speakers, trilhas e horarios do TDC Floripa 2026
+      description: Use esta operacao sempre que o usuario perguntar sobre agenda, sessoes, palestras, speakers, pessoas, trilhas, horarios ou termos especificos na programacao. A API retorna o dataset estruturado para o agente filtrar pelo q, speaker, day ou track informado.
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Termo de busca geral, como agentes, IA, arquitetura, Java ou nome de uma pessoa.
+        - name: speaker
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Nome do speaker ou parte do nome, por exemplo Ana Lindiner.
+        - name: day
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Dia da programacao, por exemplo 22/jul, 23/jul ou 24/jul.
+        - name: track
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Nome ou parte do nome da trilha.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Quantidade maxima de resultados desejada.
       responses:
         "200":
           description: Programacao estruturada do TDC Floripa 2026
@@ -333,8 +367,9 @@ consulta_programacao_tdc
 6. Descricao:
 
 ```text
-Use esta ferramenta para buscar sessoes, speakers, trilhas por dia e detalhes estruturados da programacao do TDC Floripa 2026.
-Ela deve ser usada sempre que o usuario perguntar sobre agenda, horarios, palestras, trilhas especificas, speakers ou busca por termo na programacao.
+Use esta ferramenta obrigatoriamente para buscar sessoes, speakers, trilhas por dia, horarios, palestras, nomes de pessoas e detalhes estruturados da programacao do TDC Floripa 2026.
+Ela deve ser usada sempre que o usuario perguntar sobre agenda, horarios, palestras, trilhas especificas, speakers, nomes de pessoas ou busca por termo na programacao.
+Exemplos: Ana Lindiner, sessoes sobre agentes, trilhas do dia 22/jul, palestras de arquitetura, horarios de uma sessao.
 ```
 
 7. Em **Authentication type**, selecione **No authentication** ou **None**.
@@ -436,6 +471,31 @@ Qual e o link oficial de inscricao?
 > INSERIR PRINT: chat respondendo com RAG.
 
 > INSERIR PRINT: trace mostrando uso da tool.
+
+### Se o agente usar RAG em vez da Custom Tool
+
+Se a resposta disser que nao encontrou um speaker e o trace mostrar somente:
+
+```text
+Tool output: consulta_base_tdc
+```
+
+entao o agente escolheu a ferramenta errada. Para corrigir:
+
+1. Confirme se a Custom Tool `consulta_programacao_tdc` foi criada com o OpenAPI atualizado deste repositorio.
+2. Confirme se a descricao da RAG Tool diz que ela nao deve ser usada para agenda, sessoes, horarios, speakers ou nomes de pessoas.
+3. Confirme se as instrucoes do agente dizem explicitamente para usar `consulta_programacao_tdc` quando a pergunta mencionar speakers, sessoes, trilhas, horarios ou nomes de pessoas.
+4. Teste com uma pergunta mais direcionada:
+
+```text
+Use a tool consulta_programacao_tdc e responda quais sessoes a Ana Lindiner apresenta.
+```
+
+Resultado esperado para esse teste:
+
+```text
+Ana Lindiner Lima de Araujo apresenta a sessao "Arquiteturas orientadas a agentes: quando sistemas deixam de executar e passam a decidir", no dia 22/jul, das 10:30 as 11:05, na Trilha Agentic AI.
+```
 
 ## 14. Demonstrar endpoint
 
