@@ -121,9 +121,6 @@ def generate_architecture_png():
 
     label(draw, "pergunta", 288, 382, size=17, fill=COLORS["ocean"])
     label(draw, "webhook", 288, 552, size=17, fill=COLORS["ocean"])
-    label(draw, "chamada assinada", 505, 350, size=18, fill=COLORS["line"])
-    label(draw, "chat", 948, 350, size=18, fill=COLORS["sienna"])
-    label(draw, "tool call", 1278, 350, size=18, fill=COLORS["sienna"])
     label(draw, "RAG", 1160, 475, size=18, fill=COLORS["ivy"])
     label(draw, "PDF", 940, 570, size=18, fill=COLORS["ivy"])
 
