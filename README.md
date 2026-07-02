@@ -94,7 +94,9 @@ tdc-ai-agents-users
 
 ## 3. Criar policies do lab
 
-Va em **Identity & Security > Policies** e crie uma policy no compartment root
+Va em **Identity & Security > Policies** e crie uma policy no **compartment root da tenancy**.
+
+> Importante: crie a policy no root/tenancy, nao dentro do compartment `tdc-ai-agents-lab`. Nas statements abaixo, use o nome do compartment, nao o OCID da tenancy.
 
 Nome sugerido:
 
@@ -108,9 +110,17 @@ Statements sugeridas para o lab:
 Allow group tdc-ai-agents-users to manage object-family in compartment tdc-ai-agents-lab
 Allow group tdc-ai-agents-users to manage virtual-network-family in compartment tdc-ai-agents-lab
 Allow group tdc-ai-agents-users to manage generative-ai-family in compartment tdc-ai-agents-lab
-Allow group tdc-ai-agents-users to manage ai-service-generative-ai-agents-family in compartment tdc-ai-agents-lab
-Allow group tdc-ai-agents-users to read compartments in tenancy
+Allow group tdc-ai-agents-users to manage genai-agent-family in compartment tdc-ai-agents-lab
+Allow group tdc-ai-agents-users to inspect compartments in tenancy
 ```
+
+Se a chamada ao Agent Endpoint pelo Telegram/Render retornar `404`, confirme que:
+
+- o usuario dono da API key esta no grupo `tdc-ai-agents-users`;
+- o endpoint esta na mesma regiao configurada em `OCI_REGION`;
+- `OCI_AGENT_ENDPOINT_ID` comeca com `ocid1.genaiagentendpoint`;
+- as policies acima ja propagaram, o que pode levar alguns minutos.
+
 <img width="1466" height="829" alt="image" src="https://github.com/user-attachments/assets/78e3c250-9211-4928-9a0b-aa38e7bae3a6" />
 
 
