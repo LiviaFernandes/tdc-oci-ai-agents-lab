@@ -294,6 +294,8 @@ https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia%20Rodrigues
 
 Se o retorno vier em JSON, a API esta pronta para ser usada na Custom Tool.
 
+> Observacao: no plano gratuito do Render, o servico pode "dormir" depois de alguns minutos sem uso. Antes de testar no OCI Agent ou antes da demo, abra `/health` no navegador para aquecer a API. Se a primeira chamada da tool der erro temporario, aguarde alguns segundos e teste novamente.
+
 Este repositorio tambem inclui `render.yaml`, caso seja necessario republicar ou recriar o servico no Render.
 
 Contrato OpenAPI pronto para cadastrar a tool:
@@ -584,6 +586,43 @@ Resultado esperado para esse teste:
 ```text
 Ana Lindiner Lima de Araujo apresenta a sessao "Arquiteturas orientadas a agentes: quando sistemas deixam de executar e passam a decidir", no dia 22/jul, das 10:30 as 11:05, na Trilha Agentic AI.
 ```
+
+### Se a tool retornar Internal Execution Error
+
+Se o trace mostrar a Custom Tool correta, mas a resposta da tool vier como:
+
+```text
+HTTP Endpoint API call failed
+Internal Execution Error
+```
+
+provavelmente a API publicada no Render estava em cold start. No plano gratuito, o Render pode desligar o servico quando ele fica sem trafego, e a primeira chamada pode demorar mais do que o timeout da OCI.
+
+Para corrigir:
+
+1. Abra no navegador:
+
+```text
+https://tdc-oci-ai-agents-lab.onrender.com/health
+```
+
+2. Aguarde retornar:
+
+```json
+{
+  "status": "ok"
+}
+```
+
+3. Teste diretamente:
+
+```text
+https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Livia%20Rodrigues
+```
+
+4. Volte ao chat do agente e envie a pergunta novamente.
+
+Para a apresentacao ao vivo, aqueça a API alguns minutos antes da demo ou use um plano/servico de hosting sem sleep.
 
 ## 14. Demonstrar endpoint
 
