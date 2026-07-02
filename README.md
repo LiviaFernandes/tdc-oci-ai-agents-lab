@@ -35,6 +35,12 @@ Perguntas sobre busca estruturada de sessoes, speakers, trilhas por dia e filtro
 
 ## Arquitetura
 
+O diagrama em draw.io esta em:
+
+```text
+docs/arquitetura-oci-ai-agents-tdc.drawio
+```
+
 ```text
 Usuario
   -> OCI Generative AI Agent endpoint
