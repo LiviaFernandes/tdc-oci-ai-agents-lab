@@ -41,6 +41,14 @@ O diagrama em draw.io esta em:
 docs/arquitetura-oci-ai-agents-tdc.drawio
 ```
 
+![Arquitetura da demo OCI AI Agents](docs/arquitetura-oci-ai-agents-tdc.png)
+
+Apresentacao de apoio:
+
+```text
+docs/tdc-oci-ai-agents-demo-oracle.pptx
+```
+
 ```text
 Usuario
   -> OCI Generative AI Agent endpoint
