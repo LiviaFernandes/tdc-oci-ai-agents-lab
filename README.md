@@ -297,36 +297,22 @@ Como fizemos:
 
 O importante para o conceito e que o agente nao busque sessoes e speakers no PDF. Ele deve chamar a tool, e a API deve devolver somente os resultados relevantes para a pergunta.
 
-Para usar no OCI Agent, publique essa API em um endpoint HTTPS publico. Pode ser em OCI, Render, Railway, Fly.io, Cloud Run ou outro servico simples de hosting Node.js. Depois substitua `https://SEU_ENDPOINT_PUBLICO` no OpenAPI pela URL publicada.
-
-Este repositorio ja inclui `render.yaml`, entao o caminho mais simples e publicar no Render:
-
-1. Acesse `https://render.com`.
-2. Crie um **New > Blueprint** ou **New > Web Service** conectado ao repositorio GitHub.
-3. Se usar **Blueprint**, selecione este repositorio e confirme o arquivo `render.yaml`.
-4. Se usar **Web Service**, configure:
+A API ja esta publicada para este lab em:
 
 ```text
-Root Directory: api
-Build Command: npm install
-Start Command: npm start
-Health Check Path: /health
+https://tdc-oci-ai-agents-lab.onrender.com
 ```
 
-5. Aguarde o deploy finalizar.
-6. Copie a URL publica gerada, por exemplo:
+Teste rapido:
 
 ```text
-https://tdc-floripa-programacao-api.onrender.com
+https://tdc-oci-ai-agents-lab.onrender.com/health
+https://tdc-oci-ai-agents-lab.onrender.com/sessions?speaker=Ana%20Lindiner
 ```
 
-7. Teste:
+Se o retorno vier em JSON, a API esta pronta para ser usada na Custom Tool.
 
-```text
-https://SUA_URL_RENDER/sessions?speaker=Ana%20Lindiner
-```
-
-Se o retorno vier em JSON com as sessoes da speaker, a API esta pronta para ser usada na Custom Tool.
+Este repositorio tambem inclui `render.yaml`, caso seja necessario republicar ou recriar o servico no Render.
 
 Contrato OpenAPI pronto para cadastrar a tool:
 
@@ -337,7 +323,7 @@ info:
   version: 1.0.0
   description: API de busca da programacao do TDC Floripa 2026 para uso como Custom Tool no OCI Generative AI Agents.
 servers:
-  - url: https://SEU_ENDPOINT_PUBLICO
+  - url: https://tdc-oci-ai-agents-lab.onrender.com
 paths:
   /event:
     get:
@@ -455,14 +441,6 @@ O mesmo contrato esta salvo em:
 assets/custom_tool_openapi.yaml
 ```
 
-Antes de colar o OpenAPI na OCI, substitua:
-
-```text
-https://SEU_ENDPOINT_PUBLICO
-```
-
-pela URL publica da API publicada.
-
 Para testar a API localmente antes de publicar:
 
 ```bash
@@ -487,15 +465,14 @@ http://localhost:3000/speakers?q=ana
 2. Clique em **Add tool**.
 3. Escolha **Custom tool**.
 4. Cole o contrato OpenAPI da secao anterior ou use o arquivo `assets/custom_tool_openapi.yaml`.
-5. Substitua `https://SEU_ENDPOINT_PUBLICO` pela URL publica da API.
 
-6. Nome sugerido:
+5. Nome sugerido:
 
 ```text
 consulta_programacao_tdc
 ```
 
-7. Descricao:
+6. Descricao:
 
 ```text
 Use esta ferramenta obrigatoriamente para buscar sessoes, speakers, trilhas por dia, horarios, palestras, nomes de pessoas e detalhes estruturados da programacao do TDC Floripa 2026.
@@ -503,8 +480,8 @@ Ela deve ser usada sempre que o usuario perguntar sobre agenda, horarios, palest
 Exemplos: Ana Lindiner, sessoes sobre agentes, trilhas do dia 22/jul, palestras de arquitetura, horarios de uma sessao.
 ```
 
-8. Em **Authentication type**, selecione **No authentication** ou **None**.
-9. Em rede, selecione os recursos criados no passo 4:
+7. Em **Authentication type**, selecione **No authentication** ou **None**.
+8. Em rede, selecione os recursos criados no passo 4:
 
 ```text
 VCN compartment: tdc-ai-agents-lab
@@ -513,7 +490,7 @@ Subnet compartment: tdc-ai-agents-lab
 Subnet: public subnet criada pelo wizard
 ```
 
-10. Salve a tool.
+9. Salve a tool.
 
 <img width="1470" height="792" alt="image" src="https://github.com/user-attachments/assets/a8a51ac5-e772-4dff-be31-61c4964f3114" />
 

@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: API de busca da programacao do TDC Floripa 2026 para uso como Custom Tool no OCI Generative AI Agents.
 servers:
-  - url: https://SEU_ENDPOINT_PUBLICO
+  - url: https://tdc-oci-ai-agents-lab.onrender.com
 paths:
   /event:
     get:
