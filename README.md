@@ -68,7 +68,7 @@ Usuario
 - Conta OCI Trial ativa.
 - Acesso ao OCI Console.
 - Regiao com OCI Generative AI Agents disponivel.
-- Permissao para criar compartment, policies, bucket, knowledge base, agent e endpoint.
+- Permissao para criar compartment, policies, rede, bucket, knowledge base, agent e endpoint.
 - Acesso a internet para o agente consultar a API publica da programacao.
 
 ## 1. Criar o compartment
@@ -121,6 +121,7 @@ Statements sugeridas para o lab:
 
 ```text
 Allow group tdc-ai-agents-users to manage object-family in compartment tdc-ai-agents-lab
+Allow group tdc-ai-agents-users to manage virtual-network-family in compartment tdc-ai-agents-lab
 Allow group tdc-ai-agents-users to manage generative-ai-family in compartment tdc-ai-agents-lab
 Allow group tdc-ai-agents-users to manage ai-service-generative-ai-agents-family in compartment tdc-ai-agents-lab
 Allow group tdc-ai-agents-users to read compartments in tenancy
@@ -128,8 +129,43 @@ Allow group tdc-ai-agents-users to read compartments in tenancy
 <img width="1466" height="829" alt="image" src="https://github.com/user-attachments/assets/78e3c250-9211-4928-9a0b-aa38e7bae3a6" />
 
 
+## 4. Criar rede para a Custom Tool
 
-## 4. Criar bucket no Object Storage
+A Custom Tool precisa de uma VCN e de uma subnet para fazer chamadas HTTPS externas. Para o lab, use uma rede simples criada pelo wizard da OCI.
+
+1. Va em **Networking > Virtual cloud networks**.
+2. Selecione o compartment `tdc-ai-agents-lab`.
+3. Clique em **Start VCN Wizard**.
+4. Escolha **Create VCN with Internet Connectivity**.
+5. Use:
+
+```text
+VCN name: tdc-ai-agents-vcn
+Compartment: tdc-ai-agents-lab
+VCN CIDR block: 10.0.0.0/16
+Public subnet CIDR block: 10.0.0.0/24
+Private subnet CIDR block: 10.0.1.0/24
+```
+
+6. Clique em **Next**.
+7. Revise os recursos que serao criados.
+8. Clique em **Create**.
+
+O wizard cria a VCN, subnets, Internet Gateway, NAT Gateway, route tables e security lists. No momento de criar a Custom Tool, selecione:
+
+```text
+VCN compartment: tdc-ai-agents-lab
+VCN: tdc-ai-agents-vcn
+Subnet compartment: tdc-ai-agents-lab
+Subnet: public subnet ou private subnet criada pelo wizard
+```
+
+Para este lab, a opcao mais simples e selecionar a subnet publica criada pelo wizard. O ponto importante e que a subnet tenha saida para internet, pois a tool acessa a URL publica do JSON da programacao.
+
+> INSERIR PRINT: VCN criada pelo wizard.
+
+
+## 5. Criar bucket no Object Storage
 
 1. Va em **Storage**.
 2. Clique em **Buckets**.
@@ -146,7 +182,7 @@ Bucket name: tdc-agent-kb
 
 <img width="1470" height="831" alt="image" src="https://github.com/user-attachments/assets/41ad45b7-6ae9-4c4e-a81b-7416cbdb2507" />
 
-## 5. Subir arquivo para RAG
+## 6. Subir arquivo para RAG
 
 No bucket `tdc-agent-kb`, faca upload de apenas um arquivo:
 
@@ -158,7 +194,7 @@ Esse PDF contem somente a base estatica do evento: visao geral, formato, FAQ, jo
 
 <img width="1470" height="830" alt="image" src="https://github.com/user-attachments/assets/6423d963-06d3-4c1b-b946-f47d8b09dff2" />
 
-## 6. Criar Knowledge Base
+## 7. Criar Knowledge Base
 
 1. Va em **Analytics & AI**.
 2. Acesse **Generative AI Agents**.
@@ -180,7 +216,7 @@ tdc-floripa-2026-kb
     
 
 
-## 7. Criar o agente
+## 8. Criar o agente
 
 1. Em **Generative AI Agents**, clique em **Agents**.
 2. Clique em **Create agent**.
@@ -209,7 +245,7 @@ Nao invente horarios, speakers, valores ou regras que nao estejam na base ou na 
 
 <img width="1469" height="829" alt="image" src="https://github.com/user-attachments/assets/4e88776b-77c9-4f0d-bd62-5d4f9d826098" />
 
-## 8. Adicionar RAG Tool
+## 9. Adicionar RAG Tool
 
 1. Na etapa de tools, clique em **Add tool**.
 2. Escolha **RAG**.
@@ -230,7 +266,7 @@ Use esta ferramenta para responder perguntas gerais sobre o TDC Floripa 2026, in
 
 <img width="1470" height="771" alt="image" src="https://github.com/user-attachments/assets/2eb79fab-7d78-44e7-980d-5b2e62e0a004" />
 
-## 9. Entender a API da Custom Tool
+## 10. Entender a API da Custom Tool
 
 Para simplificar o lab, a API da Custom Tool ja esta disponivel como uma consulta publica read-only via jsDelivr/GitHub. Assim, os participantes nao precisam publicar Functions, API Gateway, Compute ou Container Instance durante a aula.
 
@@ -290,7 +326,7 @@ assets/custom_tool_openapi.yaml
 
 > INSERIR PRINT: teste da URL publica do JSON no navegador.
 
-## 10. Adicionar Custom Tool no agente
+## 11. Adicionar Custom Tool no agente
 
 1. Volte ao agente.
 2. Clique em **Add tool**.
@@ -310,11 +346,21 @@ Use esta ferramenta para buscar sessoes, speakers, trilhas por dia e detalhes es
 Ela deve ser usada sempre que o usuario perguntar sobre agenda, horarios, palestras, trilhas especificas, speakers ou busca por termo na programacao.
 ```
 
-7. Salve a tool.
+7. Em **Authentication type**, selecione **No authentication** ou **None**.
+8. Em rede, selecione os recursos criados no passo 4:
+
+```text
+VCN compartment: tdc-ai-agents-lab
+VCN: tdc-ai-agents-vcn
+Subnet compartment: tdc-ai-agents-lab
+Subnet: public subnet criada pelo wizard
+```
+
+9. Salve a tool.
 
 > INSERIR PRINT: custom tool adicionada.
 
-## 11. Criar endpoint do agente
+## 12. Criar endpoint do agente
 
 1. Na etapa de endpoint, mantenha a criacao automatica ativada.
 2. Deixe guardrails desativados para o lab ou mostre rapidamente as opcoes.
@@ -323,7 +369,7 @@ Ela deve ser usada sempre que o usuario perguntar sobre agenda, horarios, palest
 
 > INSERIR PRINT: endpoint ativo.
 
-## 12. Testar no chat
+## 13. Testar no chat
 
 Perguntas para testar RAG:
 
@@ -363,7 +409,7 @@ Qual e o link oficial de inscricao?
 
 > INSERIR PRINT: trace mostrando uso da tool.
 
-## 13. Demonstrar endpoint
+## 14. Demonstrar endpoint
 
 Explique a diferenca:
 
